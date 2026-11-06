@@ -1,0 +1,104 @@
+# Example configuration (mock backend = software validation only).
+# Units: degrees for angles, meters for distances.
+
+env:
+  backend: mock            # mock | isaac
+  mock:
+    n_identities: 8
+    emb_dim: 64
+    seed: 0
+    render_failure_prob: 0.002   # exercises failure recording; set 0 for clean runs
+
+action_space:              # shared by ALL policies
+  az_steps: [-30, -15, 0, 15, 30]
+  el_steps: [-15, 0, 15]
+  az_limits: [-75, 75]
+  el_limits: [-30, 45]
+  radius: 0.6
+  include_noop: false
+
+scenes:
+  seed: 1
+  ranges:
+    light_az: [-80, 80]
+    light_el: [-10, 50]
+    light_intensity: [0.3, 1.5]
+    env_intensity: [0.2, 1.0]
+    roughness: [0.05, 0.8]
+  condition_bins:          # used only to group evaluation results
+    light_intensity: 0.9
+    roughness: [0.3, 0.55]
+    light_offaxis: 35.0
+
+label:
+  mode: auto                     # auto (margin if >=2 identities, else similarity) | margin | similarity
+  detection_failure_value: -1.0  # q_id assigned when no face is detected in the resulting view
+  aux_glare_weight: 0.0          # optional auxiliary terms, off by default
+  aux_depth_weight: 0.0
+
+collect:
+  out_dir: data/mock_v1
+  n_scenes: 300
+  starts_per_scene: 4
+  start_scene_id: 0
+  start_az_range: [-70, 70]
+  start_el_range: [-25, 40]
+  verify_restore_every: 50
+
+split:
+  fractions: [0.7, 0.15, 0.15]
+  seed: 0
+  n_heldout_identities: 1   # extra held-out-identity test split (0 to disable)
+  heldout_identities: []    # or list explicit ids
+
+features:                   # null = all supported fields (see avs/features.py)
+  obs_fields: null
+  action_fields: null
+
+model:
+  hidden: [128, 128]
+  dropout: 0.0
+
+train:
+  out_dir: runs/mock_v1
+  datasets: [data/mock_v1]
+  label_key: label.label
+  epochs: 80
+  batch_size: 256
+  lr: 0.001
+  weight_decay: 0.00001
+  loss: huber               # huber | mse
+  huber_delta: 0.1
+  select_metric: val_loss   # val_loss | val_regret  (validation only)
+  patience: 20
+  seed: 0
+
+policy:
+  revisit_penalty: 0.3      # default for every policy that supports it
+  learned:
+    movement_cost_weight: 0.2   # label units per meter of camera travel
+  greedy_heuristic:
+    frontal_weight: 1.0
+    glare_weight: 2.0
+  greedy_preview:
+    cost_weight: 0.0
+
+eval:
+  checkpoint: runs/mock_v1
+  gallery_file: data/mock_v1/gallery.npz   # same enrollment as training data
+  scene_source: test_split   # test_split | fresh
+  splits: [test, test_heldout_identity]
+  n_fresh_scenes: 100        # used when scene_source = fresh
+  scene_seed: 12345
+  episodes_per_scene: 3
+  start_az_range: [-70, 70]
+  start_el_range: [-25, 40]
+  budget: 6
+  accept:                    # overridden by accept_file if given
+    min_det_score: 0.5
+    min_top1_similarity: 0.5
+    min_margin: 0.3
+  accept_file: null          # e.g. runs/mock_v1/accept.json from avs.calibrate
+  policies: [random, greedy_heuristic, greedy_preview, learned]
+  out_dir: results/mock_v1
+  seed: 123

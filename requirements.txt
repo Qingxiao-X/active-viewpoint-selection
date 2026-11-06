@@ -1,0 +1,9 @@
+# core (simulator-independent): data, training, policy inference, evaluation on the mock env
+numpy>=1.24
+pyyaml>=6.0
+matplotlib>=3.7
+torch>=2.0          # CPU build is enough: pip install torch --index-url https://download.pytorch.org/whl/cpu
+pytest>=7.0
+# real pipeline only (not installed here):
+#   insightface, onnxruntime(-gpu)  -> avs.perception.InsightFacePerception
+#   Isaac Sim 4.5+/5.x python env  -> avs.envs.isaac_env.IsaacViewpointEnv

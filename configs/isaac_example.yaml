@@ -1,0 +1,93 @@
+# Isaac Sim configuration TEMPLATE (never run: Isaac Sim was unavailable when written).
+# Copy the mock config's other sections, then fill in assets and shader paths.
+# Usage: <isaac-python> -m avs.collect --config configs/isaac_example.yaml
+
+env:
+  backend: isaac
+  isaac:
+    assets:                              # identity -> USD head asset (existing PBR assets)
+      subject_01: /path/to/heads/subject_01.usd
+      subject_02: /path/to/heads/subject_02.usd
+    head_center: [0.0, 0.0, 1.6]         # m, world frame
+    resolution: [640, 480]
+    headless: true
+    warmup_frames: 10                    # render steps after every change before reading sensors
+    key_light_base_intensity: 3000.0     # DistantLight intensity at light_intensity = 1.0
+    dome_base_intensity: 1000.0          # DomeLight intensity at env_intensity = 1.0
+    skin_shader_path: /World/Head/Looks/Skin/Shader   # TODO: actual shader prim in the assets
+    arm_controller: null                 # or "team_pkg.arm:move_camera_to" -> fn(env, viewpoint)
+
+perception:                              # avs.perception.InsightFacePerception
+  model_name: buffalo_l
+  det_size: [640, 640]
+  ctx_id: 0                              # GPU id, -1 for CPU
+  glare_value_thresh: 0.92
+  glare_sat_thresh: 0.25
+
+action_space:
+  az_steps: [-30, -15, 0, 15, 30]
+  el_steps: [-15, 0, 15]
+  az_limits: [-75, 75]
+  el_limits: [-30, 45]
+  radius: 0.6
+  include_noop: false
+
+scenes:
+  seed: 1
+  ranges:
+    light_az: [-80, 80]
+    light_el: [-10, 50]
+    light_intensity: [0.3, 1.5]
+    env_intensity: [0.2, 1.0]
+    roughness: [0.05, 0.8]
+
+label:
+  mode: auto
+  detection_failure_value: -1.0
+  aux_glare_weight: 0.0
+  aux_depth_weight: 0.0
+
+collect:
+  out_dir: data/isaac_v1
+  n_scenes: 200          # ~200 * 4 * 15 = 12k renders; shard with start_scene_id
+  starts_per_scene: 4
+  start_scene_id: 0
+  start_az_range: [-70, 70]
+  start_el_range: [-25, 40]
+  verify_restore_every: 20   # IMPORTANT for isaac: checks deterministic reconstruction
+
+split: {fractions: [0.7, 0.15, 0.15], seed: 0, n_heldout_identities: 1, heldout_identities: []}
+features: {obs_fields: null, action_fields: null}
+model: {hidden: [128, 128], dropout: 0.0}
+train:
+  out_dir: runs/isaac_v1
+  datasets: [data/isaac_v1]
+  label_key: label.label
+  epochs: 100
+  batch_size: 256
+  lr: 0.001
+  weight_decay: 0.00001
+  loss: huber
+  huber_delta: 0.1
+  select_metric: val_loss
+  patience: 20
+  seed: 0
+
+policy:
+  revisit_penalty: 0.3
+  learned: {movement_cost_weight: 0.2}
+
+eval:
+  checkpoint: runs/isaac_v1
+  gallery_file: data/isaac_v1/gallery.npz
+  scene_source: test_split
+  splits: [test, test_heldout_identity]
+  episodes_per_scene: 3
+  start_az_range: [-70, 70]
+  start_el_range: [-25, 40]
+  budget: 6
+  accept: {min_det_score: 0.5, min_top1_similarity: 0.35, min_margin: 0.1}
+  accept_file: runs/isaac_v1/accept.json   # from avs.calibrate on the validation split
+  policies: [random, greedy_heuristic, greedy_preview, learned]
+  out_dir: results/isaac_v1
+  seed: 123
