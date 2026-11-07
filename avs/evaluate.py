@@ -43,6 +43,18 @@ from .types import PolicyObservation, RenderError
 OUTCOMES = ("correct_accept", "incorrect_accept", "budget_exhausted", "infra_error")
 
 
+def _json_default(o):
+    if isinstance(o, (np.integer,)):
+        return int(o)
+    if isinstance(o, (np.floating,)):
+        return float(o)
+    if isinstance(o, np.ndarray):
+        return o.tolist()
+    if hasattr(o, "__dict__"):
+        return vars(o)
+    return str(o)
+
+
 def accept(obs: PolicyObservation, rule: Dict) -> bool:
     """Shared observable stopping criterion."""
     if not obs.face_detected or obs.top1_similarity is None:
@@ -77,6 +89,14 @@ def build_episodes(cfg: Dict, identities: List[str]) -> List[Dict]:
             scene_sets.append(("fresh", s))
     else:
         raise ValueError(f"unknown eval.scene_source {src!r}")
+    per_split = ecfg.get("max_scenes_per_split")
+    if per_split:  # keep the first N scenes of each split (scene order is fixed by the split file)
+        kept, seen = [], {}
+        for split, s in scene_sets:
+            seen[split] = seen.get(split, 0) + 1
+            if seen[split] <= int(per_split):
+                kept.append((split, s))
+        scene_sets = kept
     max_scenes = ecfg.get("max_scenes")
     if max_scenes:
         scene_sets = scene_sets[: int(max_scenes)]
@@ -263,13 +283,23 @@ def evaluate(cfg: Dict, out_dir: str | None = None, verbose: bool = True) -> Dic
         policies = [build_policy(n, space, pcfg, ckpt) for n in ecfg["policies"]]
         recs: List[Dict] = []
         t0 = time.time()
-        for p in policies:
-            for ep in episodes:
-                recs.append(run_episode(env, perception, gallery, space, p, ep, rule, budget, cond_bins))
-            if verbose:
-                pr = [r for r in recs if r["policy"] == p.name and r["outcome"] != "infra_error"]
-                print(f"[eval] {p.name:17s} {len(pr)} valid episodes  success={_rate([r['success'] for r in pr]):.3f}  "
-                      f"({time.time() - t0:.1f}s)")
+        # Episode-major order: every policy runs each episode before the next one starts, and
+        # each record is appended to episodes.partial.jsonl, so a run cut short by a job time
+        # limit still leaves complete paired comparisons on disk.
+        os.makedirs(ecfg["out_dir"], exist_ok=True)
+        partial = os.path.join(ecfg["out_dir"], "episodes.partial.jsonl")
+        with open(partial, "w") as pf:
+            for ei, ep in enumerate(episodes):
+                for p in policies:
+                    r = run_episode(env, perception, gallery, space, p, ep, rule, budget, cond_bins)
+                    recs.append(r)
+                    pf.write(json.dumps(r, default=_json_default) + "\n")
+                pf.flush()
+                if verbose and ((ei + 1) % max(1, len(episodes) // 10) == 0 or ei + 1 == len(episodes)):
+                    msg = "  ".join(
+                        f"{p.name}={_rate([r['success'] for r in recs if r['policy'] == p.name and r['outcome'] != 'infra_error']):.3f}"
+                        for p in policies)
+                    print(f"[eval] episode {ei + 1}/{len(episodes)}  success: {msg}  ({time.time() - t0:.1f}s)", flush=True)
     finally:
         env.close()
 

@@ -36,9 +36,15 @@ def calibrate(cfg, target_precision: float = 0.95, min_accepts: int = 20, split:
     margin = ds.cols["next.margin"][rows]
     correct = ds.cols["next.correct"][rows] == 1
     margin = np.where(np.isnan(margin), np.inf, margin)  # single identity: margin not applicable
+    # The config thresholds act as a floor: with few identities the validation split can be
+    # trivially easy (it reached precision 0.95 at thresholds of 0), which then fails on the
+    # held-out identity.
+    floor = cfg.get("eval", {}).get("accept", {})
+    ts0 = float(floor.get("min_top1_similarity", 0.0))
+    tm0 = float(floor.get("min_margin", 0.0))
     best = None
-    for ts in np.round(np.arange(0.0, 0.95, 0.025), 3):
-        for tm in np.round(np.arange(0.0, 0.6, 0.01), 3):
+    for ts in np.round(np.arange(ts0, 0.95, 0.025), 3):
+        for tm in np.round(np.arange(tm0, 0.6, 0.01), 3):
             acc = det & (top1 >= ts) & (margin >= tm)
             n = int(acc.sum())
             if n < min_accepts:

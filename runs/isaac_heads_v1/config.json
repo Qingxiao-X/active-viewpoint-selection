@@ -1,0 +1,213 @@
+{
+  "env": {
+    "backend": "isaac",
+    "isaac": {
+      "assets": {
+        "lee_perry_smith": "/scratch/user/qingxiao/689/assets_usd/lee_perry_smith/lee_perry_smith.usd",
+        "faceverse_001": "/scratch/user/qingxiao/689/assets_usd/faceverse_001/faceverse_001.usd",
+        "digital_emily_2": "/scratch/user/qingxiao/689/assets_usd/digital_emily_2/digital_emily_2.usd"
+      },
+      "head_center": [
+        0.0,
+        0.0,
+        1.0
+      ],
+      "resolution": [
+        640,
+        480
+      ],
+      "headless": true,
+      "warmup_frames": 8,
+      "focal_length": 28.0,
+      "horizontal_aperture": 20.955,
+      "key_light_base_intensity": 3000.0,
+      "dome_base_intensity": 1000.0,
+      "skin_shader_path": "/World/Head/Looks/Skin/Shader",
+      "arm_controller": null,
+      "enroll_light": {
+        "light_intensity": 0.0,
+        "env_intensity": 1.0,
+        "light_az": 0.0,
+        "light_el": 0.0,
+        "roughness": 0.5
+      }
+    }
+  },
+  "perception": {
+    "model_name": "buffalo_l",
+    "root": "/scratch/user/qingxiao/689/hprc/insightface",
+    "providers": [
+      "CUDAExecutionProvider",
+      "CPUExecutionProvider"
+    ],
+    "det_size": [
+      640,
+      640
+    ],
+    "ctx_id": 0,
+    "glare_value_thresh": 0.92,
+    "glare_sat_thresh": 0.25
+  },
+  "action_space": {
+    "az_steps": [
+      -30,
+      -15,
+      0,
+      15,
+      30
+    ],
+    "el_steps": [
+      -15,
+      0,
+      15
+    ],
+    "az_limits": [
+      -75,
+      75
+    ],
+    "el_limits": [
+      -30,
+      45
+    ],
+    "radius": 0.6,
+    "include_noop": false
+  },
+  "scenes": {
+    "seed": 1,
+    "ranges": {
+      "light_az": [
+        -80,
+        80
+      ],
+      "light_el": [
+        -10,
+        50
+      ],
+      "light_intensity": [
+        0.3,
+        1.5
+      ],
+      "env_intensity": [
+        0.2,
+        1.0
+      ],
+      "roughness": [
+        0.05,
+        0.8
+      ]
+    },
+    "condition_bins": {
+      "light_intensity": 0.9,
+      "roughness": [
+        0.3,
+        0.55
+      ],
+      "light_offaxis": 35.0
+    }
+  },
+  "label": {
+    "mode": "auto",
+    "detection_failure_value": -1.0,
+    "aux_glare_weight": 0.0,
+    "aux_depth_weight": 0.0
+  },
+  "collect": {
+    "out_dir": "/scratch/user/qingxiao/689/active-viewpoint-selection/data/isaac_heads_v1",
+    "n_scenes": 90,
+    "starts_per_scene": 3,
+    "start_scene_id": 0,
+    "start_az_range": [
+      -70,
+      70
+    ],
+    "start_el_range": [
+      -25,
+      40
+    ],
+    "verify_restore_every": 10
+  },
+  "split": {
+    "fractions": [
+      0.7,
+      0.15,
+      0.15
+    ],
+    "seed": 0,
+    "n_heldout_identities": 1,
+    "heldout_identities": []
+  },
+  "features": {
+    "obs_fields": null,
+    "action_fields": null
+  },
+  "model": {
+    "hidden": [
+      128,
+      128
+    ],
+    "dropout": 0.0
+  },
+  "train": {
+    "out_dir": "/scratch/user/qingxiao/689/active-viewpoint-selection/runs/isaac_heads_v1",
+    "datasets": [
+      "/scratch/user/qingxiao/689/active-viewpoint-selection/data/isaac_heads_v1"
+    ],
+    "label_key": "label.label",
+    "epochs": 100,
+    "batch_size": 256,
+    "lr": 0.001,
+    "weight_decay": 1e-05,
+    "loss": "huber",
+    "huber_delta": 0.1,
+    "select_metric": "val_loss",
+    "patience": 20,
+    "seed": 0
+  },
+  "policy": {
+    "revisit_penalty": 0.3,
+    "learned": {
+      "movement_cost_weight": 0.2
+    },
+    "greedy_heuristic": {
+      "frontal_weight": 1.0,
+      "glare_weight": 2.0
+    },
+    "greedy_preview": {
+      "cost_weight": 0.0
+    }
+  },
+  "eval": {
+    "checkpoint": "/scratch/user/qingxiao/689/active-viewpoint-selection/runs/isaac_heads_v1",
+    "gallery_file": "/scratch/user/qingxiao/689/active-viewpoint-selection/data/isaac_heads_v1/gallery.npz",
+    "scene_source": "test_split",
+    "splits": [
+      "test",
+      "test_heldout_identity"
+    ],
+    "max_scenes_per_split": 15,
+    "episodes_per_scene": 3,
+    "start_az_range": [
+      -70,
+      70
+    ],
+    "start_el_range": [
+      -25,
+      40
+    ],
+    "budget": 6,
+    "accept": {
+      "min_det_score": 0.5,
+      "min_top1_similarity": 0.35,
+      "min_margin": 0.1
+    },
+    "accept_file": "/scratch/user/qingxiao/689/active-viewpoint-selection/runs/isaac_heads_v1/accept.json",
+    "policies": [
+      "random",
+      "greedy_heuristic",
+      "greedy_preview",
+      "learned"
+    ],
+    "out_dir": "/scratch/user/qingxiao/689/active-viewpoint-selection/results/isaac_heads_v1",
+    "seed": 123
+  }
+}

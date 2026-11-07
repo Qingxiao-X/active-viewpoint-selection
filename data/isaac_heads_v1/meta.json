@@ -1,0 +1,648 @@
+{
+  "schema_version": 1,
+  "created": "2026-11-06T19:30:34",
+  "backend": "isaac",
+  "software_validation_only": false,
+  "exact_restore": false,
+  "action_space": {
+    "az_steps": [
+      -30.0,
+      -15.0,
+      0.0,
+      15.0,
+      30.0
+    ],
+    "el_steps": [
+      -15.0,
+      0.0,
+      15.0
+    ],
+    "az_limits": [
+      -75.0,
+      75.0
+    ],
+    "el_limits": [
+      -30.0,
+      45.0
+    ],
+    "radius": 0.6,
+    "include_noop": false
+  },
+  "label": {
+    "mode": "auto",
+    "detection_failure_value": -1.0,
+    "aux_glare_weight": 0.0,
+    "aux_depth_weight": 0.0
+  },
+  "n_identities": 3,
+  "identities": [
+    "lee_perry_smith",
+    "faceverse_001",
+    "digital_emily_2"
+  ],
+  "n_scenes": 249,
+  "n_states": 747,
+  "n_rows": 10458,
+  "status_counts": {
+    "ok": 8231,
+    "invalid_action": 2227,
+    "render_failure": 0
+  },
+  "collection_cost": {
+    "renders_total": 9053,
+    "candidate_renders": 8231,
+    "render_perception_seconds": 3777.429,
+    "wall_seconds": 3839.757
+  },
+  "failures": [],
+  "restore_checks": [
+    {
+      "state_id": 0,
+      "same_detection": true,
+      "max_emb_diff": 0.055517129600048065
+    },
+    {
+      "state_id": 10,
+      "same_detection": true,
+      "max_emb_diff": 0.07215272635221481
+    },
+    {
+      "state_id": 20,
+      "same_detection": true,
+      "max_emb_diff": 0.08021703362464905
+    },
+    {
+      "state_id": 30,
+      "same_detection": true,
+      "max_emb_diff": 0.07677844166755676
+    },
+    {
+      "state_id": 40,
+      "same_detection": true,
+      "max_emb_diff": 0.055703721940517426
+    },
+    {
+      "state_id": 50,
+      "same_detection": true,
+      "max_emb_diff": 0.030349083244800568
+    },
+    {
+      "state_id": 60,
+      "same_detection": true,
+      "max_emb_diff": 0.053497545421123505
+    },
+    {
+      "state_id": 70,
+      "same_detection": true,
+      "max_emb_diff": 0.040491219609975815
+    },
+    {
+      "state_id": 80,
+      "same_detection": true,
+      "max_emb_diff": 0.06851453334093094
+    },
+    {
+      "state_id": 90,
+      "same_detection": true,
+      "max_emb_diff": 0.03960510343313217
+    },
+    {
+      "state_id": 100,
+      "same_detection": true,
+      "max_emb_diff": null
+    },
+    {
+      "state_id": 110,
+      "same_detection": true,
+      "max_emb_diff": 0.048230286687612534
+    },
+    {
+      "state_id": 120,
+      "same_detection": true,
+      "max_emb_diff": 0.05508522316813469
+    },
+    {
+      "state_id": 130,
+      "same_detection": true,
+      "max_emb_diff": 0.0573139414191246
+    },
+    {
+      "state_id": 140,
+      "same_detection": true,
+      "max_emb_diff": 0.05157965421676636
+    },
+    {
+      "state_id": 150,
+      "same_detection": true,
+      "max_emb_diff": 0.061721671372652054
+    },
+    {
+      "state_id": 160,
+      "same_detection": true,
+      "max_emb_diff": 0.0460699088871479
+    },
+    {
+      "state_id": 170,
+      "same_detection": true,
+      "max_emb_diff": 0.06889241188764572
+    },
+    {
+      "state_id": 180,
+      "same_detection": true,
+      "max_emb_diff": 0.045543819665908813
+    },
+    {
+      "state_id": 190,
+      "same_detection": true,
+      "max_emb_diff": 0.08714618533849716
+    },
+    {
+      "state_id": 200,
+      "same_detection": true,
+      "max_emb_diff": 0.049677420407533646
+    },
+    {
+      "state_id": 210,
+      "same_detection": true,
+      "max_emb_diff": 0.05919545143842697
+    },
+    {
+      "state_id": 220,
+      "same_detection": true,
+      "max_emb_diff": 0.04328819736838341
+    },
+    {
+      "state_id": 230,
+      "same_detection": true,
+      "max_emb_diff": 0.06560991704463959
+    },
+    {
+      "state_id": 240,
+      "same_detection": true,
+      "max_emb_diff": 0.05469910800457001
+    },
+    {
+      "state_id": 250,
+      "same_detection": true,
+      "max_emb_diff": 0.04013342410326004
+    },
+    {
+      "state_id": 260,
+      "same_detection": true,
+      "max_emb_diff": 0.08265462517738342
+    },
+    {
+      "state_id": 270,
+      "same_detection": true,
+      "max_emb_diff": 0.03960632532835007
+    },
+    {
+      "state_id": 280,
+      "same_detection": true,
+      "max_emb_diff": 0.06354726105928421
+    },
+    {
+      "state_id": 290,
+      "same_detection": true,
+      "max_emb_diff": 0.056258611381053925
+    },
+    {
+      "state_id": 300,
+      "same_detection": true,
+      "max_emb_diff": 0.05901316553354263
+    },
+    {
+      "state_id": 310,
+      "same_detection": true,
+      "max_emb_diff": 0.053540490567684174
+    },
+    {
+      "state_id": 320,
+      "same_detection": true,
+      "max_emb_diff": 0.04643391817808151
+    },
+    {
+      "state_id": 330,
+      "same_detection": true,
+      "max_emb_diff": 0.035607464611530304
+    },
+    {
+      "state_id": 340,
+      "same_detection": true,
+      "max_emb_diff": 0.07954823970794678
+    },
+    {
+      "state_id": 350,
+      "same_detection": true,
+      "max_emb_diff": 0.08027535676956177
+    },
+    {
+      "state_id": 360,
+      "same_detection": true,
+      "max_emb_diff": 0.05931922420859337
+    },
+    {
+      "state_id": 370,
+      "same_detection": true,
+      "max_emb_diff": 0.04607896879315376
+    },
+    {
+      "state_id": 380,
+      "same_detection": true,
+      "max_emb_diff": 0.048282090574502945
+    },
+    {
+      "state_id": 390,
+      "same_detection": true,
+      "max_emb_diff": 0.02535814419388771
+    },
+    {
+      "state_id": 400,
+      "same_detection": true,
+      "max_emb_diff": 0.0387885645031929
+    },
+    {
+      "state_id": 410,
+      "same_detection": true,
+      "max_emb_diff": 0.08989664912223816
+    },
+    {
+      "state_id": 420,
+      "same_detection": true,
+      "max_emb_diff": 0.04860909283161163
+    },
+    {
+      "state_id": 430,
+      "same_detection": false,
+      "max_emb_diff": null
+    },
+    {
+      "state_id": 440,
+      "same_detection": true,
+      "max_emb_diff": 0.06418178975582123
+    },
+    {
+      "state_id": 450,
+      "same_detection": true,
+      "max_emb_diff": 0.05755992978811264
+    },
+    {
+      "state_id": 460,
+      "same_detection": true,
+      "max_emb_diff": 0.053684212267398834
+    },
+    {
+      "state_id": 470,
+      "same_detection": true,
+      "max_emb_diff": 0.038467660546302795
+    },
+    {
+      "state_id": 480,
+      "same_detection": true,
+      "max_emb_diff": 0.057449888437986374
+    },
+    {
+      "state_id": 490,
+      "same_detection": true,
+      "max_emb_diff": 0.042907048016786575
+    },
+    {
+      "state_id": 500,
+      "same_detection": true,
+      "max_emb_diff": 0.08380268514156342
+    },
+    {
+      "state_id": 510,
+      "same_detection": true,
+      "max_emb_diff": 0.05508105456829071
+    },
+    {
+      "state_id": 520,
+      "same_detection": true,
+      "max_emb_diff": 0.06795509159564972
+    },
+    {
+      "state_id": 530,
+      "same_detection": true,
+      "max_emb_diff": 0.046842820942401886
+    },
+    {
+      "state_id": 540,
+      "same_detection": true,
+      "max_emb_diff": 0.04416588693857193
+    },
+    {
+      "state_id": 550,
+      "same_detection": true,
+      "max_emb_diff": 0.07154737412929535
+    },
+    {
+      "state_id": 560,
+      "same_detection": true,
+      "max_emb_diff": 0.0548880361020565
+    },
+    {
+      "state_id": 570,
+      "same_detection": true,
+      "max_emb_diff": 0.06828170269727707
+    },
+    {
+      "state_id": 580,
+      "same_detection": true,
+      "max_emb_diff": 0.06926858425140381
+    },
+    {
+      "state_id": 590,
+      "same_detection": true,
+      "max_emb_diff": 0.06706452369689941
+    },
+    {
+      "state_id": 600,
+      "same_detection": true,
+      "max_emb_diff": 0.0551178902387619
+    },
+    {
+      "state_id": 610,
+      "same_detection": true,
+      "max_emb_diff": 0.0484386645257473
+    },
+    {
+      "state_id": 620,
+      "same_detection": true,
+      "max_emb_diff": 0.054824911057949066
+    },
+    {
+      "state_id": 630,
+      "same_detection": true,
+      "max_emb_diff": 0.04160010814666748
+    },
+    {
+      "state_id": 640,
+      "same_detection": true,
+      "max_emb_diff": 0.06884616613388062
+    },
+    {
+      "state_id": 650,
+      "same_detection": true,
+      "max_emb_diff": 0.053001340478658676
+    },
+    {
+      "state_id": 660,
+      "same_detection": true,
+      "max_emb_diff": 0.057587552815675735
+    },
+    {
+      "state_id": 670,
+      "same_detection": true,
+      "max_emb_diff": 0.05816246569156647
+    },
+    {
+      "state_id": 680,
+      "same_detection": true,
+      "max_emb_diff": 0.04420095682144165
+    },
+    {
+      "state_id": 690,
+      "same_detection": true,
+      "max_emb_diff": 0.05972808972001076
+    },
+    {
+      "state_id": 700,
+      "same_detection": true,
+      "max_emb_diff": 0.07480605691671371
+    },
+    {
+      "state_id": 710,
+      "same_detection": true,
+      "max_emb_diff": 0.060971103608608246
+    },
+    {
+      "state_id": 720,
+      "same_detection": true,
+      "max_emb_diff": 0.03935316950082779
+    },
+    {
+      "state_id": 730,
+      "same_detection": true,
+      "max_emb_diff": 0.045517709106206894
+    },
+    {
+      "state_id": 740,
+      "same_detection": true,
+      "max_emb_diff": 0.07061512768268585
+    }
+  ],
+  "config": {
+    "env": {
+      "backend": "isaac",
+      "isaac": {
+        "assets": {
+          "lee_perry_smith": "/scratch/user/qingxiao/689/assets_usd/lee_perry_smith/lee_perry_smith.usd",
+          "faceverse_001": "/scratch/user/qingxiao/689/assets_usd/faceverse_001/faceverse_001.usd",
+          "digital_emily_2": "/scratch/user/qingxiao/689/assets_usd/digital_emily_2/digital_emily_2.usd"
+        },
+        "head_center": [
+          0.0,
+          0.0,
+          1.0
+        ],
+        "resolution": [
+          640,
+          480
+        ],
+        "headless": true,
+        "warmup_frames": 8,
+        "focal_length": 28.0,
+        "horizontal_aperture": 20.955,
+        "key_light_base_intensity": 1258.208830082549,
+        "dome_base_intensity": 521.1596523998753,
+        "skin_shader_path": "/World/Head/Looks/Skin/Shader",
+        "arm_controller": null,
+        "enroll_light": {
+          "light_intensity": 0.0,
+          "env_intensity": 1.0,
+          "light_az": 0.0,
+          "light_el": 0.0,
+          "roughness": 0.5
+        }
+      }
+    },
+    "perception": {
+      "model_name": "buffalo_l",
+      "root": "/scratch/user/qingxiao/689/hprc/insightface",
+      "providers": [
+        "CUDAExecutionProvider",
+        "CPUExecutionProvider"
+      ],
+      "det_size": [
+        640,
+        640
+      ],
+      "ctx_id": 0,
+      "glare_value_thresh": 0.92,
+      "glare_sat_thresh": 0.25
+    },
+    "action_space": {
+      "az_steps": [
+        -30,
+        -15,
+        0,
+        15,
+        30
+      ],
+      "el_steps": [
+        -15,
+        0,
+        15
+      ],
+      "az_limits": [
+        -75,
+        75
+      ],
+      "el_limits": [
+        -30,
+        45
+      ],
+      "radius": 0.6,
+      "include_noop": false
+    },
+    "scenes": {
+      "seed": 1,
+      "ranges": {
+        "light_az": [
+          -80,
+          80
+        ],
+        "light_el": [
+          -10,
+          50
+        ],
+        "light_intensity": [
+          0.3,
+          1.5
+        ],
+        "env_intensity": [
+          0.2,
+          1.0
+        ],
+        "roughness": [
+          0.05,
+          0.8
+        ]
+      },
+      "condition_bins": {
+        "light_intensity": 0.9,
+        "roughness": [
+          0.3,
+          0.55
+        ],
+        "light_offaxis": 35.0
+      }
+    },
+    "label": {
+      "mode": "auto",
+      "detection_failure_value": -1.0,
+      "aux_glare_weight": 0.0,
+      "aux_depth_weight": 0.0
+    },
+    "collect": {
+      "out_dir": "/scratch/user/qingxiao/689/active-viewpoint-selection/data/isaac_heads_v1",
+      "n_scenes": 249,
+      "starts_per_scene": 3,
+      "start_scene_id": 0,
+      "start_az_range": [
+        -70,
+        70
+      ],
+      "start_el_range": [
+        -25,
+        40
+      ],
+      "verify_restore_every": 10
+    },
+    "split": {
+      "fractions": [
+        0.7,
+        0.15,
+        0.15
+      ],
+      "seed": 0,
+      "n_heldout_identities": 1,
+      "heldout_identities": []
+    },
+    "features": {
+      "obs_fields": null,
+      "action_fields": null
+    },
+    "model": {
+      "hidden": [
+        128,
+        128
+      ],
+      "dropout": 0.0
+    },
+    "train": {
+      "out_dir": "/scratch/user/qingxiao/689/active-viewpoint-selection/runs/isaac_heads_v1",
+      "datasets": [
+        "/scratch/user/qingxiao/689/active-viewpoint-selection/data/isaac_heads_v1"
+      ],
+      "label_key": "label.label",
+      "epochs": 100,
+      "batch_size": 256,
+      "lr": 0.001,
+      "weight_decay": 1e-05,
+      "loss": "huber",
+      "huber_delta": 0.1,
+      "select_metric": "val_loss",
+      "patience": 20,
+      "seed": 0
+    },
+    "policy": {
+      "revisit_penalty": 0.3,
+      "learned": {
+        "movement_cost_weight": 0.2
+      },
+      "greedy_heuristic": {
+        "frontal_weight": 1.0,
+        "glare_weight": 2.0
+      },
+      "greedy_preview": {
+        "cost_weight": 0.0
+      }
+    },
+    "eval": {
+      "checkpoint": "/scratch/user/qingxiao/689/active-viewpoint-selection/runs/isaac_heads_v1",
+      "gallery_file": "/scratch/user/qingxiao/689/active-viewpoint-selection/data/isaac_heads_v1/gallery.npz",
+      "scene_source": "test_split",
+      "splits": [
+        "test",
+        "test_heldout_identity"
+      ],
+      "max_scenes_per_split": 15,
+      "episodes_per_scene": 3,
+      "start_az_range": [
+        -70,
+        70
+      ],
+      "start_el_range": [
+        -25,
+        40
+      ],
+      "budget": 6,
+      "accept": {
+        "min_det_score": 0.5,
+        "min_top1_similarity": 0.35,
+        "min_margin": 0.1
+      },
+      "accept_file": "/scratch/user/qingxiao/689/active-viewpoint-selection/runs/isaac_heads_v1/accept.json",
+      "policies": [
+        "random",
+        "greedy_heuristic",
+        "greedy_preview",
+        "learned"
+      ],
+      "out_dir": "/scratch/user/qingxiao/689/active-viewpoint-selection/results/isaac_heads_v1",
+      "seed": 123
+    }
+  }
+}

@@ -83,10 +83,13 @@ class InsightFacePerception(Perception):
 
     def __init__(self, model_name: str = "buffalo_l", det_size=(640, 640), ctx_id: int = -1,
                  glare_value_thresh: float = 0.92, glare_sat_thresh: float = 0.25,
-                 min_depth: float = 0.05, max_depth: float = 5.0):
+                 min_depth: float = 0.05, max_depth: float = 5.0, root: str = "~/.insightface",
+                 providers=None):
         from insightface.app import FaceAnalysis  # lazy import
 
-        self.app = FaceAnalysis(name=model_name, allowed_modules=["detection", "recognition", "landmark_3d_68"])
+        kw = {"providers": list(providers)} if providers else {}
+        self.app = FaceAnalysis(name=model_name, root=root,
+                                allowed_modules=["detection", "recognition", "landmark_3d_68"], **kw)
         self.app.prepare(ctx_id=ctx_id, det_size=tuple(det_size))
         self.gv, self.gs = glare_value_thresh, glare_sat_thresh
         self.dmin, self.dmax = min_depth, max_depth
