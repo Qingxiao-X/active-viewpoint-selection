@@ -1,0 +1,2767 @@
+{
+ "config": {
+  "_comment": "Minimal face-glare scene. Units: meters, degrees. World +Z up, head faces +X. key_light.intensity=null means: calibrate at run time so the clean frontal face median luma hits clean_target_face_luma; the resolved number is written to outputs/run_record.json. PINNED variant: key_light.intensity fixed to the value calibrated in run 1 (job 20431812).",
+  "head_usd": "/scratch/user/qingxiao/689/assets_usd/lee_perry_smith/lee_perry_smith.usd",
+  "head_center": [
+   0.0,
+   0.0,
+   1.0
+  ],
+  "skin_shader": "/World/Head/Looks/Skin/Shader",
+  "material": {
+   "roughness": 0.2,
+   "metallic": 0.0,
+   "ior": 1.4
+  },
+  "dome_light": {
+   "intensity": 260.0,
+   "color": [
+    1.0,
+    1.0,
+    1.0
+   ]
+  },
+  "key_light": {
+   "type": "SphereLight",
+   "radius": 0.05,
+   "intensity": 225052.0,
+   "clean": {
+    "az": 50.0,
+    "el": 35.0,
+    "dist": 1.2,
+    "gain": 1.0
+   },
+   "glare": {
+    "az": 5.0,
+    "el": 20.0,
+    "dist": 1.2,
+    "gain": 3.0
+   }
+  },
+  "clean_target_face_luma": 0.5,
+  "camera": {
+   "resolution": [
+    640,
+    480
+   ],
+   "focal_length_mm": 28.0,
+   "horizontal_aperture_mm": 20.955,
+   "clipping_range": [
+    0.01,
+    100.0
+   ],
+   "start": {
+    "az": 0.0,
+    "el": 0.0,
+    "r": 0.6
+   },
+   "step_az_deg": 15.0,
+   "step_r_m": 0.1,
+   "limits": {
+    "az_min": -45.0,
+    "az_max": 45.0,
+    "r_min": 0.4,
+    "r_max": 0.9
+   }
+  },
+  "render": {
+   "settle_frames": 120,
+   "first_settle_frames": 240,
+   "convergence_extra_frames": 4
+  },
+  "glare_pixel": {
+   "value_thresh": 0.92,
+   "sat_thresh": 0.25
+  },
+  "sweep": {
+   "roughness": [
+    0.15,
+    0.2,
+    0.3
+   ],
+   "gain": [
+    1.0,
+    3.0,
+    6.0
+   ]
+  },
+  "diagnostic_rough_roughness": 0.7,
+  "action_demo": [
+   "LEFT",
+   "LEFT",
+   "LEFT",
+   "LEFT",
+   "RIGHT",
+   "RIGHT",
+   "RIGHT",
+   "RIGHT",
+   "FORWARD",
+   "FORWARD",
+   "FORWARD",
+   "BACKWARD",
+   "BACKWARD",
+   "BACKWARD"
+  ],
+  "arcface": {
+   "enabled": true,
+   "root": "/scratch/user/qingxiao/689/hprc/insightface",
+   "model": "buffalo_l",
+   "det_size": [
+    640,
+    640
+   ]
+  },
+  "overview_camera": {
+   "resolution": [
+    1280,
+    720
+   ],
+   "focal_length_mm": 24.0,
+   "target_offset": [
+    0.55,
+    0.25,
+    0.3
+   ],
+   "az": -20.0,
+   "el": 45.0,
+   "dist": 2.2
+  }
+ },
+ "config_path": "/scratch/user/qingxiao/689/glare_slides/configs/glare_scene_pinned.json",
+ "captures": {
+  "arcface_reference_front": {
+   "file": "arcface_reference_front.png",
+   "pose_cmd": {
+    "az": 0.0,
+    "el": 0.0,
+    "r": 0.6
+   },
+   "pose_readback": {
+    "position_m": [
+     0.6,
+     0.0,
+     1.0
+    ],
+    "quat_wxyz_world_axes": [
+     0.0,
+     0.0,
+     0.0,
+     1.0
+    ],
+    "az_deg": 0.0,
+    "el_deg": 0.0,
+    "r_m": 0.6000000238418579,
+    "look_at_error_deg": 0.0
+   },
+   "key_light": {
+    "position_m": [
+     0.6318,
+     0.753,
+     1.6883
+    ],
+    "intensity": 0.0
+   },
+   "dome_intensity": 260.0,
+   "material": {
+    "roughness": 0.20000000298023224,
+    "metallic": 0.0,
+    "ior": 1.399999976158142
+   },
+   "render_convergence_mean_abs_diff_u8": 0.40192599826388886,
+   "stats": {
+    "face_box": [
+     217,
+     116,
+     419,
+     414
+    ],
+    "face_box_source": "detector",
+    "specular_frac_face_box": 0.0,
+    "specular_frac_head_fg": 0.0,
+    "clipped_frac_face_box": 0.0,
+    "face_median_luma": 0.3754745125770569,
+    "face_p99_luma": 0.4642886519432068
+   },
+   "depth_file": "depth/arcface_reference_front_depth.npy",
+   "depth": {
+    "shape": [
+     480,
+     640
+    ],
+    "dtype": "float32",
+    "n_valid": 84331,
+    "n_inf": 222869,
+    "n_nan": 0,
+    "n_nonpositive": 0,
+    "min_valid_m": 0.4770650863647461,
+    "max_valid_m": 0.6677327156066895,
+    "center_20px_median_m": 0.49596166610717773,
+    "rgb_depth_foreground_iou": 0.9930757545425641,
+    "background_rgb": [
+     158.0,
+     158.0,
+     158.0
+    ]
+   },
+   "arcface": {
+    "detected": true,
+    "det_score": 0.8598484992980957,
+    "bbox": [
+     217.41864013671875,
+     116.53021240234375,
+     419.2864990234375,
+     414.9971008300781
+    ]
+   },
+   "note": "ArcFace reference: dome light only (key light off), frontal"
+  },
+  "clean_front": {
+   "file": "clean_front.png",
+   "pose_cmd": {
+    "az": 0.0,
+    "el": 0.0,
+    "r": 0.6
+   },
+   "pose_readback": {
+    "position_m": [
+     0.6,
+     0.0,
+     1.0
+    ],
+    "quat_wxyz_world_axes": [
+     0.0,
+     0.0,
+     0.0,
+     1.0
+    ],
+    "az_deg": 0.0,
+    "el_deg": 0.0,
+    "r_m": 0.6000000238418579,
+    "look_at_error_deg": 0.0
+   },
+   "key_light": {
+    "position_m": [
+     0.6318,
+     0.753,
+     1.6883
+    ],
+    "intensity": 225052.0
+   },
+   "dome_intensity": 260.0,
+   "material": {
+    "roughness": 0.20000000298023224,
+    "metallic": 0.0,
+    "ior": 1.399999976158142
+   },
+   "render_convergence_mean_abs_diff_u8": 0.09974934895833333,
+   "stats": {
+    "face_box": [
+     217,
+     134,
+     419,
+     413
+    ],
+    "face_box_source": "detector",
+    "specular_frac_face_box": 0.0017576992838310365,
+    "specular_frac_head_fg": 0.0011146553461953493,
+    "clipped_frac_face_box": 0.0,
+    "face_median_luma": 0.4806235730648041,
+    "face_p99_luma": 0.7160463333129883
+   },
+   "depth_file": "depth/clean_front_depth.npy",
+   "depth": {
+    "shape": [
+     480,
+     640
+    ],
+    "dtype": "float32",
+    "n_valid": 84331,
+    "n_inf": 222869,
+    "n_nan": 0,
+    "n_nonpositive": 0,
+    "min_valid_m": 0.4770650863647461,
+    "max_valid_m": 0.6677327156066895,
+    "center_20px_median_m": 0.49596166610717773,
+    "rgb_depth_foreground_iou": 0.993836181496759,
+    "background_rgb": [
+     158.0,
+     158.0,
+     158.0
+    ]
+   },
+   "arcface": {
+    "detected": true,
+    "det_score": 0.8328925967216492,
+    "bbox": [
+     217.36273193359375,
+     134.36219787597656,
+     419.06732177734375,
+     413.135986328125
+    ]
+   }
+  },
+  "glare_front": {
+   "file": "glare_front.png",
+   "pose_cmd": {
+    "az": 0.0,
+    "el": 0.0,
+    "r": 0.6
+   },
+   "pose_readback": {
+    "position_m": [
+     0.6,
+     0.0,
+     1.0
+    ],
+    "quat_wxyz_world_axes": [
+     0.0,
+     0.0,
+     0.0,
+     1.0
+    ],
+    "az_deg": 0.0,
+    "el_deg": 0.0,
+    "r_m": 0.6000000238418579,
+    "look_at_error_deg": 0.0
+   },
+   "key_light": {
+    "position_m": [
+     1.1233,
+     0.0983,
+     1.4104
+    ],
+    "intensity": 675156.0
+   },
+   "dome_intensity": 260.0,
+   "material": {
+    "roughness": 0.20000000298023224,
+    "metallic": 0.0,
+    "ior": 1.399999976158142
+   },
+   "render_convergence_mean_abs_diff_u8": 0.07304144965277778,
+   "stats": {
+    "face_box": [
+     216,
+     122,
+     418,
+     414
+    ],
+    "face_box_source": "detector",
+    "specular_frac_face_box": 0.026771512822804037,
+    "specular_frac_head_fg": 0.017763337325538652,
+    "clipped_frac_face_box": 5.3614511661156286e-05,
+    "face_median_luma": 0.7490549087524414,
+    "face_p99_luma": 0.9332972168922424
+   },
+   "depth_file": "depth/glare_front_depth.npy",
+   "depth": {
+    "shape": [
+     480,
+     640
+    ],
+    "dtype": "float32",
+    "n_valid": 84331,
+    "n_inf": 222869,
+    "n_nan": 0,
+    "n_nonpositive": 0,
+    "min_valid_m": 0.4770650863647461,
+    "max_valid_m": 0.6677327156066895,
+    "center_20px_median_m": 0.49596166610717773,
+    "rgb_depth_foreground_iou": 0.9939518981372318,
+    "background_rgb": [
+     158.0,
+     158.0,
+     158.0
+    ]
+   },
+   "arcface": {
+    "detected": true,
+    "det_score": 0.8198642730712891,
+    "bbox": [
+     216.07171630859375,
+     122.48379516601562,
+     418.3639831542969,
+     414.59002685546875
+    ]
+   }
+  },
+  "glare_left": {
+   "file": "glare_left.png",
+   "pose_cmd": {
+    "az": -15.0,
+    "el": 0.0,
+    "r": 0.6
+   },
+   "pose_readback": {
+    "position_m": [
+     0.579556,
+     -0.155291,
+     1.0
+    ],
+    "quat_wxyz_world_axes": [
+     0.130526,
+     0.0,
+     0.0,
+     0.991445
+    ],
+    "az_deg": -14.999999255900853,
+    "el_deg": 0.0,
+    "r_m": 0.6000000141671351,
+    "look_at_error_deg": 2.9575586669421963e-06
+   },
+   "key_light": {
+    "position_m": [
+     1.1233,
+     0.0983,
+     1.4104
+    ],
+    "intensity": 675156.0
+   },
+   "dome_intensity": 260.0,
+   "material": {
+    "roughness": 0.20000000298023224,
+    "metallic": 0.0,
+    "ior": 1.399999976158142
+   },
+   "render_convergence_mean_abs_diff_u8": 0.07077799479166667,
+   "stats": {
+    "face_box": [
+     230,
+     126,
+     427,
+     412
+    ],
+    "face_box_source": "detector",
+    "specular_frac_face_box": 0.02666593957901625,
+    "specular_frac_head_fg": 0.01709451507277113,
+    "clipped_frac_face_box": 1.817719126040644e-05,
+    "face_median_luma": 0.7400588393211365,
+    "face_p99_luma": 0.8870204091072083
+   },
+   "depth_file": "depth/glare_left_depth.npy",
+   "depth": {
+    "shape": [
+     480,
+     640
+    ],
+    "dtype": "float32",
+    "n_valid": 85817,
+    "n_inf": 221383,
+    "n_nan": 0,
+    "n_nonpositive": 0,
+    "min_valid_m": 0.4807436466217041,
+    "max_valid_m": 0.6906623840332031,
+    "center_20px_median_m": 0.5093536376953125,
+    "rgb_depth_foreground_iou": 0.9945750452079566,
+    "background_rgb": [
+     159.0,
+     159.0,
+     159.0
+    ]
+   },
+   "arcface": {
+    "detected": true,
+    "det_score": 0.8080045580863953,
+    "bbox": [
+     230.71249389648438,
+     126.69956970214844,
+     427.78790283203125,
+     412.6017150878906
+    ]
+   },
+   "action_from_front": "LEFT"
+  },
+  "glare_right": {
+   "file": "glare_right.png",
+   "pose_cmd": {
+    "az": 15.0,
+    "el": 0.0,
+    "r": 0.6
+   },
+   "pose_readback": {
+    "position_m": [
+     0.579556,
+     0.155291,
+     1.0
+    ],
+    "quat_wxyz_world_axes": [
+     -0.130526,
+     0.0,
+     0.0,
+     0.991445
+    ],
+    "az_deg": 14.999999255900853,
+    "el_deg": 0.0,
+    "r_m": 0.6000000141671351,
+    "look_at_error_deg": 2.9575586669421963e-06
+   },
+   "key_light": {
+    "position_m": [
+     1.1233,
+     0.0983,
+     1.4104
+    ],
+    "intensity": 675156.0
+   },
+   "dome_intensity": 260.0,
+   "material": {
+    "roughness": 0.20000000298023224,
+    "metallic": 0.0,
+    "ior": 1.399999976158142
+   },
+   "render_convergence_mean_abs_diff_u8": 0.5726573350694445,
+   "stats": {
+    "face_box": [
+     202,
+     122,
+     404,
+     413
+    ],
+    "face_box_source": "detector",
+    "specular_frac_face_box": 0.020107167488991457,
+    "specular_frac_head_fg": 0.013059508631680507,
+    "clipped_frac_face_box": 0.00019452844536403346,
+    "face_median_luma": 0.747901976108551,
+    "face_p99_luma": 0.9020258188247683
+   },
+   "depth_file": "depth/glare_right_depth.npy",
+   "depth": {
+    "shape": [
+     480,
+     640
+    ],
+    "dtype": "float32",
+    "n_valid": 87063,
+    "n_inf": 220137,
+    "n_nan": 0,
+    "n_nonpositive": 0,
+    "min_valid_m": 0.4815545082092285,
+    "max_valid_m": 0.6891074180603027,
+    "center_20px_median_m": 0.507594108581543,
+    "rgb_depth_foreground_iou": 0.994107974787613,
+    "background_rgb": [
+     159.0,
+     159.0,
+     159.0
+    ]
+   },
+   "arcface": {
+    "detected": true,
+    "det_score": 0.7998316287994385,
+    "bbox": [
+     202.55926513671875,
+     122.57545471191406,
+     404.88043212890625,
+     413.7196044921875
+    ]
+   },
+   "action_from_front": "RIGHT"
+  },
+  "diag_glare_front_rough0.70": {
+   "file": "diag_glare_front_rough0.70.png",
+   "pose_cmd": {
+    "az": 0.0,
+    "el": 0.0,
+    "r": 0.6
+   },
+   "pose_readback": {
+    "position_m": [
+     0.6,
+     0.0,
+     1.0
+    ],
+    "quat_wxyz_world_axes": [
+     0.0,
+     0.0,
+     0.0,
+     1.0
+    ],
+    "az_deg": 0.0,
+    "el_deg": 0.0,
+    "r_m": 0.6000000238418579,
+    "look_at_error_deg": 0.0
+   },
+   "key_light": {
+    "position_m": [
+     1.1233,
+     0.0983,
+     1.4104
+    ],
+    "intensity": 675156.0
+   },
+   "dome_intensity": 260.0,
+   "material": {
+    "roughness": 0.699999988079071,
+    "metallic": 0.0,
+    "ior": 1.399999976158142
+   },
+   "render_convergence_mean_abs_diff_u8": 0.38990776909722225,
+   "stats": {
+    "face_box": [
+     215,
+     114,
+     418,
+     415
+    ],
+    "face_box_source": "detector",
+    "specular_frac_face_box": 0.010635165330053868,
+    "specular_frac_head_fg": 0.0072808338570632385,
+    "clipped_frac_face_box": 0.0,
+    "face_median_luma": 0.7588220238685608,
+    "face_p99_luma": 0.8690643310546875
+   },
+   "depth_file": "depth/diag_glare_front_rough0.70_depth.npy",
+   "depth": {
+    "shape": [
+     480,
+     640
+    ],
+    "dtype": "float32",
+    "n_valid": 84331,
+    "n_inf": 222869,
+    "n_nan": 0,
+    "n_nonpositive": 0,
+    "min_valid_m": 0.4770650863647461,
+    "max_valid_m": 0.6677327156066895,
+    "center_20px_median_m": 0.49596166610717773,
+    "rgb_depth_foreground_iou": 0.9919660291246147,
+    "background_rgb": [
+     158.0,
+     158.0,
+     158.0
+    ]
+   },
+   "arcface": {
+    "detected": true,
+    "det_score": 0.8462597131729126,
+    "bbox": [
+     215.84446716308594,
+     114.79103088378906,
+     418.1793212890625,
+     415.72857666015625
+    ]
+   },
+   "note": "diagnostic only: glare lighting with roughness raised; not part of the 4-view comparison"
+  }
+ },
+ "actions": [
+  {
+   "step": 0,
+   "action": "START",
+   "accepted": true,
+   "file": "actions/step_00_START.png",
+   "pose_cmd": {
+    "az": 0.0,
+    "el": 0.0,
+    "r": 0.6
+   },
+   "pose_readback": {
+    "position_m": [
+     0.6,
+     0.0,
+     1.0
+    ],
+    "quat_wxyz_world_axes": [
+     0.0,
+     0.0,
+     0.0,
+     1.0
+    ],
+    "az_deg": 0.0,
+    "el_deg": 0.0,
+    "r_m": 0.6000000238418579,
+    "look_at_error_deg": 0.0
+   },
+   "key_light": {
+    "position_m": [
+     1.1233,
+     0.0983,
+     1.4104
+    ],
+    "intensity": 675156.0
+   },
+   "dome_intensity": 260.0,
+   "material": {
+    "roughness": 0.20000000298023224,
+    "metallic": 0.0,
+    "ior": 1.399999976158142
+   },
+   "render_convergence_mean_abs_diff_u8": 0.10269856770833333,
+   "stats": {
+    "face_box": [
+     216,
+     120,
+     418,
+     414
+    ],
+    "face_box_source": "detector",
+    "specular_frac_face_box": 0.028707879132194723,
+    "specular_frac_head_fg": 0.019174443561679574,
+    "clipped_frac_face_box": 0.0001420303234740617,
+    "face_median_luma": 0.756635308265686,
+    "face_p99_luma": 0.9338478446006775
+   },
+   "depth_file": "actions/step_00_START_depth.npy",
+   "depth": {
+    "shape": [
+     480,
+     640
+    ],
+    "dtype": "float32",
+    "n_valid": 84331,
+    "n_inf": 222869,
+    "n_nan": 0,
+    "n_nonpositive": 0,
+    "min_valid_m": 0.4770650863647461,
+    "max_valid_m": 0.6677327156066895,
+    "center_20px_median_m": 0.49596166610717773,
+    "rgb_depth_foreground_iou": 0.9940810960583872,
+    "background_rgb": [
+     158.0,
+     158.0,
+     158.0
+    ]
+   },
+   "arcface": {
+    "detected": true,
+    "det_score": 0.825458824634552,
+    "bbox": [
+     216.09239196777344,
+     120.23692321777344,
+     418.26593017578125,
+     414.4219055175781
+    ]
+   }
+  },
+  {
+   "step": 1,
+   "action": "LEFT",
+   "accepted": true,
+   "pose_before": {
+    "az": 0.0,
+    "el": 0.0,
+    "r": 0.6
+   },
+   "valid_actions_before": [
+    "LEFT",
+    "RIGHT",
+    "FORWARD",
+    "BACKWARD"
+   ],
+   "file": "actions/step_01_LEFT.png",
+   "pose_cmd": {
+    "az": -15.0,
+    "el": 0.0,
+    "r": 0.6
+   },
+   "pose_readback": {
+    "position_m": [
+     0.579556,
+     -0.155291,
+     1.0
+    ],
+    "quat_wxyz_world_axes": [
+     0.130526,
+     0.0,
+     0.0,
+     0.991445
+    ],
+    "az_deg": -14.999999255900853,
+    "el_deg": 0.0,
+    "r_m": 0.6000000141671351,
+    "look_at_error_deg": 2.9575586669421963e-06
+   },
+   "key_light": {
+    "position_m": [
+     1.1233,
+     0.0983,
+     1.4104
+    ],
+    "intensity": 675156.0
+   },
+   "dome_intensity": 260.0,
+   "material": {
+    "roughness": 0.20000000298023224,
+    "metallic": 0.0,
+    "ior": 1.399999976158142
+   },
+   "render_convergence_mean_abs_diff_u8": 0.6821647135416666,
+   "stats": {
+    "face_box": [
+     230,
+     130,
+     428,
+     412
+    ],
+    "face_box_source": "detector",
+    "specular_frac_face_box": 0.024233850224149336,
+    "specular_frac_head_fg": 0.015369915051796265,
+    "clipped_frac_face_box": 1.8372896303373263e-05,
+    "face_median_luma": 0.7389475107192993,
+    "face_p99_luma": 0.8875709772109985
+   },
+   "depth_file": "actions/step_01_LEFT_depth.npy",
+   "depth": {
+    "shape": [
+     480,
+     640
+    ],
+    "dtype": "float32",
+    "n_valid": 85817,
+    "n_inf": 221383,
+    "n_nan": 0,
+    "n_nonpositive": 0,
+    "min_valid_m": 0.4807436466217041,
+    "max_valid_m": 0.6906623840332031,
+    "center_20px_median_m": 0.5093536376953125,
+    "rgb_depth_foreground_iou": 0.9947008963254137,
+    "background_rgb": [
+     158.0,
+     158.0,
+     158.0
+    ]
+   },
+   "arcface": {
+    "detected": true,
+    "det_score": 0.8040887117385864,
+    "bbox": [
+     230.15252685546875,
+     130.88882446289062,
+     428.148193359375,
+     412.00927734375
+    ]
+   }
+  },
+  {
+   "step": 2,
+   "action": "LEFT",
+   "accepted": true,
+   "pose_before": {
+    "az": -15.0,
+    "el": 0.0,
+    "r": 0.6
+   },
+   "valid_actions_before": [
+    "LEFT",
+    "RIGHT",
+    "FORWARD",
+    "BACKWARD"
+   ],
+   "file": "actions/step_02_LEFT.png",
+   "pose_cmd": {
+    "az": -30.0,
+    "el": 0.0,
+    "r": 0.6
+   },
+   "pose_readback": {
+    "position_m": [
+     0.519615,
+     -0.3,
+     1.0
+    ],
+    "quat_wxyz_world_axes": [
+     0.258819,
+     0.0,
+     0.0,
+     0.965926
+    ],
+    "az_deg": -30.000001431144934,
+    "el_deg": 0.0,
+    "r_m": 0.5999999978837605,
+    "look_at_error_deg": 0.0
+   },
+   "key_light": {
+    "position_m": [
+     1.1233,
+     0.0983,
+     1.4104
+    ],
+    "intensity": 675156.0
+   },
+   "dome_intensity": 260.0,
+   "material": {
+    "roughness": 0.20000000298023224,
+    "metallic": 0.0,
+    "ior": 1.399999976158142
+   },
+   "render_convergence_mean_abs_diff_u8": 0.4878515625,
+   "stats": {
+    "face_box": [
+     246,
+     116,
+     446,
+     410
+    ],
+    "face_box_source": "detector",
+    "specular_frac_face_box": 0.010633997152549523,
+    "specular_frac_head_fg": 0.006668209723462179,
+    "clipped_frac_face_box": 1.7576854797602515e-05,
+    "face_median_luma": 0.6856824159622192,
+    "face_p99_luma": 0.879727840423584
+   },
+   "depth_file": "actions/step_02_LEFT_depth.npy",
+   "depth": {
+    "shape": [
+     480,
+     640
+    ],
+    "dtype": "float32",
+    "n_valid": 90729,
+    "n_inf": 216471,
+    "n_nan": 0,
+    "n_nonpositive": 0,
+    "min_valid_m": 0.49168336391448975,
+    "max_valid_m": 0.7191565036773682,
+    "center_20px_median_m": 0.5074098110198975,
+    "rgb_depth_foreground_iou": 0.9940830995792427,
+    "background_rgb": [
+     158.0,
+     158.0,
+     158.0
+    ]
+   },
+   "arcface": {
+    "detected": true,
+    "det_score": 0.848533034324646,
+    "bbox": [
+     246.24447631835938,
+     116.66848754882812,
+     446.022216796875,
+     410.22186279296875
+    ]
+   }
+  },
+  {
+   "step": 3,
+   "action": "LEFT",
+   "accepted": true,
+   "pose_before": {
+    "az": -30.0,
+    "el": 0.0,
+    "r": 0.6
+   },
+   "valid_actions_before": [
+    "LEFT",
+    "RIGHT",
+    "FORWARD",
+    "BACKWARD"
+   ],
+   "file": "actions/step_03_LEFT.png",
+   "pose_cmd": {
+    "az": -45.0,
+    "el": 0.0,
+    "r": 0.6
+   },
+   "pose_readback": {
+    "position_m": [
+     0.424264,
+     -0.424264,
+     1.0
+    ],
+    "quat_wxyz_world_axes": [
+     0.382683,
+     -0.0,
+     0.0,
+     0.92388
+    ],
+    "az_deg": -45.0,
+    "el_deg": 0.0,
+    "r_m": 0.6000000065901768,
+    "look_at_error_deg": 5.853177225625915e-06
+   },
+   "key_light": {
+    "position_m": [
+     1.1233,
+     0.0983,
+     1.4104
+    ],
+    "intensity": 675156.0
+   },
+   "dome_intensity": 260.0,
+   "material": {
+    "roughness": 0.20000000298023224,
+    "metallic": 0.0,
+    "ior": 1.399999976158142
+   },
+   "render_convergence_mean_abs_diff_u8": 0.3861642795138889,
+   "stats": {
+    "face_box": [
+     269,
+     115,
+     466,
+     407
+    ],
+    "face_box_source": "detector",
+    "specular_frac_face_box": 0.01179771105826397,
+    "specular_frac_head_fg": 0.006687730384412849,
+    "clipped_frac_face_box": 0.00022294887039239002,
+    "face_median_luma": 0.6018776297569275,
+    "face_p99_luma": 0.8934756684303283
+   },
+   "depth_file": "actions/step_03_LEFT_depth.npy",
+   "depth": {
+    "shape": [
+     480,
+     640
+    ],
+    "dtype": "float32",
+    "n_valid": 94950,
+    "n_inf": 212250,
+    "n_nan": 0,
+    "n_nonpositive": 0,
+    "min_valid_m": 0.502354621887207,
+    "max_valid_m": 0.7550081610679626,
+    "center_20px_median_m": 0.5115224123001099,
+    "rgb_depth_foreground_iou": 0.9936993699369937,
+    "background_rgb": [
+     158.0,
+     158.0,
+     158.0
+    ]
+   },
+   "arcface": {
+    "detected": true,
+    "det_score": 0.8295139074325562,
+    "bbox": [
+     269.2316589355469,
+     115.69688415527344,
+     466.5868225097656,
+     407.591796875
+    ]
+   }
+  },
+  {
+   "step": 4,
+   "action": "LEFT",
+   "accepted": false,
+   "pose_before": {
+    "az": -45.0,
+    "el": 0.0,
+    "r": 0.6
+   },
+   "valid_actions_before": [
+    "RIGHT",
+    "FORWARD",
+    "BACKWARD"
+   ],
+   "note": "rejected by limits; camera not moved, nothing rendered"
+  },
+  {
+   "step": 5,
+   "action": "RIGHT",
+   "accepted": true,
+   "pose_before": {
+    "az": -45.0,
+    "el": 0.0,
+    "r": 0.6
+   },
+   "valid_actions_before": [
+    "RIGHT",
+    "FORWARD",
+    "BACKWARD"
+   ],
+   "file": "actions/step_05_RIGHT.png",
+   "pose_cmd": {
+    "az": -30.0,
+    "el": 0.0,
+    "r": 0.6
+   },
+   "pose_readback": {
+    "position_m": [
+     0.519615,
+     -0.3,
+     1.0
+    ],
+    "quat_wxyz_world_axes": [
+     0.258819,
+     0.0,
+     0.0,
+     0.965926
+    ],
+    "az_deg": -30.000001431144934,
+    "el_deg": 0.0,
+    "r_m": 0.5999999978837605,
+    "look_at_error_deg": 0.0
+   },
+   "key_light": {
+    "position_m": [
+     1.1233,
+     0.0983,
+     1.4104
+    ],
+    "intensity": 675156.0
+   },
+   "dome_intensity": 260.0,
+   "material": {
+    "roughness": 0.20000000298023224,
+    "metallic": 0.0,
+    "ior": 1.399999976158142
+   },
+   "render_convergence_mean_abs_diff_u8": 0.09423719618055555,
+   "stats": {
+    "face_box": [
+     246,
+     114,
+     446,
+     410
+    ],
+    "face_box_source": "detector",
+    "specular_frac_face_box": 0.010220840030749878,
+    "specular_frac_head_fg": 0.006447773038389048,
+    "clipped_frac_face_box": 0.0,
+    "face_median_luma": 0.6863176822662354,
+    "face_p99_luma": 0.8786212176084519
+   },
+   "depth_file": "actions/step_05_RIGHT_depth.npy",
+   "depth": {
+    "shape": [
+     480,
+     640
+    ],
+    "dtype": "float32",
+    "n_valid": 90729,
+    "n_inf": 216471,
+    "n_nan": 0,
+    "n_nonpositive": 0,
+    "min_valid_m": 0.49168336391448975,
+    "max_valid_m": 0.7191565036773682,
+    "center_20px_median_m": 0.5074098110198975,
+    "rgb_depth_foreground_iou": 0.99402844432757,
+    "background_rgb": [
+     158.0,
+     158.0,
+     158.0
+    ]
+   },
+   "arcface": {
+    "detected": true,
+    "det_score": 0.8521871566772461,
+    "bbox": [
+     246.26690673828125,
+     114.61952209472656,
+     446.802734375,
+     410.2360534667969
+    ]
+   }
+  },
+  {
+   "step": 6,
+   "action": "RIGHT",
+   "accepted": true,
+   "pose_before": {
+    "az": -30.0,
+    "el": 0.0,
+    "r": 0.6
+   },
+   "valid_actions_before": [
+    "LEFT",
+    "RIGHT",
+    "FORWARD",
+    "BACKWARD"
+   ],
+   "file": "actions/step_06_RIGHT.png",
+   "pose_cmd": {
+    "az": -15.0,
+    "el": 0.0,
+    "r": 0.6
+   },
+   "pose_readback": {
+    "position_m": [
+     0.579556,
+     -0.155291,
+     1.0
+    ],
+    "quat_wxyz_world_axes": [
+     0.130526,
+     0.0,
+     0.0,
+     0.991445
+    ],
+    "az_deg": -14.999999255900853,
+    "el_deg": 0.0,
+    "r_m": 0.6000000141671351,
+    "look_at_error_deg": 2.9575586669421963e-06
+   },
+   "key_light": {
+    "position_m": [
+     1.1233,
+     0.0983,
+     1.4104
+    ],
+    "intensity": 675156.0
+   },
+   "dome_intensity": 260.0,
+   "material": {
+    "roughness": 0.20000000298023224,
+    "metallic": 0.0,
+    "ior": 1.399999976158142
+   },
+   "render_convergence_mean_abs_diff_u8": 0.4934027777777778,
+   "stats": {
+    "face_box": [
+     229,
+     130,
+     428,
+     412
+    ],
+    "face_box_source": "detector",
+    "specular_frac_face_box": 0.023885787498856045,
+    "specular_frac_head_fg": 0.015206777211974318,
+    "clipped_frac_face_box": 7.321314175894573e-05,
+    "face_median_luma": 0.7375890612602234,
+    "face_p99_luma": 0.8872877955436707
+   },
+   "depth_file": "actions/step_06_RIGHT_depth.npy",
+   "depth": {
+    "shape": [
+     480,
+     640
+    ],
+    "dtype": "float32",
+    "n_valid": 85817,
+    "n_inf": 221383,
+    "n_nan": 0,
+    "n_nonpositive": 0,
+    "min_valid_m": 0.4807436466217041,
+    "max_valid_m": 0.6906623840332031,
+    "center_20px_median_m": 0.5093536376953125,
+    "rgb_depth_foreground_iou": 0.9947008963254137,
+    "background_rgb": [
+     158.0,
+     158.0,
+     158.0
+    ]
+   },
+   "arcface": {
+    "detected": true,
+    "det_score": 0.8042455315589905,
+    "bbox": [
+     229.2188720703125,
+     130.29090881347656,
+     428.24615478515625,
+     412.25042724609375
+    ]
+   }
+  },
+  {
+   "step": 7,
+   "action": "RIGHT",
+   "accepted": true,
+   "pose_before": {
+    "az": -15.0,
+    "el": 0.0,
+    "r": 0.6
+   },
+   "valid_actions_before": [
+    "LEFT",
+    "RIGHT",
+    "FORWARD",
+    "BACKWARD"
+   ],
+   "file": "actions/step_07_RIGHT.png",
+   "pose_cmd": {
+    "az": 0.0,
+    "el": 0.0,
+    "r": 0.6
+   },
+   "pose_readback": {
+    "position_m": [
+     0.6,
+     0.0,
+     1.0
+    ],
+    "quat_wxyz_world_axes": [
+     0.0,
+     0.0,
+     0.0,
+     1.0
+    ],
+    "az_deg": 0.0,
+    "el_deg": 0.0,
+    "r_m": 0.6000000238418579,
+    "look_at_error_deg": 0.0
+   },
+   "key_light": {
+    "position_m": [
+     1.1233,
+     0.0983,
+     1.4104
+    ],
+    "intensity": 675156.0
+   },
+   "dome_intensity": 260.0,
+   "material": {
+    "roughness": 0.20000000298023224,
+    "metallic": 0.0,
+    "ior": 1.399999976158142
+   },
+   "render_convergence_mean_abs_diff_u8": 0.09478949652777778,
+   "stats": {
+    "face_box": [
+     215,
+     120,
+     418,
+     414
+    ],
+    "face_box_source": "detector",
+    "specular_frac_face_box": 0.031455224541093584,
+    "specular_frac_head_fg": 0.02107172925733123,
+    "clipped_frac_face_box": 0.00015931177314003505,
+    "face_median_luma": 0.7563161253929138,
+    "face_p99_luma": 0.9338478446006775
+   },
+   "depth_file": "actions/step_07_RIGHT_depth.npy",
+   "depth": {
+    "shape": [
+     480,
+     640
+    ],
+    "dtype": "float32",
+    "n_valid": 84331,
+    "n_inf": 222869,
+    "n_nan": 0,
+    "n_nonpositive": 0,
+    "min_valid_m": 0.4770650863647461,
+    "max_valid_m": 0.6677327156066895,
+    "center_20px_median_m": 0.49596166610717773,
+    "rgb_depth_foreground_iou": 0.9937656154245038,
+    "background_rgb": [
+     159.0,
+     159.0,
+     159.0
+    ]
+   },
+   "arcface": {
+    "detected": true,
+    "det_score": 0.8228175640106201,
+    "bbox": [
+     215.64248657226562,
+     120.43218994140625,
+     418.0626525878906,
+     414.33355712890625
+    ]
+   }
+  },
+  {
+   "step": 8,
+   "action": "RIGHT",
+   "accepted": true,
+   "pose_before": {
+    "az": 0.0,
+    "el": 0.0,
+    "r": 0.6
+   },
+   "valid_actions_before": [
+    "LEFT",
+    "RIGHT",
+    "FORWARD",
+    "BACKWARD"
+   ],
+   "file": "actions/step_08_RIGHT.png",
+   "pose_cmd": {
+    "az": 15.0,
+    "el": 0.0,
+    "r": 0.6
+   },
+   "pose_readback": {
+    "position_m": [
+     0.579556,
+     0.155291,
+     1.0
+    ],
+    "quat_wxyz_world_axes": [
+     -0.130526,
+     0.0,
+     0.0,
+     0.991445
+    ],
+    "az_deg": 14.999999255900853,
+    "el_deg": 0.0,
+    "r_m": 0.6000000141671351,
+    "look_at_error_deg": 2.9575586669421963e-06
+   },
+   "key_light": {
+    "position_m": [
+     1.1233,
+     0.0983,
+     1.4104
+    ],
+    "intensity": 675156.0
+   },
+   "dome_intensity": 260.0,
+   "material": {
+    "roughness": 0.20000000298023224,
+    "metallic": 0.0,
+    "ior": 1.399999976158142
+   },
+   "render_convergence_mean_abs_diff_u8": 0.09079752604166667,
+   "stats": {
+    "face_box": [
+     202,
+     122,
+     404,
+     413
+    ],
+    "face_box_source": "detector",
+    "specular_frac_face_box": 0.020849912462199586,
+    "specular_frac_head_fg": 0.013541917921505118,
+    "clipped_frac_face_box": 0.00019452844536403346,
+    "face_median_luma": 0.7478910088539124,
+    "face_p99_luma": 0.901466785669327
+   },
+   "depth_file": "actions/step_08_RIGHT_depth.npy",
+   "depth": {
+    "shape": [
+     480,
+     640
+    ],
+    "dtype": "float32",
+    "n_valid": 87063,
+    "n_inf": 220137,
+    "n_nan": 0,
+    "n_nonpositive": 0,
+    "min_valid_m": 0.4815545082092285,
+    "max_valid_m": 0.6891074180603027,
+    "center_20px_median_m": 0.507594108581543,
+    "rgb_depth_foreground_iou": 0.9944713515489354,
+    "background_rgb": [
+     159.0,
+     159.0,
+     159.0
+    ]
+   },
+   "arcface": {
+    "detected": true,
+    "det_score": 0.7961602807044983,
+    "bbox": [
+     202.79498291015625,
+     122.02287292480469,
+     404.75579833984375,
+     413.22320556640625
+    ]
+   }
+  },
+  {
+   "step": 9,
+   "action": "FORWARD",
+   "accepted": true,
+   "pose_before": {
+    "az": 15.0,
+    "el": 0.0,
+    "r": 0.6
+   },
+   "valid_actions_before": [
+    "LEFT",
+    "RIGHT",
+    "FORWARD",
+    "BACKWARD"
+   ],
+   "file": "actions/step_09_FORWARD.png",
+   "pose_cmd": {
+    "az": 15.0,
+    "el": 0.0,
+    "r": 0.5
+   },
+   "pose_readback": {
+    "position_m": [
+     0.482963,
+     0.12941,
+     1.0
+    ],
+    "quat_wxyz_world_axes": [
+     -0.130526,
+     0.0,
+     0.0,
+     0.991445
+    ],
+    "az_deg": 15.000000120055855,
+    "el_deg": 0.0,
+    "r_m": 0.49999999325750805,
+    "look_at_error_deg": 3.91248236030638e-06
+   },
+   "key_light": {
+    "position_m": [
+     1.1233,
+     0.0983,
+     1.4104
+    ],
+    "intensity": 675156.0
+   },
+   "dome_intensity": 260.0,
+   "material": {
+    "roughness": 0.20000000298023224,
+    "metallic": 0.0,
+    "ior": 1.399999976158142
+   },
+   "render_convergence_mean_abs_diff_u8": 0.49763346354166665,
+   "stats": {
+    "face_box": [
+     176,
+     102,
+     424,
+     455
+    ],
+    "face_box_source": "detector",
+    "specular_frac_face_box": 0.02058372101324259,
+    "specular_frac_head_fg": 0.015875199471743796,
+    "clipped_frac_face_box": 9.518483705545707e-05,
+    "face_median_luma": 0.7470682859420776,
+    "face_p99_luma": 0.8971176743507385
+   },
+   "depth_file": "actions/step_09_FORWARD_depth.npy",
+   "depth": {
+    "shape": [
+     480,
+     640
+    ],
+    "dtype": "float32",
+    "n_valid": 109038,
+    "n_inf": 198162,
+    "n_nan": 0,
+    "n_nonpositive": 0,
+    "min_valid_m": 0.3814835548400879,
+    "max_valid_m": 0.5861759185791016,
+    "center_20px_median_m": 0.4073758125305176,
+    "rgb_depth_foreground_iou": 0.9943457999325144,
+    "background_rgb": [
+     158.0,
+     158.0,
+     158.0
+    ]
+   },
+   "arcface": {
+    "detected": true,
+    "det_score": 0.7780666351318359,
+    "bbox": [
+     176.34494018554688,
+     102.92466735839844,
+     424.2750244140625,
+     455.7826843261719
+    ]
+   }
+  },
+  {
+   "step": 10,
+   "action": "FORWARD",
+   "accepted": true,
+   "pose_before": {
+    "az": 15.0,
+    "el": 0.0,
+    "r": 0.5
+   },
+   "valid_actions_before": [
+    "LEFT",
+    "RIGHT",
+    "FORWARD",
+    "BACKWARD"
+   ],
+   "file": "actions/step_10_FORWARD.png",
+   "pose_cmd": {
+    "az": 15.0,
+    "el": 0.0,
+    "r": 0.4
+   },
+   "pose_readback": {
+    "position_m": [
+     0.38637,
+     0.103528,
+     1.0
+    ],
+    "quat_wxyz_world_axes": [
+     -0.130526,
+     0.0,
+     0.0,
+     0.991445
+    ],
+    "az_deg": 15.000000311423978,
+    "el_deg": 0.0,
+    "r_m": 0.4000000011347139,
+    "look_at_error_deg": 4.182619578303746e-06
+   },
+   "key_light": {
+    "position_m": [
+     1.1233,
+     0.0983,
+     1.4104
+    ],
+    "intensity": 675156.0
+   },
+   "dome_intensity": 260.0,
+   "material": {
+    "roughness": 0.20000000298023224,
+    "metallic": 0.0,
+    "ior": 1.399999976158142
+   },
+   "render_convergence_mean_abs_diff_u8": 0.09344292534722222,
+   "stats": {
+    "face_box": [
+     133,
+     46,
+     454,
+     480
+    ],
+    "face_box_source": "detector",
+    "specular_frac_face_box": 0.018169637872641333,
+    "specular_frac_head_fg": 0.015588280371921937,
+    "clipped_frac_face_box": 2.233056682422122e-05,
+    "face_median_luma": 0.760814905166626,
+    "face_p99_luma": 0.889254093170166
+   },
+   "depth_file": "actions/step_10_FORWARD_depth.npy",
+   "depth": {
+    "shape": [
+     480,
+     640
+    ],
+    "dtype": "float32",
+    "n_valid": 156592,
+    "n_inf": 150608,
+    "n_nan": 0,
+    "n_nonpositive": 0,
+    "min_valid_m": 0.2815098762512207,
+    "max_valid_m": 0.40673351287841797,
+    "center_20px_median_m": 0.3069760799407959,
+    "rgb_depth_foreground_iou": 0.9970138230069338,
+    "background_rgb": [
+     159.0,
+     159.0,
+     159.0
+    ]
+   },
+   "arcface": {
+    "detected": true,
+    "det_score": 0.5961900353431702,
+    "bbox": [
+     133.5902862548828,
+     46.69091796875,
+     454.00592041015625,
+     492.59698486328125
+    ]
+   }
+  },
+  {
+   "step": 11,
+   "action": "FORWARD",
+   "accepted": false,
+   "pose_before": {
+    "az": 15.0,
+    "el": 0.0,
+    "r": 0.4
+   },
+   "valid_actions_before": [
+    "LEFT",
+    "RIGHT",
+    "BACKWARD"
+   ],
+   "note": "rejected by limits; camera not moved, nothing rendered"
+  },
+  {
+   "step": 12,
+   "action": "BACKWARD",
+   "accepted": true,
+   "pose_before": {
+    "az": 15.0,
+    "el": 0.0,
+    "r": 0.4
+   },
+   "valid_actions_before": [
+    "LEFT",
+    "RIGHT",
+    "BACKWARD"
+   ],
+   "file": "actions/step_12_BACKWARD.png",
+   "pose_cmd": {
+    "az": 15.0,
+    "el": 0.0,
+    "r": 0.5
+   },
+   "pose_readback": {
+    "position_m": [
+     0.482963,
+     0.12941,
+     1.0
+    ],
+    "quat_wxyz_world_axes": [
+     -0.130526,
+     0.0,
+     0.0,
+     0.991445
+    ],
+    "az_deg": 15.000000120055855,
+    "el_deg": 0.0,
+    "r_m": 0.49999999325750805,
+    "look_at_error_deg": 3.91248236030638e-06
+   },
+   "key_light": {
+    "position_m": [
+     1.1233,
+     0.0983,
+     1.4104
+    ],
+    "intensity": 675156.0
+   },
+   "dome_intensity": 260.0,
+   "material": {
+    "roughness": 0.20000000298023224,
+    "metallic": 0.0,
+    "ior": 1.399999976158142
+   },
+   "render_convergence_mean_abs_diff_u8": 0.08274088541666667,
+   "stats": {
+    "face_box": [
+     176,
+     97,
+     423,
+     456
+    ],
+    "face_box_source": "detector",
+    "specular_frac_face_box": 0.0192524682651622,
+    "specular_frac_head_fg": 0.015031456923274455,
+    "clipped_frac_face_box": 2.3507287259050304e-05,
+    "face_median_luma": 0.7482620477676392,
+    "face_p99_luma": 0.8971176743507385
+   },
+   "depth_file": "actions/step_12_BACKWARD_depth.npy",
+   "depth": {
+    "shape": [
+     480,
+     640
+    ],
+    "dtype": "float32",
+    "n_valid": 109038,
+    "n_inf": 198162,
+    "n_nan": 0,
+    "n_nonpositive": 0,
+    "min_valid_m": 0.3814835548400879,
+    "max_valid_m": 0.5861759185791016,
+    "center_20px_median_m": 0.4073758125305176,
+    "rgb_depth_foreground_iou": 0.9939016052725135,
+    "background_rgb": [
+     159.0,
+     159.0,
+     159.0
+    ]
+   },
+   "arcface": {
+    "detected": true,
+    "det_score": 0.7642027735710144,
+    "bbox": [
+     176.03555297851562,
+     97.19241333007812,
+     423.8155822753906,
+     456.01190185546875
+    ]
+   }
+  },
+  {
+   "step": 13,
+   "action": "BACKWARD",
+   "accepted": true,
+   "pose_before": {
+    "az": 15.0,
+    "el": 0.0,
+    "r": 0.5
+   },
+   "valid_actions_before": [
+    "LEFT",
+    "RIGHT",
+    "FORWARD",
+    "BACKWARD"
+   ],
+   "file": "actions/step_13_BACKWARD.png",
+   "pose_cmd": {
+    "az": 15.0,
+    "el": 0.0,
+    "r": 0.6
+   },
+   "pose_readback": {
+    "position_m": [
+     0.579556,
+     0.155291,
+     1.0
+    ],
+    "quat_wxyz_world_axes": [
+     -0.130526,
+     0.0,
+     0.0,
+     0.991445
+    ],
+    "az_deg": 14.999999255900853,
+    "el_deg": 0.0,
+    "r_m": 0.6000000141671351,
+    "look_at_error_deg": 2.9575586669421963e-06
+   },
+   "key_light": {
+    "position_m": [
+     1.1233,
+     0.0983,
+     1.4104
+    ],
+    "intensity": 675156.0
+   },
+   "dome_intensity": 260.0,
+   "material": {
+    "roughness": 0.20000000298023224,
+    "metallic": 0.0,
+    "ior": 1.399999976158142
+   },
+   "render_convergence_mean_abs_diff_u8": 0.3702126736111111,
+   "stats": {
+    "face_box": [
+     202,
+     123,
+     405,
+     413
+    ],
+    "face_box_source": "detector",
+    "specular_frac_face_box": 0.019287833827893175,
+    "specular_frac_head_fg": 0.012542641535439854,
+    "clipped_frac_face_box": 0.00012363996043521266,
+    "face_median_luma": 0.7465741038322449,
+    "face_p99_luma": 0.9015496939420696
+   },
+   "depth_file": "actions/step_13_BACKWARD_depth.npy",
+   "depth": {
+    "shape": [
+     480,
+     640
+    ],
+    "dtype": "float32",
+    "n_valid": 87063,
+    "n_inf": 220137,
+    "n_nan": 0,
+    "n_nonpositive": 0,
+    "min_valid_m": 0.4815545082092285,
+    "max_valid_m": 0.6891074180603027,
+    "center_20px_median_m": 0.507594108581543,
+    "rgb_depth_foreground_iou": 0.9943916480102344,
+    "background_rgb": [
+     159.0,
+     159.0,
+     159.0
+    ]
+   },
+   "arcface": {
+    "detected": true,
+    "det_score": 0.799329936504364,
+    "bbox": [
+     202.74655151367188,
+     123.14068603515625,
+     405.0389709472656,
+     413.44317626953125
+    ]
+   }
+  },
+  {
+   "step": 14,
+   "action": "BACKWARD",
+   "accepted": true,
+   "pose_before": {
+    "az": 15.0,
+    "el": 0.0,
+    "r": 0.6
+   },
+   "valid_actions_before": [
+    "LEFT",
+    "RIGHT",
+    "FORWARD",
+    "BACKWARD"
+   ],
+   "file": "actions/step_14_BACKWARD.png",
+   "pose_cmd": {
+    "az": 15.0,
+    "el": 0.0,
+    "r": 0.7
+   },
+   "pose_readback": {
+    "position_m": [
+     0.676148,
+     0.181173,
+     1.0
+    ],
+    "quat_wxyz_world_axes": [
+     -0.130526,
+     0.0,
+     0.0,
+     0.991445
+    ],
+    "az_deg": 14.999999901349419,
+    "el_deg": 0.0,
+    "r_m": 0.6999999775030964,
+    "look_at_error_deg": 3.7215130446689423e-06
+   },
+   "key_light": {
+    "position_m": [
+     1.1233,
+     0.0983,
+     1.4104
+    ],
+    "intensity": 675156.0
+   },
+   "dome_intensity": 260.0,
+   "material": {
+    "roughness": 0.20000000298023224,
+    "metallic": 0.0,
+    "ior": 1.399999976158142
+   },
+   "render_convergence_mean_abs_diff_u8": 0.4147547743055556,
+   "stats": {
+    "face_box": [
+     221,
+     135,
+     391,
+     383
+    ],
+    "face_box_source": "detector",
+    "specular_frac_face_box": 0.019557802262521164,
+    "specular_frac_head_fg": 0.010373011947835594,
+    "clipped_frac_face_box": 0.0001717749257686928,
+    "face_median_luma": 0.7482211589813232,
+    "face_p99_luma": 0.9066541194915771
+   },
+   "depth_file": "actions/step_14_BACKWARD_depth.npy",
+   "depth": {
+    "shape": [
+     480,
+     640
+    ],
+    "dtype": "float32",
+    "n_valid": 76834,
+    "n_inf": 230366,
+    "n_nan": 0,
+    "n_nonpositive": 0,
+    "min_valid_m": 0.5815448760986328,
+    "max_valid_m": 0.7881789207458496,
+    "center_20px_median_m": 0.6077830791473389,
+    "rgb_depth_foreground_iou": 0.9947043362293321,
+    "background_rgb": [
+     158.0,
+     158.0,
+     158.0
+    ]
+   },
+   "arcface": {
+    "detected": true,
+    "det_score": 0.8460739850997925,
+    "bbox": [
+     221.3480224609375,
+     135.16734313964844,
+     391.0653381347656,
+     383.3542175292969
+    ]
+   }
+  }
+ ],
+ "sweep": [
+  {
+   "file": "sweep/sweep_r0.15_g1.png",
+   "pose_cmd": {
+    "az": 0.0,
+    "el": 0.0,
+    "r": 0.6
+   },
+   "pose_readback": {
+    "position_m": [
+     0.6,
+     0.0,
+     1.0
+    ],
+    "quat_wxyz_world_axes": [
+     0.0,
+     0.0,
+     0.0,
+     1.0
+    ],
+    "az_deg": 0.0,
+    "el_deg": 0.0,
+    "r_m": 0.6000000238418579,
+    "look_at_error_deg": 0.0
+   },
+   "key_light": {
+    "position_m": [
+     1.1233,
+     0.0983,
+     1.4104
+    ],
+    "intensity": 225052.0
+   },
+   "dome_intensity": 260.0,
+   "material": {
+    "roughness": 0.15000000596046448,
+    "metallic": 0.0,
+    "ior": 1.399999976158142
+   },
+   "render_convergence_mean_abs_diff_u8": 0.5635818142361111,
+   "stats": {
+    "face_box": [
+     216,
+     126,
+     418,
+     415
+    ],
+    "face_box_source": "detector",
+    "specular_frac_face_box": 0.0035586545756710864,
+    "specular_frac_head_fg": 0.0023360330127711044,
+    "clipped_frac_face_box": 0.0,
+    "face_median_luma": 0.5582776665687561,
+    "face_p99_luma": 0.7747492492198945
+   },
+   "arcface": {
+    "detected": true,
+    "det_score": 0.8145656585693359,
+    "bbox": [
+     216.52813720703125,
+     126.71861267089844,
+     418.1181640625,
+     415.17694091796875
+    ]
+   },
+   "roughness": 0.15,
+   "gain": 1.0
+  },
+  {
+   "file": "sweep/sweep_r0.15_g3.png",
+   "pose_cmd": {
+    "az": 0.0,
+    "el": 0.0,
+    "r": 0.6
+   },
+   "pose_readback": {
+    "position_m": [
+     0.6,
+     0.0,
+     1.0
+    ],
+    "quat_wxyz_world_axes": [
+     0.0,
+     0.0,
+     0.0,
+     1.0
+    ],
+    "az_deg": 0.0,
+    "el_deg": 0.0,
+    "r_m": 0.6000000238418579,
+    "look_at_error_deg": 0.0
+   },
+   "key_light": {
+    "position_m": [
+     1.1233,
+     0.0983,
+     1.4104
+    ],
+    "intensity": 675156.0
+   },
+   "dome_intensity": 260.0,
+   "material": {
+    "roughness": 0.15000000596046448,
+    "metallic": 0.0,
+    "ior": 1.399999976158142
+   },
+   "render_convergence_mean_abs_diff_u8": 0.20361870659722223,
+   "stats": {
+    "face_box": [
+     216,
+     134,
+     417,
+     415
+    ],
+    "face_box_source": "detector",
+    "specular_frac_face_box": 0.018689148356772486,
+    "specular_frac_head_fg": 0.01188175166901851,
+    "clipped_frac_face_box": 0.0010631551460439437,
+    "face_median_luma": 0.7403419613838196,
+    "face_p99_luma": 0.9125364422798157
+   },
+   "arcface": {
+    "detected": true,
+    "det_score": 0.8221807479858398,
+    "bbox": [
+     216.12405395507812,
+     134.38966369628906,
+     417.5246887207031,
+     415.055419921875
+    ]
+   },
+   "roughness": 0.15,
+   "gain": 3.0
+  },
+  {
+   "file": "sweep/sweep_r0.15_g6.png",
+   "pose_cmd": {
+    "az": 0.0,
+    "el": 0.0,
+    "r": 0.6
+   },
+   "pose_readback": {
+    "position_m": [
+     0.6,
+     0.0,
+     1.0
+    ],
+    "quat_wxyz_world_axes": [
+     0.0,
+     0.0,
+     0.0,
+     1.0
+    ],
+    "az_deg": 0.0,
+    "el_deg": 0.0,
+    "r_m": 0.6000000238418579,
+    "look_at_error_deg": 0.0
+   },
+   "key_light": {
+    "position_m": [
+     1.1233,
+     0.0983,
+     1.4104
+    ],
+    "intensity": 1350312.0
+   },
+   "dome_intensity": 260.0,
+   "material": {
+    "roughness": 0.15000000596046448,
+    "metallic": 0.0,
+    "ior": 1.399999976158142
+   },
+   "render_convergence_mean_abs_diff_u8": 0.09842556423611111,
+   "stats": {
+    "face_box": [
+     216,
+     135,
+     417,
+     414
+    ],
+    "face_box_source": "detector",
+    "specular_frac_face_box": 0.43026137899954936,
+    "specular_frac_head_fg": 0.32150691916377133,
+    "clipped_frac_face_box": 0.0028541385008261978,
+    "face_median_luma": 0.8468987941741943,
+    "face_p99_luma": 0.956543505191803
+   },
+   "arcface": {
+    "detected": true,
+    "det_score": 0.815157413482666,
+    "bbox": [
+     216.24569702148438,
+     135.7139892578125,
+     417.2335510253906,
+     414.75408935546875
+    ]
+   },
+   "roughness": 0.15,
+   "gain": 6.0
+  },
+  {
+   "file": "sweep/sweep_r0.20_g1.png",
+   "pose_cmd": {
+    "az": 0.0,
+    "el": 0.0,
+    "r": 0.6
+   },
+   "pose_readback": {
+    "position_m": [
+     0.6,
+     0.0,
+     1.0
+    ],
+    "quat_wxyz_world_axes": [
+     0.0,
+     0.0,
+     0.0,
+     1.0
+    ],
+    "az_deg": 0.0,
+    "el_deg": 0.0,
+    "r_m": 0.6000000238418579,
+    "look_at_error_deg": 0.0
+   },
+   "key_light": {
+    "position_m": [
+     1.1233,
+     0.0983,
+     1.4104
+    ],
+    "intensity": 225052.0
+   },
+   "dome_intensity": 260.0,
+   "material": {
+    "roughness": 0.20000000298023224,
+    "metallic": 0.0,
+    "ior": 1.399999976158142
+   },
+   "render_convergence_mean_abs_diff_u8": 0.08516493055555556,
+   "stats": {
+    "face_box": [
+     216,
+     118,
+     418,
+     414
+    ],
+    "face_box_source": "detector",
+    "specular_frac_face_box": 0.003051630770316276,
+    "specular_frac_head_fg": 0.0020514401584233555,
+    "clipped_frac_face_box": 0.0,
+    "face_median_luma": 0.5714361071586609,
+    "face_p99_luma": 0.810243946313858
+   },
+   "arcface": {
+    "detected": true,
+    "det_score": 0.8384816646575928,
+    "bbox": [
+     216.9854736328125,
+     118.40353393554688,
+     418.7174987792969,
+     414.35943603515625
+    ]
+   },
+   "roughness": 0.2,
+   "gain": 1.0
+  },
+  {
+   "file": "sweep/sweep_r0.20_g3.png",
+   "pose_cmd": {
+    "az": 0.0,
+    "el": 0.0,
+    "r": 0.6
+   },
+   "pose_readback": {
+    "position_m": [
+     0.6,
+     0.0,
+     1.0
+    ],
+    "quat_wxyz_world_axes": [
+     0.0,
+     0.0,
+     0.0,
+     1.0
+    ],
+    "az_deg": 0.0,
+    "el_deg": 0.0,
+    "r_m": 0.6000000238418579,
+    "look_at_error_deg": 0.0
+   },
+   "key_light": {
+    "position_m": [
+     1.1233,
+     0.0983,
+     1.4104
+    ],
+    "intensity": 675156.0
+   },
+   "dome_intensity": 260.0,
+   "material": {
+    "roughness": 0.20000000298023224,
+    "metallic": 0.0,
+    "ior": 1.399999976158142
+   },
+   "render_convergence_mean_abs_diff_u8": 0.07423177083333334,
+   "stats": {
+    "face_box": [
+     216,
+     124,
+     417,
+     414
+    ],
+    "face_box_source": "detector",
+    "specular_frac_face_box": 0.02510920971876241,
+    "specular_frac_head_fg": 0.016494527516571603,
+    "clipped_frac_face_box": 0.0001624607386548251,
+    "face_median_luma": 0.7451435327529907,
+    "face_p99_luma": 0.9271465921401968
+   },
+   "arcface": {
+    "detected": true,
+    "det_score": 0.8177652955055237,
+    "bbox": [
+     216.0975341796875,
+     124.09773254394531,
+     417.9413757324219,
+     414.5675354003906
+    ]
+   },
+   "roughness": 0.2,
+   "gain": 3.0
+  },
+  {
+   "file": "sweep/sweep_r0.20_g6.png",
+   "pose_cmd": {
+    "az": 0.0,
+    "el": 0.0,
+    "r": 0.6
+   },
+   "pose_readback": {
+    "position_m": [
+     0.6,
+     0.0,
+     1.0
+    ],
+    "quat_wxyz_world_axes": [
+     0.0,
+     0.0,
+     0.0,
+     1.0
+    ],
+    "az_deg": 0.0,
+    "el_deg": 0.0,
+    "r_m": 0.6000000238418579,
+    "look_at_error_deg": 0.0
+   },
+   "key_light": {
+    "position_m": [
+     1.1233,
+     0.0983,
+     1.4104
+    ],
+    "intensity": 1350312.0
+   },
+   "dome_intensity": 260.0,
+   "material": {
+    "roughness": 0.20000000298023224,
+    "metallic": 0.0,
+    "ior": 1.399999976158142
+   },
+   "render_convergence_mean_abs_diff_u8": 0.7782194010416666,
+   "stats": {
+    "face_box": [
+     216,
+     132,
+     417,
+     414
+    ],
+    "face_box_source": "detector",
+    "specular_frac_face_box": 0.43707404037215175,
+    "specular_frac_head_fg": 0.3240208227105098,
+    "clipped_frac_face_box": 0.0029712715185054505,
+    "face_median_luma": 0.8480156660079956,
+    "face_p99_luma": 0.9677577018737793
+   },
+   "arcface": {
+    "detected": true,
+    "det_score": 0.8182169198989868,
+    "bbox": [
+     216.23464965820312,
+     132.8143310546875,
+     417.4752197265625,
+     414.4951171875
+    ]
+   },
+   "roughness": 0.2,
+   "gain": 6.0
+  },
+  {
+   "file": "sweep/sweep_r0.30_g1.png",
+   "pose_cmd": {
+    "az": 0.0,
+    "el": 0.0,
+    "r": 0.6
+   },
+   "pose_readback": {
+    "position_m": [
+     0.6,
+     0.0,
+     1.0
+    ],
+    "quat_wxyz_world_axes": [
+     0.0,
+     0.0,
+     0.0,
+     1.0
+    ],
+    "az_deg": 0.0,
+    "el_deg": 0.0,
+    "r_m": 0.6000000238418579,
+    "look_at_error_deg": 0.0
+   },
+   "key_light": {
+    "position_m": [
+     1.1233,
+     0.0983,
+     1.4104
+    ],
+    "intensity": 225052.0
+   },
+   "dome_intensity": 260.0,
+   "material": {
+    "roughness": 0.30000001192092896,
+    "metallic": 0.0,
+    "ior": 1.399999976158142
+   },
+   "render_convergence_mean_abs_diff_u8": 0.08441189236111112,
+   "stats": {
+    "face_box": [
+     216,
+     117,
+     418,
+     414
+    ],
+    "face_box_source": "detector",
+    "specular_frac_face_box": 0.0,
+    "specular_frac_head_fg": 0.0,
+    "clipped_frac_face_box": 0.0,
+    "face_median_luma": 0.5716988444328308,
+    "face_p99_luma": 0.7912452518939974
+   },
+   "arcface": {
+    "detected": true,
+    "det_score": 0.835880696773529,
+    "bbox": [
+     216.3905029296875,
+     117.40484619140625,
+     418.8679504394531,
+     414.1836242675781
+    ]
+   },
+   "roughness": 0.3,
+   "gain": 1.0
+  },
+  {
+   "file": "sweep/sweep_r0.30_g3.png",
+   "pose_cmd": {
+    "az": 0.0,
+    "el": 0.0,
+    "r": 0.6
+   },
+   "pose_readback": {
+    "position_m": [
+     0.6,
+     0.0,
+     1.0
+    ],
+    "quat_wxyz_world_axes": [
+     0.0,
+     0.0,
+     0.0,
+     1.0
+    ],
+    "az_deg": 0.0,
+    "el_deg": 0.0,
+    "r_m": 0.6000000238418579,
+    "look_at_error_deg": 0.0
+   },
+   "key_light": {
+    "position_m": [
+     1.1233,
+     0.0983,
+     1.4104
+    ],
+    "intensity": 675156.0
+   },
+   "dome_intensity": 260.0,
+   "material": {
+    "roughness": 0.30000001192092896,
+    "metallic": 0.0,
+    "ior": 1.399999976158142
+   },
+   "render_convergence_mean_abs_diff_u8": 0.08088541666666667,
+   "stats": {
+    "face_box": [
+     216,
+     116,
+     418,
+     414
+    ],
+    "face_box_source": "detector",
+    "specular_frac_face_box": 0.033197784477318935,
+    "specular_frac_head_fg": 0.022459119422276505,
+    "clipped_frac_face_box": 0.0,
+    "face_median_luma": 0.7462501525878906,
+    "face_p99_luma": 0.9195459485054016
+   },
+   "arcface": {
+    "detected": true,
+    "det_score": 0.8471652269363403,
+    "bbox": [
+     216.0665740966797,
+     116.59660339355469,
+     418.680908203125,
+     414.0726318359375
+    ]
+   },
+   "roughness": 0.3,
+   "gain": 3.0
+  },
+  {
+   "file": "sweep/sweep_r0.30_g6.png",
+   "pose_cmd": {
+    "az": 0.0,
+    "el": 0.0,
+    "r": 0.6
+   },
+   "pose_readback": {
+    "position_m": [
+     0.6,
+     0.0,
+     1.0
+    ],
+    "quat_wxyz_world_axes": [
+     0.0,
+     0.0,
+     0.0,
+     1.0
+    ],
+    "az_deg": 0.0,
+    "el_deg": 0.0,
+    "r_m": 0.6000000238418579,
+    "look_at_error_deg": 0.0
+   },
+   "key_light": {
+    "position_m": [
+     1.1233,
+     0.0983,
+     1.4104
+    ],
+    "intensity": 1350312.0
+   },
+   "dome_intensity": 260.0,
+   "material": {
+    "roughness": 0.30000001192092896,
+    "metallic": 0.0,
+    "ior": 1.399999976158142
+   },
+   "render_convergence_mean_abs_diff_u8": 0.7403938802083333,
+   "stats": {
+    "face_box": [
+     216,
+     125,
+     418,
+     414
+    ],
+    "face_box_source": "detector",
+    "specular_frac_face_box": 0.44395096499304915,
+    "specular_frac_head_fg": 0.3264635780436613,
+    "clipped_frac_face_box": 0.0,
+    "face_median_luma": 0.849173367023468,
+    "face_p99_luma": 0.9638360738754272
+   },
+   "arcface": {
+    "detected": true,
+    "det_score": 0.8184638619422913,
+    "bbox": [
+     216.4076690673828,
+     125.47128295898438,
+     418.2746276855469,
+     414.56982421875
+    ]
+   },
+   "roughness": 0.3,
+   "gain": 6.0
+  }
+ ],
+ "errors": [],
+ "startup_seconds": 24.8,
+ "shader_id": "UsdPreviewSurface",
+ "material_applied": {
+  "roughness": 0.2,
+  "metallic": 0.0,
+  "ior": 1.4
+ },
+ "material_readback": {
+  "ior": 1.399999976158142,
+  "metallic": 0.0,
+  "roughness": 0.20000000298023224
+ },
+ "arcface_runtime": {
+  "insightface_model": "buffalo_l",
+  "onnxruntime": "1.22.0",
+  "providers": [
+   "TensorrtExecutionProvider",
+   "CUDAExecutionProvider",
+   "CPUExecutionProvider"
+  ]
+ },
+ "exposure_settings": {
+  "/rtx/rendermode": "RaytracedLighting",
+  "/rtx/post/histogram/enabled": false,
+  "/rtx/post/tonemap/op": 6,
+  "/rtx/post/tonemap/filmIso": 100.0,
+  "/rtx/post/tonemap/cameraShutter": 50.0,
+  "/rtx/post/tonemap/fNumber": 5.0,
+  "/rtx/post/tonemap/whitepoint": [
+   1.0,
+   1.0,
+   1.0
+  ],
+  "/rtx/post/aa/op": 3,
+  "/rtx/directLighting/sampledLighting/enabled": true
+ },
+ "intrinsics_K": [
+  [
+   855.165771484375,
+   0.0,
+   320.0
+  ],
+  [
+   0.0,
+   855.165771484375,
+   240.0
+  ],
+  [
+   0.0,
+   0.0,
+   1.0
+  ]
+ ],
+ "first_frame_seconds": 7.4,
+ "key_base_intensity": 225052.0,
+ "settle_probe": [
+  {
+   "frames_after_light_change": 1,
+   "specular_frac_center_box": 0.0020167919854440232,
+   "median_luma_center_box": 0.5137608051300049
+  },
+  {
+   "frames_after_light_change": 2,
+   "specular_frac_center_box": 0.0020167919854440232,
+   "median_luma_center_box": 0.5137921571731567
+  },
+  {
+   "frames_after_light_change": 5,
+   "specular_frac_center_box": 0.012407655040883881,
+   "median_luma_center_box": 0.6669694185256958
+  },
+  {
+   "frames_after_light_change": 10,
+   "specular_frac_center_box": 0.023521932612841703,
+   "median_luma_center_box": 0.7196376919746399
+  },
+  {
+   "frames_after_light_change": 20,
+   "specular_frac_center_box": 0.026174452506740907,
+   "median_luma_center_box": 0.7401310205459595
+  },
+  {
+   "frames_after_light_change": 30,
+   "specular_frac_center_box": 0.027730889799855316,
+   "median_luma_center_box": 0.7488234639167786
+  },
+  {
+   "frames_after_light_change": 60,
+   "specular_frac_center_box": 0.030032663261503386,
+   "median_luma_center_box": 0.7597028017044067
+  },
+  {
+   "frames_after_light_change": 120,
+   "specular_frac_center_box": 0.032926321327575246,
+   "median_luma_center_box": 0.7686988115310669
+  },
+  {
+   "frames_after_light_change": 240,
+   "specular_frac_center_box": 0.03577613608961571,
+   "median_luma_center_box": 0.7740250825881958
+  },
+  {
+   "frames_after_light_change": 480,
+   "specular_frac_center_box": 0.034241620448517,
+   "median_luma_center_box": 0.7754250764846802
+  }
+ ],
+ "overview_label_px": {
+  "head center": [
+   411.8,
+   309.9
+  ],
+  "glare key light": [
+   686.0,
+   652.1
+  ],
+  "clean key light": [
+   1008.3,
+   108.5
+  ],
+  "cam FRONT (az 0)": [
+   502.3,
+   553.4
+  ],
+  "cam LEFT (az -15)": [
+   403.1,
+   570.7
+  ],
+  "cam RIGHT (az +15)": [
+   591.2,
+   517.6
+  ]
+ },
+ "overview_camera": {
+  "position_m": [
+   2.0118,
+   -0.2821,
+   2.8556
+  ],
+  "target_m": [
+   0.55,
+   0.25,
+   1.3
+  ],
+  "resolution": [
+   1280,
+   720
+  ],
+  "focal_length_mm": 24.0
+ },
+ "marker_positions_m": {
+  "head center": [
+   0.0,
+   0.0,
+   1.0
+  ],
+  "glare key light": [
+   1.1233,
+   0.0983,
+   1.4104
+  ],
+  "clean key light": [
+   0.6318,
+   0.753,
+   1.6883
+  ],
+  "cam FRONT (az 0)": [
+   0.6,
+   0.0,
+   1.0
+  ],
+  "cam LEFT (az -15)": [
+   0.5796,
+   -0.1553,
+   1.0
+  ],
+  "cam RIGHT (az +15)": [
+   0.5796,
+   0.1553,
+   1.0
+  ]
+ },
+ "arcface_scores": {
+  "reference": "arcface_reference_front.png",
+  "reference_detected": true,
+  "views": {
+   "clean_front": {
+    "detected": true,
+    "det_score": 0.8328925967216492,
+    "cosine_to_reference": 0.8230332732200623
+   },
+   "glare_front": {
+    "detected": true,
+    "det_score": 0.8198642730712891,
+    "cosine_to_reference": 0.835131049156189
+   },
+   "glare_left": {
+    "detected": true,
+    "det_score": 0.8080045580863953,
+    "cosine_to_reference": 0.8366239666938782
+   },
+   "glare_right": {
+    "detected": true,
+    "det_score": 0.7998316287994385,
+    "cosine_to_reference": 0.8349474668502808
+   },
+   "diag_glare_front_rough0.70": {
+    "detected": true,
+    "det_score": 0.8462597131729126,
+    "cosine_to_reference": 0.8049471378326416
+   }
+  }
+ },
+ "scene_usd": "/scratch/user/qingxiao/689/glare_slides/scene/face_glare_scene.usda",
+ "total_seconds": 152.0
+}

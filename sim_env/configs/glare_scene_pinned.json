@@ -1,0 +1,128 @@
+{
+ "_comment": "Minimal face-glare scene. Units: meters, degrees. World +Z up, head faces +X. key_light.intensity=null means: calibrate at run time so the clean frontal face median luma hits clean_target_face_luma; the resolved number is written to outputs/run_record.json. PINNED variant: key_light.intensity fixed to the value calibrated in run 1 (job 20431812).",
+ "head_usd": "assets/lee_perry_smith/lee_perry_smith.usd",
+ "head_center": [
+  0.0,
+  0.0,
+  1.0
+ ],
+ "skin_shader": "/World/Head/Looks/Skin/Shader",
+ "material": {
+  "roughness": 0.2,
+  "metallic": 0.0,
+  "ior": 1.4
+ },
+ "dome_light": {
+  "intensity": 260.0,
+  "color": [
+   1.0,
+   1.0,
+   1.0
+  ]
+ },
+ "key_light": {
+  "type": "SphereLight",
+  "radius": 0.05,
+  "intensity": 225052.0,
+  "clean": {
+   "az": 50.0,
+   "el": 35.0,
+   "dist": 1.2,
+   "gain": 1.0
+  },
+  "glare": {
+   "az": 5.0,
+   "el": 20.0,
+   "dist": 1.2,
+   "gain": 3.0
+  }
+ },
+ "clean_target_face_luma": 0.5,
+ "camera": {
+  "resolution": [
+   640,
+   480
+  ],
+  "focal_length_mm": 28.0,
+  "horizontal_aperture_mm": 20.955,
+  "clipping_range": [
+   0.01,
+   100.0
+  ],
+  "start": {
+   "az": 0.0,
+   "el": 0.0,
+   "r": 0.6
+  },
+  "step_az_deg": 15.0,
+  "step_r_m": 0.1,
+  "limits": {
+   "az_min": -45.0,
+   "az_max": 45.0,
+   "r_min": 0.4,
+   "r_max": 0.9
+  }
+ },
+ "render": {
+  "settle_frames": 120,
+  "first_settle_frames": 240,
+  "convergence_extra_frames": 4
+ },
+ "glare_pixel": {
+  "value_thresh": 0.92,
+  "sat_thresh": 0.25
+ },
+ "sweep": {
+  "roughness": [
+   0.15,
+   0.2,
+   0.3
+  ],
+  "gain": [
+   1.0,
+   3.0,
+   6.0
+  ]
+ },
+ "diagnostic_rough_roughness": 0.7,
+ "action_demo": [
+  "LEFT",
+  "LEFT",
+  "LEFT",
+  "LEFT",
+  "RIGHT",
+  "RIGHT",
+  "RIGHT",
+  "RIGHT",
+  "FORWARD",
+  "FORWARD",
+  "FORWARD",
+  "BACKWARD",
+  "BACKWARD",
+  "BACKWARD"
+ ],
+ "arcface": {
+  "enabled": true,
+  "root": "${H}/insightface",
+  "model": "buffalo_l",
+  "det_size": [
+   640,
+   640
+  ]
+ },
+ "overview_camera": {
+  "resolution": [
+   1280,
+   720
+  ],
+  "focal_length_mm": 24.0,
+  "target_offset": [
+   0.55,
+   0.25,
+   0.3
+  ],
+  "az": -20.0,
+  "el": 45.0,
+  "dist": 2.2
+ }
+}

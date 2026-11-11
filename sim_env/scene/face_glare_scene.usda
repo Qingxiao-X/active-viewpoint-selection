@@ -1,0 +1,621 @@
+#usda 1.0
+(
+    endTimeCode = 1000000
+    metersPerUnit = 1
+    startTimeCode = 0
+    timeCodesPerSecond = 60
+    upAxis = "Z"
+)
+
+def "Render" (
+    hide_in_stage_window = true
+    no_delete = true
+)
+{
+    def "OmniverseKit"
+    {
+        def "HydraTextures" (
+            hide_in_stage_window = true
+            no_delete = true
+        )
+        {
+            def RenderProduct "omni_kit_widget_viewport_ViewportTexture_0" (
+                prepend apiSchemas = ["OmniRtxSettingsCommonAdvancedAPI_1", "OmniRtxSettingsRtAdvancedAPI_1", "OmniRtxSettingsPtAdvancedAPI_1", "OmniRtxPostColorGradingAPI_1", "OmniRtxPostChromaticAberrationAPI_1", "OmniRtxPostBloomPhysicalAPI_1", "OmniRtxPostMatteObjectAPI_1", "OmniRtxPostCompositingAPI_1", "OmniRtxPostDofAPI_1", "OmniRtxPostMotionBlurAPI_1", "OmniRtxPostTvNoiseAPI_1", "OmniRtxPostTonemapIrayReinhardAPI_1", "OmniRtxPostDebugSettingsAPI_1", "OmniRtxDebugSettingsAPI_1"]
+                hide_in_stage_window = true
+                no_delete = true
+            )
+            {
+                rel camera = </OmniverseKit_Persp>
+                token omni:rtx:background:source:texture:textureMode = "repeatMirrored"
+                token omni:rtx:background:source:type = "domeLight"
+                bool omni:rtx:material:db:syncLoads = 1
+                bool omni:rtx:post:registeredCompositing:invertColorCorrection = 1
+                bool omni:rtx:post:registeredCompositing:invertToneMap = 1
+                bool omni:rtx:pt:lightcache:cached:dontResolveConflicts = 1
+                int omni:rtx:pt:maxSamplesPerLaunch = 2073600
+                int omni:rtx:pt:mgpu:maxPixelsPerRegionExponent = 12
+                color3f omni:rtx:rt:ambientLight:color = (0.1, 0.1, 0.1)
+                bool omni:rtx:rt:demoire = 0
+                bool omni:rtx:rt:ecoMode:enabled = 0
+                bool omni:rtx:rt:lightcache:spatialCache:dontResolveConflicts = 1
+                bool omni:rtx:scene:hydra:materialSyncLoads = 1
+                uint omni:rtx:viewTile:limit = 4294967295
+                rel orderedVars = </Render/Vars/LdrColor>
+                custom bool overrideClipRange = 0
+                uniform int2 resolution = (1280, 720)
+            }
+
+            def RenderProduct "Replicator" (
+                prepend apiSchemas = ["OmniRtxSettingsCommonAdvancedAPI_1", "OmniRtxSettingsRtAdvancedAPI_1", "OmniRtxSettingsPtAdvancedAPI_1", "OmniRtxPostColorGradingAPI_1", "OmniRtxPostChromaticAberrationAPI_1", "OmniRtxPostBloomPhysicalAPI_1", "OmniRtxPostMatteObjectAPI_1", "OmniRtxPostCompositingAPI_1", "OmniRtxPostDofAPI_1", "OmniRtxPostMotionBlurAPI_1", "OmniRtxPostTvNoiseAPI_1", "OmniRtxPostTonemapIrayReinhardAPI_1", "OmniRtxPostDebugSettingsAPI_1", "OmniRtxDebugSettingsAPI_1"]
+                hide_in_stage_window = true
+                no_delete = true
+            )
+            {
+                rel camera = </World/RGBDCamera>
+                token omni:rtx:background:source:texture:textureMode = "repeatMirrored"
+                token omni:rtx:background:source:type = "domeLight"
+                bool omni:rtx:dlss:frameGeneration = 0
+                string[] omni:rtx:material:db:flattener:ior_constant = ["ior_constant", "glass_ior"]
+                string[] omni:rtx:material:db:flattener:reflection_roughness_constant = ["reflection_roughness_constant", "frosting_roughness"]
+                string[] omni:rtx:material:db:flattener:transmittance_color = ["transmittance_color", "glass_color"]
+                bool omni:rtx:material:db:nonVisualMaterialCSV:enabled = 0
+                bool omni:rtx:material:db:syncLoads = 1
+                token omni:rtx:post:aa:op = "dlss"
+                token omni:rtx:post:dlss:execMode = "performance"
+                bool omni:rtx:post:registeredCompositing:invertColorCorrection = 1
+                bool omni:rtx:post:registeredCompositing:invertToneMap = 1
+                int omni:rtx:pt:clampSpp = 64
+                bool omni:rtx:pt:denoising:enabled = 1
+                bool omni:rtx:pt:lightcache:cached:dontResolveConflicts = 1
+                int omni:rtx:pt:limits:maxBounces = 4
+                int omni:rtx:pt:limits:maxGlossyBounces = 6
+                int omni:rtx:pt:maxSamplesPerLaunch = 2073600
+                int omni:rtx:pt:maxVolumeBounces = 4
+                int omni:rtx:pt:mgpu:maxPixelsPerRegionExponent = 12
+                int omni:rtx:pt:samplesPerIteration = 64
+                int omni:rtx:pt:samplesPerPixel = 64
+                bool omni:rtx:raytracing:picking:occluded:enabled = 0
+                color3f omni:rtx:rt:ambientLight:color = (0.1, 0.1, 0.1)
+                bool omni:rtx:rt:demoire = 0
+                bool omni:rtx:rt:ecoMode:enabled = 0
+                int omni:rtx:rt:iesTextureRes = 1024
+                bool omni:rtx:rt:lightcache:spatialCache:dontResolveConflicts = 1
+                bool omni:rtx:scene:hydra:materialSyncLoads = 1
+                bool omni:rtx:scene:hydra:mdlMaterialWarmup = 1
+                int omni:rtx:scene:hydra:subdivision:refinementLevel = 0
+                uint omni:rtx:viewTile:limit = 4294967295
+                rel orderedVars = </Render/Vars/LdrColor>
+                custom bool overrideClipRange = 0
+                uniform int2 resolution = (640, 480)
+            }
+
+            def RenderProduct "Replicator_01" (
+                prepend apiSchemas = ["OmniRtxSettingsCommonAdvancedAPI_1", "OmniRtxSettingsRtAdvancedAPI_1", "OmniRtxSettingsPtAdvancedAPI_1", "OmniRtxPostColorGradingAPI_1", "OmniRtxPostChromaticAberrationAPI_1", "OmniRtxPostBloomPhysicalAPI_1", "OmniRtxPostMatteObjectAPI_1", "OmniRtxPostCompositingAPI_1", "OmniRtxPostDofAPI_1", "OmniRtxPostMotionBlurAPI_1", "OmniRtxPostTvNoiseAPI_1", "OmniRtxPostTonemapIrayReinhardAPI_1", "OmniRtxPostDebugSettingsAPI_1", "OmniRtxDebugSettingsAPI_1"]
+                hide_in_stage_window = true
+                no_delete = true
+            )
+            {
+                rel camera = </World/OverviewCamera>
+                token omni:rtx:background:source:texture:textureMode = "repeatMirrored"
+                token omni:rtx:background:source:type = "domeLight"
+                bool omni:rtx:dlss:frameGeneration = 0
+                string[] omni:rtx:material:db:flattener:ior_constant = ["ior_constant", "glass_ior"]
+                string[] omni:rtx:material:db:flattener:reflection_roughness_constant = ["reflection_roughness_constant", "frosting_roughness"]
+                string[] omni:rtx:material:db:flattener:transmittance_color = ["transmittance_color", "glass_color"]
+                bool omni:rtx:material:db:nonVisualMaterialCSV:enabled = 0
+                bool omni:rtx:material:db:syncLoads = 1
+                token omni:rtx:post:aa:op = "dlss"
+                token omni:rtx:post:dlss:execMode = "performance"
+                bool omni:rtx:post:registeredCompositing:invertColorCorrection = 1
+                bool omni:rtx:post:registeredCompositing:invertToneMap = 1
+                int omni:rtx:pt:clampSpp = 64
+                bool omni:rtx:pt:denoising:enabled = 1
+                bool omni:rtx:pt:lightcache:cached:dontResolveConflicts = 1
+                int omni:rtx:pt:limits:maxBounces = 4
+                int omni:rtx:pt:limits:maxGlossyBounces = 6
+                int omni:rtx:pt:maxSamplesPerLaunch = 2073600
+                int omni:rtx:pt:maxVolumeBounces = 4
+                int omni:rtx:pt:mgpu:maxPixelsPerRegionExponent = 12
+                int omni:rtx:pt:samplesPerIteration = 64
+                int omni:rtx:pt:samplesPerPixel = 64
+                bool omni:rtx:raytracing:picking:occluded:enabled = 0
+                color3f omni:rtx:rt:ambientLight:color = (0.1, 0.1, 0.1)
+                bool omni:rtx:rt:demoire = 0
+                bool omni:rtx:rt:ecoMode:enabled = 0
+                int omni:rtx:rt:iesTextureRes = 1024
+                bool omni:rtx:rt:lightcache:spatialCache:dontResolveConflicts = 1
+                bool omni:rtx:scene:hydra:materialSyncLoads = 1
+                bool omni:rtx:scene:hydra:mdlMaterialWarmup = 1
+                int omni:rtx:scene:hydra:subdivision:refinementLevel = 0
+                uint omni:rtx:viewTile:limit = 4294967295
+                rel orderedVars = </Render/Vars/LdrColor>
+                custom bool overrideClipRange = 0
+                uniform int2 resolution = (1280, 720)
+            }
+        }
+    }
+
+    def RenderSettings "OmniverseGlobalRenderSettings" (
+        prepend apiSchemas = ["OmniRtxSettingsGlobalRtAdvancedAPI_1", "OmniRtxSettingsGlobalPtAdvancedAPI_1"]
+        no_delete = true
+    )
+    {
+        rel products = [
+            </Render/OmniverseKit/HydraTextures/omni_kit_widget_viewport_ViewportTexture_0>,
+            </Render/OmniverseKit/HydraTextures/Replicator>,
+            </Render/OmniverseKit/HydraTextures/Replicator_01>,
+        ]
+    }
+
+    def "Vars"
+    {
+        def RenderVar "LdrColor" (
+            hide_in_stage_window = true
+            no_delete = true
+        )
+        {
+            uniform string sourceName = "LdrColor"
+        }
+    }
+}
+
+def PhysicsScene "physicsScene" (
+    prepend apiSchemas = ["PhysxSceneAPI"]
+)
+{
+    vector3f physics:gravityDirection = (0, 0, -1)
+    float physics:gravityMagnitude = 9.81
+    uniform token physxScene:broadphaseType = "MBP"
+    bool physxScene:enableCCD = 1
+    bool physxScene:enableGPUDynamics = 0
+    bool physxScene:enableStabilization = 0
+    uniform token physxScene:solverType = "TGS"
+    uint physxScene:timeStepsPerSecond = 60
+}
+
+def "World"
+{
+    def DomeLight "EnvLight"
+    {
+        color3f inputs:color = (1, 1, 1)
+        float inputs:intensity = 260
+    }
+
+    def SphereLight "KeyLight"
+    {
+        float inputs:intensity = 675156
+        float inputs:radius = 0.05
+        bool treatAsPoint = 0
+        double3 xformOp:translate = (1.1233401679954311, 0.0982795299829072, 1.4104241719908024)
+        uniform token[] xformOpOrder = ["xformOp:translate"]
+    }
+
+    def Camera "RGBDCamera"
+    {
+        float2 clippingRange = (0.01, 100)
+        float focalLength = 28
+        float horizontalAperture = 20.955
+        float verticalAperture = 15.71625
+        quatd xformOp:orient = (0.5, 0.5, 0.5, 0.5)
+        double3 xformOp:scale = (1, 1, 1)
+        double3 xformOp:translate = (0.6000000238418579, 0, 1)
+        uniform token[] xformOpOrder = ["xformOp:translate", "xformOp:orient", "xformOp:scale"]
+    }
+
+    def Xform "Head" (
+        prepend references = @../assets/lee_perry_smith/lee_perry_smith.usd@
+    )
+    {
+        double3 xformOp:translate = (0, 0, 1)
+        uniform token[] xformOpOrder = ["xformOp:translate"]
+
+        over "Looks"
+        {
+            over "Skin"
+            {
+                over "Shader"
+                {
+                    float inputs:ior = 1.4
+                    float inputs:metallic = 0
+                    float inputs:roughness = 0.2
+                }
+            }
+        }
+    }
+
+    def Xform "Markers"
+    {
+        token visibility = "invisible"
+
+        def "Looks"
+        {
+            def Material "glare"
+            {
+                token outputs:surface.connect = </World/Markers/Looks/glare/Shader.outputs:surface>
+
+                def Shader "Shader"
+                {
+                    uniform token info:id = "UsdPreviewSurface"
+                    color3f inputs:diffuseColor = (1, 0.75, 0.1)
+                    color3f inputs:emissiveColor = (3, 2.25, 0.3)
+                    float inputs:roughness = 0.7
+                    token outputs:surface
+                }
+            }
+
+            def Material "clean"
+            {
+                token outputs:surface.connect = </World/Markers/Looks/clean/Shader.outputs:surface>
+
+                def Shader "Shader"
+                {
+                    uniform token info:id = "UsdPreviewSurface"
+                    color3f inputs:diffuseColor = (0.55, 0.65, 0.8)
+                    color3f inputs:emissiveColor = (0.275, 0.325, 0.4)
+                    float inputs:roughness = 0.7
+                    token outputs:surface
+                }
+            }
+
+            def Material "front"
+            {
+                token outputs:surface.connect = </World/Markers/Looks/front/Shader.outputs:surface>
+
+                def Shader "Shader"
+                {
+                    uniform token info:id = "UsdPreviewSurface"
+                    color3f inputs:diffuseColor = (0.15, 0.45, 1)
+                    color3f inputs:emissiveColor = (0.12, 0.36, 0.8)
+                    float inputs:roughness = 0.7
+                    token outputs:surface
+                }
+            }
+
+            def Material "left"
+            {
+                token outputs:surface.connect = </World/Markers/Looks/left/Shader.outputs:surface>
+
+                def Shader "Shader"
+                {
+                    uniform token info:id = "UsdPreviewSurface"
+                    color3f inputs:diffuseColor = (0.1, 0.8, 0.2)
+                    color3f inputs:emissiveColor = (0.08, 0.64, 0.16)
+                    float inputs:roughness = 0.7
+                    token outputs:surface
+                }
+            }
+
+            def Material "right"
+            {
+                token outputs:surface.connect = </World/Markers/Looks/right/Shader.outputs:surface>
+
+                def Shader "Shader"
+                {
+                    uniform token info:id = "UsdPreviewSurface"
+                    color3f inputs:diffuseColor = (0.95, 0.15, 0.15)
+                    color3f inputs:emissiveColor = (0.76, 0.12, 0.12)
+                    float inputs:roughness = 0.7
+                    token outputs:surface
+                }
+            }
+
+            def Material "dot"
+            {
+                token outputs:surface.connect = </World/Markers/Looks/dot/Shader.outputs:surface>
+
+                def Shader "Shader"
+                {
+                    uniform token info:id = "UsdPreviewSurface"
+                    color3f inputs:diffuseColor = (0.9, 0.9, 0.9)
+                    color3f inputs:emissiveColor = (0.27, 0.27, 0.27)
+                    float inputs:roughness = 0.7
+                    token outputs:surface
+                }
+            }
+        }
+
+        def Sphere "glare_light" (
+            prepend apiSchemas = ["MaterialBindingAPI"]
+        )
+        {
+            rel material:binding = </World/Markers/Looks/glare>
+            bool primvars:doNotCastShadows = 1
+            bool primvars:invisibleToSecondaryRays = 1
+            double radius = 0.05
+            double3 xformOp:translate = (1.1233401679954311, 0.0982795299829072, 1.4104241719908024)
+            uniform token[] xformOpOrder = ["xformOp:translate"]
+        }
+
+        def Cylinder "glare_ray" (
+            prepend apiSchemas = ["MaterialBindingAPI"]
+        )
+        {
+            uniform token axis = "Z"
+            double height = 1.0700000000000003
+            rel material:binding = </World/Markers/Looks/glare>
+            bool primvars:doNotCastShadows = 1
+            bool primvars:invisibleToSecondaryRays = 1
+            double radius = 0.004
+            quatd xformOp:orient = (0.5735764363510463, 0.07139380484326964, -0.8160349234517084, 0)
+            double3 xformOp:translate = (0.6225176764308014, 0.05446323953219441, 1.2274433953115698)
+            uniform token[] xformOpOrder = ["xformOp:translate", "xformOp:orient"]
+        }
+
+        def Sphere "clean_light" (
+            prepend apiSchemas = ["MaterialBindingAPI"]
+        )
+        {
+            rel material:binding = </World/Markers/Looks/clean>
+            bool primvars:doNotCastShadows = 1
+            bool primvars:invisibleToSecondaryRays = 1
+            double radius = 0.04000000000000001
+            double3 xformOp:translate = (0.631848941422036, 0.7530082459165598, 1.6882917236212553)
+            uniform token[] xformOpOrder = ["xformOp:translate"]
+        }
+
+        def Cylinder "clean_ray" (
+            prepend apiSchemas = ["MaterialBindingAPI"]
+        )
+        {
+            uniform token axis = "Z"
+            double height = 1.07
+            rel material:binding = </World/Markers/Looks/clean>
+            bool primvars:doNotCastShadows = 1
+            bool primvars:invisibleToSecondaryRays = 1
+            double radius = 0.003
+            quatd xformOp:orient = (0.46174861323503386, 0.6794897197425116, -0.5701595732246949, 0)
+            double3 xformOp:translate = (0.3501496217047116, 0.41729206961209353, 1.3814283301734456)
+            uniform token[] xformOpOrder = ["xformOp:translate", "xformOp:orient"]
+        }
+
+        def Cube "cam_front" (
+            prepend apiSchemas = ["MaterialBindingAPI"]
+        )
+        {
+            rel material:binding = </World/Markers/Looks/front>
+            bool primvars:doNotCastShadows = 1
+            bool primvars:invisibleToSecondaryRays = 1
+            double size = 0.045
+            double3 xformOp:translate = (0.6, 0, 1)
+            uniform token[] xformOpOrder = ["xformOp:translate"]
+        }
+
+        def Cylinder "cam_front_ray" (
+            prepend apiSchemas = ["MaterialBindingAPI"]
+        )
+        {
+            uniform token axis = "Z"
+            double height = 0.47
+            rel material:binding = </World/Markers/Looks/front>
+            bool primvars:doNotCastShadows = 1
+            bool primvars:invisibleToSecondaryRays = 1
+            double radius = 0.003
+            quatd xformOp:orient = (0.7071067811865476, 0, -0.7071067811865475, 0)
+            double3 xformOp:translate = (0.365, 0, 1)
+            uniform token[] xformOpOrder = ["xformOp:translate", "xformOp:orient"]
+        }
+
+        def Cube "cam_left" (
+            prepend apiSchemas = ["MaterialBindingAPI"]
+        )
+        {
+            rel material:binding = </World/Markers/Looks/left>
+            bool primvars:doNotCastShadows = 1
+            bool primvars:invisibleToSecondaryRays = 1
+            double size = 0.045
+            double3 xformOp:translate = (0.579556, -0.155291, 1)
+            uniform token[] xformOpOrder = ["xformOp:translate"]
+        }
+
+        def Cylinder "cam_left_ray" (
+            prepend apiSchemas = ["MaterialBindingAPI"]
+        )
+        {
+            uniform token axis = "Z"
+            double height = 0.47000037651404847
+            rel material:binding = </World/Markers/Looks/left>
+            bool primvars:doNotCastShadows = 1
+            bool primvars:invisibleToSecondaryRays = 1
+            double radius = 0.003
+            quatd xformOp:orient = (0.7071067811865476, -0.18301208375103264, -0.6830128675223512, 0)
+            double3 xformOp:translate = (0.35256319393415403, -0.09446868110972663, 1)
+            uniform token[] xformOpOrder = ["xformOp:translate", "xformOp:orient"]
+        }
+
+        def Cube "cam_right" (
+            prepend apiSchemas = ["MaterialBindingAPI"]
+        )
+        {
+            rel material:binding = </World/Markers/Looks/right>
+            bool primvars:doNotCastShadows = 1
+            bool primvars:invisibleToSecondaryRays = 1
+            double size = 0.045
+            double3 xformOp:translate = (0.579556, 0.155291, 1)
+            uniform token[] xformOpOrder = ["xformOp:translate"]
+        }
+
+        def Cylinder "cam_right_ray" (
+            prepend apiSchemas = ["MaterialBindingAPI"]
+        )
+        {
+            uniform token axis = "Z"
+            double height = 0.47000037651404847
+            rel material:binding = </World/Markers/Looks/right>
+            bool primvars:doNotCastShadows = 1
+            bool primvars:invisibleToSecondaryRays = 1
+            double radius = 0.003
+            quatd xformOp:orient = (0.7071067811865476, 0.18301208375103264, -0.6830128675223512, 0)
+            double3 xformOp:translate = (0.35256319393415403, 0.09446868110972663, 1)
+            uniform token[] xformOpOrder = ["xformOp:translate", "xformOp:orient"]
+        }
+
+        def Sphere "orbit_0" (
+            prepend apiSchemas = ["MaterialBindingAPI"]
+        )
+        {
+            rel material:binding = </World/Markers/Looks/dot>
+            bool primvars:doNotCastShadows = 1
+            bool primvars:invisibleToSecondaryRays = 1
+            double radius = 0.008
+            double3 xformOp:translate = (0.4242640687119285, -0.42426406871192845, 1)
+            uniform token[] xformOpOrder = ["xformOp:translate"]
+        }
+
+        def Sphere "orbit_1" (
+            prepend apiSchemas = ["MaterialBindingAPI"]
+        )
+        {
+            rel material:binding = </World/Markers/Looks/dot>
+            bool primvars:doNotCastShadows = 1
+            bool primvars:invisibleToSecondaryRays = 1
+            double radius = 0.008
+            double3 xformOp:translate = (0.5196152422706632, -0.29999999999999993, 1)
+            uniform token[] xformOpOrder = ["xformOp:translate"]
+        }
+
+        def Sphere "orbit_2" (
+            prepend apiSchemas = ["MaterialBindingAPI"]
+        )
+        {
+            rel material:binding = </World/Markers/Looks/dot>
+            bool primvars:doNotCastShadows = 1
+            bool primvars:invisibleToSecondaryRays = 1
+            double radius = 0.008
+            double3 xformOp:translate = (0.579555495773441, -0.15529142706151244, 1)
+            uniform token[] xformOpOrder = ["xformOp:translate"]
+        }
+
+        def Sphere "orbit_3" (
+            prepend apiSchemas = ["MaterialBindingAPI"]
+        )
+        {
+            rel material:binding = </World/Markers/Looks/dot>
+            bool primvars:doNotCastShadows = 1
+            bool primvars:invisibleToSecondaryRays = 1
+            double radius = 0.008
+            double3 xformOp:translate = (0.6, 0, 1)
+            uniform token[] xformOpOrder = ["xformOp:translate"]
+        }
+
+        def Sphere "orbit_4" (
+            prepend apiSchemas = ["MaterialBindingAPI"]
+        )
+        {
+            rel material:binding = </World/Markers/Looks/dot>
+            bool primvars:doNotCastShadows = 1
+            bool primvars:invisibleToSecondaryRays = 1
+            double radius = 0.008
+            double3 xformOp:translate = (0.579555495773441, 0.15529142706151244, 1)
+            uniform token[] xformOpOrder = ["xformOp:translate"]
+        }
+
+        def Sphere "orbit_5" (
+            prepend apiSchemas = ["MaterialBindingAPI"]
+        )
+        {
+            rel material:binding = </World/Markers/Looks/dot>
+            bool primvars:doNotCastShadows = 1
+            bool primvars:invisibleToSecondaryRays = 1
+            double radius = 0.008
+            double3 xformOp:translate = (0.5196152422706632, 0.29999999999999993, 1)
+            uniform token[] xformOpOrder = ["xformOp:translate"]
+        }
+
+        def Sphere "orbit_6" (
+            prepend apiSchemas = ["MaterialBindingAPI"]
+        )
+        {
+            rel material:binding = </World/Markers/Looks/dot>
+            bool primvars:doNotCastShadows = 1
+            bool primvars:invisibleToSecondaryRays = 1
+            double radius = 0.008
+            double3 xformOp:translate = (0.4242640687119285, 0.42426406871192845, 1)
+            uniform token[] xformOpOrder = ["xformOp:translate"]
+        }
+
+        def Sphere "radial_0" (
+            prepend apiSchemas = ["MaterialBindingAPI"]
+        )
+        {
+            rel material:binding = </World/Markers/Looks/dot>
+            bool primvars:doNotCastShadows = 1
+            bool primvars:invisibleToSecondaryRays = 1
+            double radius = 0.008
+            double3 xformOp:translate = (0.4, 0, 1)
+            uniform token[] xformOpOrder = ["xformOp:translate"]
+        }
+
+        def Sphere "radial_1" (
+            prepend apiSchemas = ["MaterialBindingAPI"]
+        )
+        {
+            rel material:binding = </World/Markers/Looks/dot>
+            bool primvars:doNotCastShadows = 1
+            bool primvars:invisibleToSecondaryRays = 1
+            double radius = 0.008
+            double3 xformOp:translate = (0.5, 0, 1)
+            uniform token[] xformOpOrder = ["xformOp:translate"]
+        }
+
+        def Sphere "radial_2" (
+            prepend apiSchemas = ["MaterialBindingAPI"]
+        )
+        {
+            rel material:binding = </World/Markers/Looks/dot>
+            bool primvars:doNotCastShadows = 1
+            bool primvars:invisibleToSecondaryRays = 1
+            double radius = 0.008
+            double3 xformOp:translate = (0.6, 0, 1)
+            uniform token[] xformOpOrder = ["xformOp:translate"]
+        }
+
+        def Sphere "radial_3" (
+            prepend apiSchemas = ["MaterialBindingAPI"]
+        )
+        {
+            rel material:binding = </World/Markers/Looks/dot>
+            bool primvars:doNotCastShadows = 1
+            bool primvars:invisibleToSecondaryRays = 1
+            double radius = 0.008
+            double3 xformOp:translate = (0.7, 0, 1)
+            uniform token[] xformOpOrder = ["xformOp:translate"]
+        }
+
+        def Sphere "radial_4" (
+            prepend apiSchemas = ["MaterialBindingAPI"]
+        )
+        {
+            rel material:binding = </World/Markers/Looks/dot>
+            bool primvars:doNotCastShadows = 1
+            bool primvars:invisibleToSecondaryRays = 1
+            double radius = 0.008
+            double3 xformOp:translate = (0.7999999999999999, 0, 1)
+            uniform token[] xformOpOrder = ["xformOp:translate"]
+        }
+
+        def Sphere "radial_5" (
+            prepend apiSchemas = ["MaterialBindingAPI"]
+        )
+        {
+            rel material:binding = </World/Markers/Looks/dot>
+            bool primvars:doNotCastShadows = 1
+            bool primvars:invisibleToSecondaryRays = 1
+            double radius = 0.008
+            double3 xformOp:translate = (0.8999999999999999, 0, 1)
+            uniform token[] xformOpOrder = ["xformOp:translate"]
+        }
+    }
+
+    def Camera "OverviewCamera"
+    {
+        float2 clippingRange = (0.01, 100)
+        float focalLength = 24
+        float horizontalAperture = 20.955
+        float verticalAperture = 11.787188
+        quatd xformOp:orient = (0.7567977905273438, 0.31347590684890747, 0.21949820220470428, 0.5299155116081238)
+        double3 xformOp:scale = (1, 1, 1)
+        double3 xformOp:translate = (2.0118186473846436, -0.2820584774017334, 2.855634927749634)
+        uniform token[] xformOpOrder = ["xformOp:translate", "xformOp:orient", "xformOp:scale"]
+    }
+}
+

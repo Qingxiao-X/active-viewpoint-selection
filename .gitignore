@@ -5,3 +5,6 @@ data/
 runs/
 results/
 .pytest_cache/
+sim_env/outputs_*/
+sim_env/hprc/logs/*.out
+*.npy
