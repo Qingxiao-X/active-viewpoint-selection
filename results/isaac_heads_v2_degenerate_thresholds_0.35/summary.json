@@ -1,0 +1,479 @@
+{
+  "note": "isaac backend",
+  "budget": 6,
+  "accept_rule": {
+    "min_det_score": 0.5,
+    "min_top1_similarity": 0.35,
+    "min_margin": 0.1
+  },
+  "n_episodes_per_policy": 180,
+  "preview_baselines": [
+    "greedy_preview"
+  ],
+  "summary": {
+    "random": {
+      "n_episodes": 180,
+      "n_valid": 180,
+      "infra_errors": 0,
+      "success_rate": 1.0,
+      "failure_rate": 0.0,
+      "incorrect_accept_rate": 0.0,
+      "budget_exhausted_rate": 0.0,
+      "mean_steps_to_success": 0.0,
+      "mean_path_length_m": 0.0,
+      "mean_path_length_success_m": 0.0,
+      "mean_previews": 0.0,
+      "mean_acquisitions": 1.0,
+      "inference_ms_mean": NaN,
+      "inference_ms_p95": NaN,
+      "sense_ms_mean": 566.6957002547052,
+      "success_vs_budget": [
+        1.0,
+        1.0,
+        1.0,
+        1.0,
+        1.0,
+        1.0,
+        1.0
+      ],
+      "incorrect_accept_vs_budget": [
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0
+      ]
+    },
+    "greedy_heuristic": {
+      "n_episodes": 180,
+      "n_valid": 180,
+      "infra_errors": 0,
+      "success_rate": 1.0,
+      "failure_rate": 0.0,
+      "incorrect_accept_rate": 0.0,
+      "budget_exhausted_rate": 0.0,
+      "mean_steps_to_success": 0.0,
+      "mean_path_length_m": 0.0,
+      "mean_path_length_success_m": 0.0,
+      "mean_previews": 0.0,
+      "mean_acquisitions": 1.0,
+      "inference_ms_mean": NaN,
+      "inference_ms_p95": NaN,
+      "sense_ms_mean": 301.2821305543184,
+      "success_vs_budget": [
+        1.0,
+        1.0,
+        1.0,
+        1.0,
+        1.0,
+        1.0,
+        1.0
+      ],
+      "incorrect_accept_vs_budget": [
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0
+      ]
+    },
+    "greedy_preview": {
+      "n_episodes": 180,
+      "n_valid": 180,
+      "infra_errors": 0,
+      "success_rate": 1.0,
+      "failure_rate": 0.0,
+      "incorrect_accept_rate": 0.0,
+      "budget_exhausted_rate": 0.0,
+      "mean_steps_to_success": 0.0,
+      "mean_path_length_m": 0.0,
+      "mean_path_length_success_m": 0.0,
+      "mean_previews": 0.0,
+      "mean_acquisitions": 1.0,
+      "inference_ms_mean": NaN,
+      "inference_ms_p95": NaN,
+      "sense_ms_mean": 301.0061668542524,
+      "success_vs_budget": [
+        1.0,
+        1.0,
+        1.0,
+        1.0,
+        1.0,
+        1.0,
+        1.0
+      ],
+      "incorrect_accept_vs_budget": [
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0
+      ]
+    },
+    "learned": {
+      "n_episodes": 180,
+      "n_valid": 180,
+      "infra_errors": 0,
+      "success_rate": 1.0,
+      "failure_rate": 0.0,
+      "incorrect_accept_rate": 0.0,
+      "budget_exhausted_rate": 0.0,
+      "mean_steps_to_success": 0.0,
+      "mean_path_length_m": 0.0,
+      "mean_path_length_success_m": 0.0,
+      "mean_previews": 0.0,
+      "mean_acquisitions": 1.0,
+      "inference_ms_mean": NaN,
+      "inference_ms_p95": NaN,
+      "sense_ms_mean": 301.1013586798476,
+      "success_vs_budget": [
+        1.0,
+        1.0,
+        1.0,
+        1.0,
+        1.0,
+        1.0,
+        1.0
+      ],
+      "incorrect_accept_vs_budget": [
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0
+      ]
+    }
+  },
+  "by_split": {
+    "test": {
+      "random": {
+        "n_episodes": 90,
+        "n_valid": 90,
+        "infra_errors": 0,
+        "success_rate": 1.0,
+        "failure_rate": 0.0,
+        "incorrect_accept_rate": 0.0,
+        "budget_exhausted_rate": 0.0,
+        "mean_steps_to_success": 0.0,
+        "mean_path_length_m": 0.0,
+        "mean_path_length_success_m": 0.0,
+        "mean_previews": 0.0,
+        "mean_acquisitions": 1.0,
+        "inference_ms_mean": NaN,
+        "inference_ms_p95": NaN,
+        "sense_ms_mean": 762.3525453110536,
+        "success_vs_budget": [
+          1.0,
+          1.0,
+          1.0,
+          1.0,
+          1.0,
+          1.0,
+          1.0
+        ],
+        "incorrect_accept_vs_budget": [
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0
+        ]
+      },
+      "greedy_heuristic": {
+        "n_episodes": 90,
+        "n_valid": 90,
+        "infra_errors": 0,
+        "success_rate": 1.0,
+        "failure_rate": 0.0,
+        "incorrect_accept_rate": 0.0,
+        "budget_exhausted_rate": 0.0,
+        "mean_steps_to_success": 0.0,
+        "mean_path_length_m": 0.0,
+        "mean_path_length_success_m": 0.0,
+        "mean_previews": 0.0,
+        "mean_acquisitions": 1.0,
+        "inference_ms_mean": NaN,
+        "inference_ms_p95": NaN,
+        "sense_ms_mean": 296.31750122126607,
+        "success_vs_budget": [
+          1.0,
+          1.0,
+          1.0,
+          1.0,
+          1.0,
+          1.0,
+          1.0
+        ],
+        "incorrect_accept_vs_budget": [
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0
+        ]
+      },
+      "greedy_preview": {
+        "n_episodes": 90,
+        "n_valid": 90,
+        "infra_errors": 0,
+        "success_rate": 1.0,
+        "failure_rate": 0.0,
+        "incorrect_accept_rate": 0.0,
+        "budget_exhausted_rate": 0.0,
+        "mean_steps_to_success": 0.0,
+        "mean_path_length_m": 0.0,
+        "mean_path_length_success_m": 0.0,
+        "mean_previews": 0.0,
+        "mean_acquisitions": 1.0,
+        "inference_ms_mean": NaN,
+        "inference_ms_p95": NaN,
+        "sense_ms_mean": 295.90154801391895,
+        "success_vs_budget": [
+          1.0,
+          1.0,
+          1.0,
+          1.0,
+          1.0,
+          1.0,
+          1.0
+        ],
+        "incorrect_accept_vs_budget": [
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0
+        ]
+      },
+      "learned": {
+        "n_episodes": 90,
+        "n_valid": 90,
+        "infra_errors": 0,
+        "success_rate": 1.0,
+        "failure_rate": 0.0,
+        "incorrect_accept_rate": 0.0,
+        "budget_exhausted_rate": 0.0,
+        "mean_steps_to_success": 0.0,
+        "mean_path_length_m": 0.0,
+        "mean_path_length_success_m": 0.0,
+        "mean_previews": 0.0,
+        "mean_acquisitions": 1.0,
+        "inference_ms_mean": NaN,
+        "inference_ms_p95": NaN,
+        "sense_ms_mean": 295.5450083646509,
+        "success_vs_budget": [
+          1.0,
+          1.0,
+          1.0,
+          1.0,
+          1.0,
+          1.0,
+          1.0
+        ],
+        "incorrect_accept_vs_budget": [
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0
+        ]
+      }
+    },
+    "test_heldout_identity": {
+      "random": {
+        "n_episodes": 90,
+        "n_valid": 90,
+        "infra_errors": 0,
+        "success_rate": 1.0,
+        "failure_rate": 0.0,
+        "incorrect_accept_rate": 0.0,
+        "budget_exhausted_rate": 0.0,
+        "mean_steps_to_success": 0.0,
+        "mean_path_length_m": 0.0,
+        "mean_path_length_success_m": 0.0,
+        "mean_previews": 0.0,
+        "mean_acquisitions": 1.0,
+        "inference_ms_mean": NaN,
+        "inference_ms_p95": NaN,
+        "sense_ms_mean": 371.0388551983568,
+        "success_vs_budget": [
+          1.0,
+          1.0,
+          1.0,
+          1.0,
+          1.0,
+          1.0,
+          1.0
+        ],
+        "incorrect_accept_vs_budget": [
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0
+        ]
+      },
+      "greedy_heuristic": {
+        "n_episodes": 90,
+        "n_valid": 90,
+        "infra_errors": 0,
+        "success_rate": 1.0,
+        "failure_rate": 0.0,
+        "incorrect_accept_rate": 0.0,
+        "budget_exhausted_rate": 0.0,
+        "mean_steps_to_success": 0.0,
+        "mean_path_length_m": 0.0,
+        "mean_path_length_success_m": 0.0,
+        "mean_previews": 0.0,
+        "mean_acquisitions": 1.0,
+        "inference_ms_mean": NaN,
+        "inference_ms_p95": NaN,
+        "sense_ms_mean": 306.2467598873708,
+        "success_vs_budget": [
+          1.0,
+          1.0,
+          1.0,
+          1.0,
+          1.0,
+          1.0,
+          1.0
+        ],
+        "incorrect_accept_vs_budget": [
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0
+        ]
+      },
+      "greedy_preview": {
+        "n_episodes": 90,
+        "n_valid": 90,
+        "infra_errors": 0,
+        "success_rate": 1.0,
+        "failure_rate": 0.0,
+        "incorrect_accept_rate": 0.0,
+        "budget_exhausted_rate": 0.0,
+        "mean_steps_to_success": 0.0,
+        "mean_path_length_m": 0.0,
+        "mean_path_length_success_m": 0.0,
+        "mean_previews": 0.0,
+        "mean_acquisitions": 1.0,
+        "inference_ms_mean": NaN,
+        "inference_ms_p95": NaN,
+        "sense_ms_mean": 306.1107856945859,
+        "success_vs_budget": [
+          1.0,
+          1.0,
+          1.0,
+          1.0,
+          1.0,
+          1.0,
+          1.0
+        ],
+        "incorrect_accept_vs_budget": [
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0
+        ]
+      },
+      "learned": {
+        "n_episodes": 90,
+        "n_valid": 90,
+        "infra_errors": 0,
+        "success_rate": 1.0,
+        "failure_rate": 0.0,
+        "incorrect_accept_rate": 0.0,
+        "budget_exhausted_rate": 0.0,
+        "mean_steps_to_success": 0.0,
+        "mean_path_length_m": 0.0,
+        "mean_path_length_success_m": 0.0,
+        "mean_previews": 0.0,
+        "mean_acquisitions": 1.0,
+        "inference_ms_mean": NaN,
+        "inference_ms_p95": NaN,
+        "sense_ms_mean": 306.65770899504423,
+        "success_vs_budget": [
+          1.0,
+          1.0,
+          1.0,
+          1.0,
+          1.0,
+          1.0,
+          1.0
+        ],
+        "incorrect_accept_vs_budget": [
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0
+        ]
+      }
+    }
+  },
+  "paired_vs_learned": [
+    {
+      "policy": "learned",
+      "vs": "random",
+      "n_pairs": 180,
+      "success_diff": 0.0,
+      "ci95_low": 0.0,
+      "ci95_high": 0.0,
+      "both_success": 180,
+      "only_learned": 0,
+      "only_other": 0,
+      "neither": 0
+    },
+    {
+      "policy": "learned",
+      "vs": "greedy_heuristic",
+      "n_pairs": 180,
+      "success_diff": 0.0,
+      "ci95_low": 0.0,
+      "ci95_high": 0.0,
+      "both_success": 180,
+      "only_learned": 0,
+      "only_other": 0,
+      "neither": 0
+    },
+    {
+      "policy": "learned",
+      "vs": "greedy_preview",
+      "n_pairs": 180,
+      "success_diff": 0.0,
+      "ci95_low": 0.0,
+      "ci95_high": 0.0,
+      "both_success": 180,
+      "only_learned": 0,
+      "only_other": 0,
+      "neither": 0
+    }
+  ]
+}

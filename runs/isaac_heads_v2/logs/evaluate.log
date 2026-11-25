@@ -1,0 +1,698 @@
+[Info] [carb] Logging to file: /isaac-sim/kit/logs/Kit/Isaac-Sim Python/5.1/kit_20261110_215935.log
+2026-11-11T03:59:35Z [108ms] [Warning] [carb.crashreporter-breakpad.plugin] [previous crash] preventing upload of minidump due to user opt-out: '/isaac-sim/kit/data/Kit/Isaac-Sim Python/5.1/d19e927c-f32a-4ec9-f5a4bc81-6b749de5.dmp'
+2026-11-11T03:59:35Z [133ms] [Warning] [carb.crashreporter-breakpad.plugin] [previous crash] preventing upload of minidump due to user opt-out: '/isaac-sim/kit/data/Kit/Isaac-Sim Python/5.1/32f64fb5-63fd-43a5-829b0191-918af9a2.dmp'
+2026-11-11T03:59:35Z [148ms] [Warning] [carb.crashreporter-breakpad.plugin] [previous crash] preventing upload of minidump due to user opt-out: '/isaac-sim/kit/data/Kit/Isaac-Sim Python/5.1/53a2ef94-a8d0-4908-f0a8438b-9c543250.dmp'
+2026-11-11T03:59:35Z [350ms] [Warning] [omni.ext.plugin] [ext: .git] Extensions config 'extension.toml' doesn't exist '/scratch/user/chenzc2001/qx/689/active-viewpoint-selection/.git' or '/scratch/user/chenzc2001/qx/689/active-viewpoint-selection/.git/config'
+2026-11-11T03:59:35Z [350ms] [Warning] [omni.ext.plugin] [ext: avs] Extensions config 'extension.toml' doesn't exist '/scratch/user/chenzc2001/qx/689/active-viewpoint-selection/avs' or '/scratch/user/chenzc2001/qx/689/active-viewpoint-selection/avs/config'
+2026-11-11T03:59:35Z [350ms] [Warning] [omni.ext.plugin] [ext: configs] Extensions config 'extension.toml' doesn't exist '/scratch/user/chenzc2001/qx/689/active-viewpoint-selection/configs' or '/scratch/user/chenzc2001/qx/689/active-viewpoint-selection/configs/config'
+2026-11-11T03:59:35Z [350ms] [Warning] [omni.ext.plugin] [ext: data] Extensions config 'extension.toml' doesn't exist '/scratch/user/chenzc2001/qx/689/active-viewpoint-selection/data' or '/scratch/user/chenzc2001/qx/689/active-viewpoint-selection/data/config'
+2026-11-11T03:59:35Z [350ms] [Warning] [omni.ext.plugin] [ext: results] Extensions config 'extension.toml' doesn't exist '/scratch/user/chenzc2001/qx/689/active-viewpoint-selection/results' or '/scratch/user/chenzc2001/qx/689/active-viewpoint-selection/results/config'
+2026-11-11T03:59:35Z [350ms] [Warning] [omni.ext.plugin] [ext: hprc] Extensions config 'extension.toml' doesn't exist '/scratch/user/chenzc2001/qx/689/active-viewpoint-selection/hprc' or '/scratch/user/chenzc2001/qx/689/active-viewpoint-selection/hprc/config'
+2026-11-11T03:59:35Z [351ms] [Warning] [omni.ext.plugin] [ext: runs] Extensions config 'extension.toml' doesn't exist '/scratch/user/chenzc2001/qx/689/active-viewpoint-selection/runs' or '/scratch/user/chenzc2001/qx/689/active-viewpoint-selection/runs/config'
+2026-11-11T03:59:35Z [351ms] [Warning] [omni.ext.plugin] [ext: scripts] Extensions config 'extension.toml' doesn't exist '/scratch/user/chenzc2001/qx/689/active-viewpoint-selection/scripts' or '/scratch/user/chenzc2001/qx/689/active-viewpoint-selection/scripts/config'
+2026-11-11T03:59:35Z [351ms] [Warning] [omni.ext.plugin] [ext: tests] Extensions config 'extension.toml' doesn't exist '/scratch/user/chenzc2001/qx/689/active-viewpoint-selection/tests' or '/scratch/user/chenzc2001/qx/689/active-viewpoint-selection/tests/config'
+2026-11-11T03:59:35Z [351ms] [Warning] [omni.ext.plugin] [ext: tools] Extensions config 'extension.toml' doesn't exist '/scratch/user/chenzc2001/qx/689/active-viewpoint-selection/tools' or '/scratch/user/chenzc2001/qx/689/active-viewpoint-selection/tools/config'
+[4.231s] [ext: omni.kit.async_engine-0.0.3] startup
+[4.946s] [ext: omni.metrics.core-0.0.3] startup
+[4.947s] [ext: omni.client.lib-1.1.0] startup
+[5.773s] [ext: omni.blobkey-1.1.2] startup
+[5.801s] [ext: omni.stats-1.0.1] startup
+[5.835s] [ext: omni.datastore-0.0.0] startup
+[6.250s] [ext: omni.client-1.3.0] startup
+[6.498s] [ext: omni.ujitso.default-1.0.0] startup
+[6.565s] [ext: omni.hsscclient-1.1.2] startup
+[6.775s] [ext: omni.gpu_foundation.shadercache.vulkan-1.0.0] startup
+[6.802s] [ext: omni.assets.plugins-0.0.0] startup
+[6.885s] [ext: omni.gpu_foundation-0.0.0] startup
+[7.740s] [ext: carb.windowing.plugins-1.0.0] startup
+2026-11-11T03:59:43Z [7,480ms] [Warning] [carb.windowing-glfw.plugin] GLFW initialization failed.
+2026-11-11T03:59:43Z [7,480ms] [Warning] [carb] Failed to startup plugin carb.windowing-glfw.plugin (interfaces: [carb::windowing::IGLContext v1.0],[carb::windowing::IWindowing v1.5]) (impl: carb.windowing-glfw.plugin)
+[7.785s] [ext: omni.kit.renderer.init-0.0.0] startup
+2026-11-11T03:59:43Z [8,076ms] [Warning] [omni.platforminfo.plugin] failed to open the default display.  Can't verify X Server version.
+2026-11-11T03:59:43Z [8,082ms] [Warning] [carb.cudainterop.plugin] CUDA_VISIBLE_DEVICES environment variable is set.
+2026-11-11T03:59:43Z [8,082ms] [Warning] [carb.cudainterop.plugin] Note CUDA device enumeration and Omniverse device enumeration are different.
+2026-11-11T03:59:43Z [8,082ms] [Warning] [carb.cudainterop.plugin] Setting CUDA_VISIBLE_DEVICES can lead to undesired behavior or crashes.
+
+|---------------------------------------------------------------------------------------------|
+| Driver Version: 580.126.20    | Graphics API: Vulkan
+|=============================================================================================|
+| GPU | Name                             | Active | LDA | GPU Memory | Vendor-ID | LUID       |
+|     |                                  |        |     |            | Device-ID | UUID       |
+|     |                                  |        |     |            | Bus-ID    |            |
+|---------------------------------------------------------------------------------------------|
+| 0   | Tesla T4                         | Yes: 0 |     | 16630   MB | 10de      | 0          |
+|     |                                  |        |     |            | 1eb8      | 3e9d8345.. |
+|     |                                  |        |     |            | 86        |            |
+|=============================================================================================|
+| OS: 24.04.2 LTS (Noble Numbat) ubuntu, Version: 24.04.2, Kernel: 4.18.0-553.125.1.el8_10.x86_64
+| Processor: Intel(R) Xeon(R) Gold 6248R CPU @ 3.00GHz
+| Cores: 48 | Logical Cores: 48
+|---------------------------------------------------------------------------------------------|
+| Total Memory (MB): 384915 | Free Memory: 291066
+| Total Page/Swap (MB): 16383 | Free Page/Swap: 14278
+|---------------------------------------------------------------------------------------------|
+2026-11-11T03:59:46Z [11,098ms] [Warning] [gpu.foundation.plugin] PCIe link width current (8) and maximum (16) for device 0 don't match.
+[11.768s] [ext: omni.kit.pipapi-0.0.0] startup
+[11.772s] [ext: omni.kit.pip_archive-0.0.0] startup
+[11.773s] [ext: omni.pip.compute-1.6.3] startup
+[11.779s] [ext: omni.materialx.libs-1.0.7] startup
+[11.955s] [ext: omni.pip.cloud-1.4.3] startup
+[11.975s] [ext: omni.isaac.core_archive-3.0.0] startup
+[11.976s] [ext: omni.usd.config-1.0.6] startup
+[11.984s] [ext: omni.gpucompute.plugins-0.0.0] startup
+[12.019s] [ext: omni.usd.libs-1.0.1] startup
+[14.261s] [ext: omni.kit.telemetry-0.5.2] startup
+[14.440s] [ext: omni.mdl-56.0.3] startup
+[14.914s] [ext: omni.iray.libs-0.0.0] startup
+[16.229s] [ext: omni.mdl.neuraylib-0.2.12] startup
+[16.289s] [ext: omni.kit.usd.mdl-1.1.5] startup
+[17.532s] [ext: omni.isaac.ml_archive-3.0.4] startup
+[17.533s] [ext: omni.kit.loop-isaac-1.3.7] startup
+[17.629s] [ext: omni.kit.test-2.0.1] startup
+[18.164s] [ext: omni.appwindow-1.1.10] startup
+2026-11-11T03:59:53Z [17,877ms] [Warning] [carb.windowing-glfw.plugin] GLFW initialization failed.
+2026-11-11T03:59:53Z [17,877ms] [Warning] [carb] Failed to startup plugin carb.windowing-glfw.plugin (interfaces: [carb::windowing::IGLContext v1.0],[carb::windowing::IWindowing v1.5]) (impl: carb.windowing-glfw.plugin)
+[18.202s] [ext: omni.kit.renderer.core-1.1.0] startup
+2026-11-11T03:59:53Z [18,108ms] [Warning] [carb.windowing-glfw.plugin] GLFW initialization failed.
+2026-11-11T03:59:53Z [18,108ms] [Warning] [carb] Failed to startup plugin carb.windowing-glfw.plugin (interfaces: [carb::windowing::IGLContext v1.0],[carb::windowing::IWindowing v1.5]) (impl: carb.windowing-glfw.plugin)
+2026-11-11T03:59:53Z [18,117ms] [Warning] [carb.windowing-glfw.plugin] GLFW initialization failed.
+2026-11-11T03:59:53Z [18,117ms] [Warning] [carb] Failed to startup plugin carb.windowing-glfw.plugin (interfaces: [carb::windowing::IGLContext v1.0],[carb::windowing::IWindowing v1.5]) (impl: carb.windowing-glfw.plugin)
+[18.457s] [ext: omni.kit.renderer.capture-0.0.0] startup
+[18.480s] [ext: omni.kit.renderer.imgui-2.0.5] startup
+2026-11-11T03:59:53Z [18,295ms] [Warning] [carb.windowing-glfw.plugin] GLFW initialization failed.
+2026-11-11T03:59:53Z [18,295ms] [Warning] [carb] Failed to startup plugin carb.windowing-glfw.plugin (interfaces: [carb::windowing::IGLContext v1.0],[carb::windowing::IWindowing v1.5]) (impl: carb.windowing-glfw.plugin)
+2026-11-11T03:59:53Z [18,297ms] [Warning] [carb.windowing-glfw.plugin] GLFW initialization failed.
+2026-11-11T03:59:53Z [18,297ms] [Warning] [carb] Failed to startup plugin carb.windowing-glfw.plugin (interfaces: [carb::windowing::IGLContext v1.0],[carb::windowing::IWindowing v1.5]) (impl: carb.windowing-glfw.plugin)
+2026-11-11T03:59:53Z [18,316ms] [Warning] [carb.windowing-glfw.plugin] GLFW initialization failed.
+2026-11-11T03:59:53Z [18,316ms] [Warning] [carb] Failed to startup plugin carb.windowing-glfw.plugin (interfaces: [carb::windowing::IGLContext v1.0],[carb::windowing::IWindowing v1.5]) (impl: carb.windowing-glfw.plugin)
+[18.906s] [ext: omni.ui-2.27.1] startup
+[19.096s] [ext: omni.kit.mainwindow-1.0.3] startup
+[19.098s] [ext: carb.audio-0.1.0] startup
+[19.208s] [ext: omni.uiaudio-1.0.0] startup
+[19.225s] [ext: omni.kit.uiapp-0.0.0] startup
+[19.225s] [ext: omni.usd.schema.metrics.assembler-107.3.1] startup
+[19.229s] [ext: omni.usd.schema.audio-0.0.0] startup
+[19.248s] [ext: omni.anim.graph.schema-107.3.3] startup
+[19.373s] [ext: omni.usd_resolver-1.0.0] startup
+[19.417s] [ext: omni.usd.core-1.5.3] startup
+[19.506s] [ext: omni.usd.schema.render_settings.rtx-0.0.0] startup
+[19.651s] [ext: omni.usd.schema.semantics-0.0.0] startup
+[19.658s] [ext: isaacsim.robot.schema-3.6.0] startup
+[19.724s] [ext: omni.usd.schema.geospatial-0.0.0] startup
+[19.739s] [ext: omni.usd.schema.anim-0.0.0] startup
+[19.843s] [ext: omni.kit.window.popup_dialog-2.0.24] startup
+[19.889s] [ext: usdrt.scenegraph-7.6.1] startup
+[20.492s] [ext: omni.timeline-1.0.14] startup
+[20.528s] [ext: omni.resourcemonitor-107.0.1] startup
+[20.554s] [ext: omni.activity.core-1.0.3] startup
+[20.584s] [ext: omni.kit.widget.nucleus_connector-2.0.1] startup
+[20.595s] [ext: omni.hydra.usdrt_delegate-7.5.1] startup
+[20.746s] [ext: omni.kit.actions.core-1.0.0] startup
+[20.782s] [ext: omni.graph.exec-0.9.6] startup
+[20.784s] [ext: omni.kit.commands-1.4.10] startup
+[20.810s] [ext: omni.kit.usd_undo-0.1.8] startup
+[20.812s] [ext: omni.kit.exec.core-0.13.4] startup
+[20.855s] [ext: omni.kit.audiodeviceenum-1.0.2] startup
+[20.877s] [ext: omni.hydra.scene_delegate-0.3.4] startup
+[20.944s] [ext: omni.usd-1.13.10] startup
+[21.215s] [ext: omni.kit.asset_converter-5.0.17] startup
+[21.678s] [ext: omni.usd.schema.flow-107.1.1] startup
+[21.681s] [ext: omni.usd.schema.omnigraph-1.0.0] startup
+[21.725s] [ext: omni.usd.schema.omni_sensors-0.0.0] startup
+[21.725s] [ext: omni.anim.navigation.schema-107.3.3] startup
+[21.743s] [ext: omni.inspect-1.0.2] startup
+[21.761s] [ext: omni.kit.notification_manager-1.0.10] startup
+[21.771s] [ext: omni.graph.core-2.184.5] startup
+[21.901s] [ext: isaacsim.core.deprecation_manager-0.2.7] startup
+[21.904s] [ext: omni.usd.schema.physx-107.3.26] startup
+[22.188s] [ext: omni.usd.schema.isaac-3.0.5] startup
+[22.188s] [ext: omni.usd.schema.omniscripting-1.0.0] startup
+[22.194s] [ext: omni.usd.schema.omni_lens_distortion-0.0.0] startup
+[22.196s] [ext: omni.kvdb-107.3.26] startup
+[22.230s] [ext: omni.usdphysics-107.3.26] startup
+[22.254s] [ext: omni.physx.foundation-107.3.26] startup
+[22.323s] [ext: omni.localcache-107.3.26] startup
+[22.337s] [ext: omni.convexdecomposition-107.3.26] startup
+[22.400s] [ext: omni.physx.cooking-107.3.26] startup
+[22.470s] [ext: omni.physx-107.3.26] startup
+[22.759s] [ext: omni.physics-107.3.26] startup
+[22.801s] [ext: omni.kit.usd.layers-2.2.11] startup
+[22.917s] [ext: omni.physics.physx-107.3.26] startup
+2026-11-11T03:59:58Z [22,625ms] [Warning] [carb] Acquiring non optional plugin interface which is not listed as dependency: [omni::physx::IPhysxBenchmarks v1.0] (plugin: <default plugin>), by client: omni.physics.physx.plugin. Add it to CARB_PLUGIN_IMPL_DEPS() macro of a client.
+[22.934s] [ext: omni.physics.stageupdate-107.3.26] startup
+[22.952s] [ext: omni.kit.numpy.common-0.1.3] startup
+[22.969s] [ext: isaacsim.core.version-2.0.6] startup
+[22.971s] [ext: omni.isaac.dynamic_control-2.0.7] startup
+2026-11-11T03:59:58Z [22,749ms] [Warning] [omni.isaac.dynamic_control] omni.isaac.dynamic_control is deprecated as of Isaac Sim 4.5. No action is needed from end-users.
+[23.054s] [ext: isaacsim.storage.native-1.5.1] startup
+[23.062s] [ext: omni.kit.menu.core-1.1.2] startup
+[23.067s] [ext: omni.kit.helper.file_utils-0.1.9] startup
+[23.072s] [ext: omni.usd.metrics.assembler-107.3.1] startup
+[23.140s] [ext: omni.kit.widget.context_menu-1.2.5] startup
+[23.176s] [ext: omni.warp.core-1.8.2] startup
+[23.706s] [ext: omni.usd.metrics.assembler.physics-107.3.26] startup
+[23.731s] [ext: omni.physics.tensors-107.3.26] startup
+[23.798s] [ext: omni.kit.context_menu-1.8.6] startup
+[23.809s] [ext: omni.kit.clipboard-1.0.5] startup
+[23.811s] [ext: isaacsim.core.utils-3.5.1] startup
+[23.858s] [ext: omni.kit.widget.filebrowser-2.12.3] startup
+[23.897s] [ext: omni.kit.widget.options_menu-1.1.6] startup
+[23.922s] [ext: omni.kit.widget.path_field-2.0.11] startup
+[23.927s] [ext: omni.index.libs-380600.8087.0] startup
+[23.927s] [ext: omni.ui.scene-1.11.5] startup
+[24.045s] [ext: omni.kit.widget.options_button-1.0.3] startup
+[24.047s] [ext: omni.kit.widget.browser_bar-2.0.10] startup
+[24.051s] [ext: omni.index-1.0.1] startup
+[24.093s] [ext: omni.hydra.rtx.shadercache.vulkan-1.0.0] startup
+[24.095s] [ext: omni.kit.window.filepicker-2.13.4] startup
+[24.244s] [ext: omni.volume-0.5.2] startup
+[24.402s] [ext: omni.ujitso.client-0.0.0] startup
+[24.403s] [ext: omni.graph.tools-1.79.2] startup
+[24.594s] [ext: omni.graph.image.core-0.6.1] startup
+[24.622s] [ext: omni.hydra.rtx-1.0.0] startup
+2026-11-11T04:00:01Z [25,628ms] [Warning] [omni.log] Source: omni.hydra was already registered.
+[26.857s] [ext: omni.kit.window.file_importer-1.1.18] startup
+[26.896s] [ext: omni.kit.menu.utils-2.0.5] startup
+[26.941s] [ext: omni.graph.image.nodes-1.3.1] startup
+[27.000s] [ext: omni.kit.widget.searchable_combobox-1.0.6] startup
+[27.005s] [ext: omni.kit.hydra_texture-1.4.6] startup
+[27.057s] [ext: omni.kit.material.library-2.0.7] startup
+[27.126s] [ext: omni.hydra.engine.stats-1.0.3] startup
+[27.145s] [ext: omni.kit.viewport.scene_camera_model-1.0.6] startup
+[27.180s] [ext: omni.kit.widget.settings-1.2.6] startup
+[27.204s] [ext: omni.kit.viewport.legacy_gizmos-1.0.19] startup
+[27.227s] [ext: omni.kit.widget.viewport-107.1.3] startup
+[27.268s] [ext: omni.kit.viewport.registry-104.0.6] startup
+[27.270s] [ext: omni.kit.raycast.query-1.1.0] startup
+[27.300s] [ext: omni.physx.tensors-107.3.26] startup
+[27.382s] [ext: omni.kit.window.drop_support-1.0.5] startup
+[27.384s] [ext: omni.kit.primitive.mesh-1.0.17] startup
+[27.402s] [ext: omni.kit.viewport.window-107.2.0] startup
+[27.507s] [ext: omni.kit.window.preferences-1.8.0] startup
+[27.550s] [ext: isaacsim.core.simulation_manager-1.4.4] startup
+[46.019s] [ext: omni.graph.action_core-1.1.7] startup
+[46.079s] [ext: omni.graph-1.141.2] startup
+[46.382s] [ext: omni.kit.viewport.utility-1.1.2] startup
+[46.387s] [ext: omni.kit.viewport.menubar.core-107.2.1] startup
+[46.456s] [ext: isaacsim.core.prims-0.6.1] startup
+[46.598s] [ext: omni.graph.action_nodes-1.50.4] startup
+[46.674s] [ext: omni.kit.stage_template.core-1.1.22] startup
+[46.680s] [ext: omni.syntheticdata-0.6.13] startup
+[47.094s] [ext: omni.graph.nodes-1.170.10] startup
+[47.673s] [ext: omni.graph.action-1.130.0] startup
+[47.678s] [ext: omni.kit.stage_templates-2.0.0] startup
+[47.700s] [ext: omni.kit.widget.filter-1.1.4] startup
+[47.708s] [ext: omni.kit.widget.graph-2.0.0] startup
+[47.772s] [ext: omni.kit.property.adapter.core-1.0.2] startup
+[47.777s] [ext: omni.kit.window.file_exporter-1.0.33] startup
+[47.796s] [ext: omni.kit.widget.searchfield-1.1.8] startup
+[47.804s] [ext: omni.kit.hotkeys.core-1.3.10] startup
+[47.805s] [ext: omni.kit.graph.delegate.default-1.2.3] startup
+[47.807s] [ext: omni.kit.property.adapter.fabric-1.0.3] startup
+[47.813s] [ext: omni.kit.widget.stage-3.1.4] startup
+[47.895s] [ext: omni.kit.property.adapter.usd-1.0.2] startup
+[47.899s] [ext: omni.kit.graph.editor.core-1.5.3] startup
+[47.915s] [ext: omni.kit.widget.material_preview-1.0.16] startup
+[47.923s] [ext: omni.kit.widget.highlight_label-1.0.3] startup
+[47.926s] [ext: omni.kit.window.file-2.0.5] startup
+[47.944s] [ext: omni.kit.window.content_browser_registry-0.0.6] startup
+[47.947s] [ext: omni.kit.window.property-1.12.1] startup
+[47.959s] [ext: omni.kit.window.content_browser-3.1.3] startup
+[47.992s] [ext: omni.kit.graph.usd.commands-1.3.1] startup
+[47.996s] [ext: omni.kit.property.usd-4.5.12] startup
+[48.163s] [ext: omni.graph.ui_nodes-1.50.5] startup
+[48.225s] [ext: omni.videoencoding-0.1.2] startup
+[48.281s] [ext: omni.kit.window.material_graph-1.9.1] startup
+[48.352s] [ext: omni.warp-1.8.2] startup
+[48.385s] [ext: isaacsim.core.api-4.8.0] startup
+[48.469s] [ext: omni.graph.scriptnode-1.50.0] startup
+[48.471s] [ext: isaacsim.test.docstring-1.1.0] startup
+[48.494s] [ext: isaacsim.core.experimental.utils-0.3.0] startup
+[48.498s] [ext: omni.replicator.core-1.12.27] startup
+2026-11-11T04:00:24Z [48,464ms] [Warning] [pxr.Semantics] pxr.Semantics is deprecated - please use Semantics instead
+2026-11-11T04:00:31Z [56,263ms] [Warning] [omni.graph.core.plugin] Found duplicate of category 'Replicator' - was 'Annotators', adding 'Fabric Reader'
+2026-11-11T04:00:31Z [56,263ms] [Warning] [omni.graph.core.plugin] Category 'Replicator' not accepted on node type 'omni.replicator.core.FabricReader' in extension 'omni.replicator.core'
+2026-11-11T04:00:31Z [56,270ms] [Warning] [omni.replicator.core.scripts.extension] No material configuration file, adding configuration to material settings directly.
+[56.583s] [ext: isaacsim.core.experimental.prims-0.8.1] startup
+[56.766s] [ext: omni.kit.window.extensions-1.4.27] startup
+[56.913s] [ext: isaacsim.core.experimental.objects-0.4.0] startup
+[57.008s] [ext: omni.ui_query-1.1.8] startup
+[57.025s] [ext: omni.kit.manipulator.viewport-107.0.1] startup
+[57.041s] [ext: isaacsim.robot.surface_gripper-3.3.1] startup
+[57.110s] [ext: omni.kit.ui_test-1.3.7] startup
+[57.143s] [ext: omni.graph.visualization.nodes-2.1.3] startup
+[57.216s] [ext: isaacsim.robot_motion.lula-4.0.8] startup
+[57.516s] [ext: isaacsim.core.nodes-3.4.3] startup
+[57.623s] [ext: isaacsim.gui.components-1.2.1] startup
+[57.682s] [ext: isaacsim.robot_motion.motion_generation-8.0.26] startup
+[57.921s] [ext: isaacsim.robot.manipulators-3.3.6] startup
+[58.070s] [ext: isaacsim.core.experimental.materials-0.4.0] startup
+[58.182s] [ext: isaacsim.robot.manipulators.examples-1.1.2] startup
+[58.223s] [ext: isaacsim.cortex.framework-1.0.12] startup
+[58.238s] [ext: isaacsim.cortex.behaviors-2.0.14] startup
+[58.266s] [ext: omni.isaac.cortex.sample_behaviors-2.0.5] startup
+2026-11-11T04:00:33Z [57,984ms] [Warning] [omni.isaac.cortex] omni.isaac.cortex has been deprecated in favor of isaacsim.cortex.framework. Please update your code accordingly.
+2026-11-11T04:00:33Z [57,990ms] [Warning] [omni.isaac.cortex.sample_behaviors] omni.isaac.cortex.sample_behaviors has been deprecated in favor of isaacsim.cortex.behaviors. Please update your code accordingly.
+[58.295s] [ext: omni.kit.widget.zoombar-1.0.6] startup
+[58.346s] [ext: isaacsim.gui.content_browser-0.1.11] startup
+[58.390s] [ext: omni.kit.browser.core-2.3.13] startup
+[58.665s] [ext: omni.kit.widget.stage_icons-1.0.8] startup
+[58.673s] [ext: omni.kit.widget.prompt-1.0.7] startup
+[58.683s] [ext: omni.kit.usd.collect-2.4.5] startup
+[58.725s] [ext: omni.kit.browser.folder.core-1.10.9] startup
+[58.798s] [ext: omni.kit.window.stage-2.6.1] startup
+[58.827s] [ext: omni.kit.usdz_export-1.0.9] startup
+[58.841s] [ext: omni.kit.tool.collect-2.2.18] startup
+[58.876s] [ext: omni.kit.menu.stage-1.2.7] startup
+[58.884s] [ext: omni.kit.tool.asset_importer-4.3.2] startup
+[58.934s] [ext: isaacsim.robot.wheeled_robots-4.0.24] startup
+[59.052s] [ext: isaacsim.examples.browser-0.2.1] startup
+[59.064s] [ext: isaacsim.asset.importer.urdf-2.4.30] startup
+[59.549s] [ext: omni.isaac.wheeled_robots-3.0.7] startup
+2026-11-11T04:00:34Z [59,250ms] [Warning] [omni.isaac.wheeled_robots] omni.isaac.wheeled_robots has been deprecated in favor of isaacsim.robot.wheeled_robots. Please update your code accordingly.
+2026-11-11T04:00:34Z [59,252ms] [Warning] [omni.isaac.wheeled_robots.controllers] omni.isaac.wheeled_robots has been deprecated in favor of isaacsim.robot.wheeled_robots. Please update your code accordingly.
+2026-11-11T04:00:34Z [59,256ms] [Warning] [omni.isaac.wheeled_robots.controllers.ackermann_controller] omni.isaac.wheeled_robots has been deprecated in favor of isaacsim.robot.wheeled_robots. Please update your code accordingly.
+2026-11-11T04:00:34Z [59,258ms] [Warning] [omni.isaac.wheeled_robots.controllers.differential_controller] omni.isaac.wheeled_robots has been deprecated in favor of isaacsim.robot.wheeled_robots. Please update your code accordingly.
+2026-11-11T04:00:34Z [59,260ms] [Warning] [omni.isaac.wheeled_robots.controllers.holonomic_controller] omni.isaac.wheeled_robots has been deprecated in favor of isaacsim.robot.wheeled_robots. Please update your code accordingly.
+2026-11-11T04:00:34Z [59,260ms] [Warning] [omni.isaac.wheeled_robots.controllers.quintic_path_planner] omni.isaac.wheeled_robots has been deprecated in favor of isaacsim.robot.wheeled_robots. Please update your code accordingly.
+2026-11-11T04:00:34Z [59,260ms] [Warning] [omni.isaac.wheeled_robots.controllers.stanley_control] omni.isaac.wheeled_robots has been deprecated in favor of isaacsim.robot.wheeled_robots. Please update your code accordingly.
+2026-11-11T04:00:34Z [59,261ms] [Warning] [omni.isaac.wheeled_robots.controllers.wheel_base_pose_controller] omni.isaac.wheeled_robots has been deprecated in favor of isaacsim.robot.wheeled_robots. Please update your code accordingly.
+2026-11-11T04:00:34Z [59,261ms] [Warning] [omni.isaac.wheeled_robots.impl] omni.isaac.wheeled_robots has been deprecated in favor of isaacsim.robot.wheeled_robots. Please update your code accordingly.
+2026-11-11T04:00:34Z [59,261ms] [Warning] [omni.isaac.wheeled_robots.robots] omni.isaac.wheeled_robots has been deprecated in favor of isaacsim.robot.wheeled_robots. Please update your code accordingly.
+2026-11-11T04:00:34Z [59,261ms] [Warning] [omni.isaac.wheeled_robots.robots.holonomic_robot_usd_setup] omni.isaac.wheeled_robots has been deprecated in favor of isaacsim.robot.wheeled_robots. Please update your code accordingly.
+2026-11-11T04:00:34Z [59,262ms] [Warning] [omni.isaac.wheeled_robots.robots.wheeled_robot] omni.isaac.wheeled_robots has been deprecated in favor of isaacsim.robot.wheeled_robots. Please update your code accordingly.
+[59.567s] [ext: isaacsim.simulation_app-2.12.2] startup
+[59.570s] [ext: omni.isaac.franka-1.0.7] startup
+2026-11-11T04:00:34Z [59,270ms] [Warning] [omni.isaac.franka] omni.isaac.franka has been deprecated in favor of isaacsim.robot.manipulators.examples.franka. Please update your code accordingly.
+2026-11-11T04:00:34Z [59,270ms] [Warning] [omni.isaac.franka.franka] omni.isaac.franka has been deprecated in favor of isaacsim.robot.manipulators.examples.franka. Please update your code accordingly.
+2026-11-11T04:00:34Z [59,303ms] [Warning] [omni.isaac.franka.kinematics_solver] omni.isaac.franka has been deprecated in favor of isaacsim.robot.manipulators.examples.franka. Please update your code accordingly.
+[59.608s] [ext: omni.isaac.kit-2.0.6] startup
+2026-11-11T04:00:34Z [59,307ms] [Warning] [omni.isaac.kit] omni.isaac.kit has been deprecated in favor of isaacsim.simulation_app. Please update your code accordingly.
+[59.612s] [ext: omni.kit.selection-0.1.6] startup
+[59.618s] [ext: omni.isaac.lula-4.0.6] startup
+2026-11-11T04:00:34Z [59,314ms] [Warning] [omni.isaac.lula] omni.isaac.lula has been deprecated in favor of isaacsim.robot_motion.lula. Please update your code accordingly.
+[59.620s] [ext: isaacsim.robot_motion.lula_test_widget-1.0.12] startup
+[59.632s] [ext: isaacsim.asset.browser-1.3.23] startup
+[59.939s] [ext: omni.kit.viewport.actions-107.0.2] startup
+[59.953s] [ext: isaacsim.gui.menu-2.4.4] startup
+[59.978s] [ext: omni.isaac.manipulators-3.0.7] startup
+2026-11-11T04:00:35Z [59,679ms] [Warning] [omni.isaac.manipulators] omni.isaac.manipulators has been deprecated in favor of isaacsim.robot.manipulators. Please update your code accordingly.
+2026-11-11T04:00:35Z [59,679ms] [Warning] [omni.isaac.manipulators.controllers] omni.isaac.manipulators has been deprecated in favor of isaacsim.robot.manipulators. Please update your code accordingly.
+2026-11-11T04:00:35Z [59,680ms] [Warning] [omni.isaac.manipulators.controllers.pick_place_controller] omni.isaac.manipulators has been deprecated in favor of isaacsim.robot.manipulators. Please update your code accordingly.
+2026-11-11T04:00:35Z [59,683ms] [Warning] [omni.isaac.manipulators.controllers.stacking_controller] omni.isaac.manipulators has been deprecated in favor of isaacsim.robot.manipulators. Please update your code accordingly.
+2026-11-11T04:00:35Z [59,683ms] [Warning] [omni.isaac.manipulators.grippers] omni.isaac.manipulators has been deprecated in favor of isaacsim.robot.manipulators. Please update your code accordingly.
+2026-11-11T04:00:35Z [59,683ms] [Warning] [omni.isaac.manipulators.grippers.gripper] omni.isaac.manipulators has been deprecated in favor of isaacsim.robot.manipulators. Please update your code accordingly.
+2026-11-11T04:00:35Z [59,683ms] [Warning] [omni.isaac.manipulators.grippers.parallel_gripper] omni.isaac.manipulators has been deprecated in favor of isaacsim.robot.manipulators. Please update your code accordingly.
+2026-11-11T04:00:35Z [59,684ms] [Warning] [omni.isaac.manipulators.grippers.surface_gripper] omni.isaac.manipulators has been deprecated in favor of isaacsim.robot.manipulators. Please update your code accordingly.
+2026-11-11T04:00:35Z [59,684ms] [Warning] [omni.isaac.manipulators.manipulators] omni.isaac.manipulators has been deprecated in favor of isaacsim.robot.manipulators. Please update your code accordingly.
+2026-11-11T04:00:35Z [59,684ms] [Warning] [omni.isaac.manipulators.manipulators.single_manipulator] omni.isaac.manipulators has been deprecated in favor of isaacsim.robot.manipulators. Please update your code accordingly.
+[59.989s] [ext: omni.isaac.lula_test_widget-1.0.6] startup
+2026-11-11T04:00:35Z [59,688ms] [Warning] [omni.isaac.lula_test_widget] omni.isaac.lula_test_widget has been deprecated in favor of isaacsim.robot_motion.lula_test_widget. Please update your code accordingly.
+[59.993s] [ext: omni.isaac.asset_browser-1.0.6] startup
+2026-11-11T04:00:35Z [59,694ms] [Warning] [omni.isaac.asset_browser] omni.isaac.asset_browser has been deprecated in favor of isaacsim.asset.browser. Please update your code accordingly.
+[60.000s] [ext: omni.kit.viewport.menubar.display-107.0.3] startup
+[60.024s] [ext: omni.isaac.menu-1.0.6] startup
+2026-11-11T04:00:35Z [59,722ms] [Warning] [omni.isaac.menu] omni.isaac.menu has been deprecated in favor of isaacsim.gui.menu. Please update your code accordingly.
+[60.027s] [ext: omni.isaac.motion_generation-8.0.7] startup
+2026-11-11T04:00:35Z [59,725ms] [Warning] [omni.isaac.motion_generation] omni.isaac.motion_generation has been deprecated in favor of isaacsim.robot_motion.motion_generation. Please update your code accordingly.
+2026-11-11T04:00:35Z [59,728ms] [Warning] [omni.isaac.motion_generation.articulation_kinematics_solver] omni.isaac.motion_generation has been deprecated in favor of isaacsim.robot_motion.motion_generation. Please update your code accordingly.
+2026-11-11T04:00:35Z [59,728ms] [Warning] [omni.isaac.motion_generation.articulation_motion_policy] omni.isaac.motion_generation has been deprecated in favor of isaacsim.robot_motion.motion_generation. Please update your code accordingly.
+2026-11-11T04:00:35Z [59,728ms] [Warning] [omni.isaac.motion_generation.articulation_trajectory] omni.isaac.motion_generation has been deprecated in favor of isaacsim.robot_motion.motion_generation. Please update your code accordingly.
+2026-11-11T04:00:35Z [59,728ms] [Warning] [omni.isaac.motion_generation.kinematics_interface] omni.isaac.motion_generation has been deprecated in favor of isaacsim.robot_motion.motion_generation. Please update your code accordingly.
+2026-11-11T04:00:35Z [59,729ms] [Warning] [omni.isaac.motion_generation.lula] omni.isaac.motion_generation has been deprecated in favor of isaacsim.robot_motion.motion_generation. Please update your code accordingly.
+2026-11-11T04:00:35Z [59,729ms] [Warning] [omni.isaac.motion_generation.lula.kinematics] omni.isaac.motion_generation has been deprecated in favor of isaacsim.robot_motion.motion_generation. Please update your code accordingly.
+2026-11-11T04:00:35Z [59,729ms] [Warning] [omni.isaac.motion_generation.lula.motion_policies] omni.isaac.motion_generation has been deprecated in favor of isaacsim.robot_motion.motion_generation. Please update your code accordingly.
+2026-11-11T04:00:35Z [59,729ms] [Warning] [omni.isaac.motion_generation.lula.path_planners] omni.isaac.motion_generation has been deprecated in favor of isaacsim.robot_motion.motion_generation. Please update your code accordingly.
+2026-11-11T04:00:35Z [59,730ms] [Warning] [omni.isaac.motion_generation.lula.trajectory_generator] omni.isaac.motion_generation has been deprecated in favor of isaacsim.robot_motion.motion_generation. Please update your code accordingly.
+2026-11-11T04:00:35Z [59,730ms] [Warning] [omni.isaac.motion_generation.motion_policy_controller] omni.isaac.motion_generation has been deprecated in favor of isaacsim.robot_motion.motion_generation. Please update your code accordingly.
+2026-11-11T04:00:35Z [59,730ms] [Warning] [omni.isaac.motion_generation.motion_policy_interface] omni.isaac.motion_generation has been deprecated in favor of isaacsim.robot_motion.motion_generation. Please update your code accordingly.
+2026-11-11T04:00:35Z [59,730ms] [Warning] [omni.isaac.motion_generation.path_planner_visualizer] omni.isaac.motion_generation has been deprecated in favor of isaacsim.robot_motion.motion_generation. Please update your code accordingly.
+2026-11-11T04:00:35Z [59,731ms] [Warning] [omni.isaac.motion_generation.path_planning_interface] omni.isaac.motion_generation has been deprecated in favor of isaacsim.robot_motion.motion_generation. Please update your code accordingly.
+2026-11-11T04:00:35Z [59,731ms] [Warning] [omni.isaac.motion_generation.trajectory] omni.isaac.motion_generation has been deprecated in favor of isaacsim.robot_motion.motion_generation. Please update your code accordingly.
+2026-11-11T04:00:35Z [59,731ms] [Warning] [omni.isaac.motion_generation.world_interface] omni.isaac.motion_generation has been deprecated in favor of isaacsim.robot_motion.motion_generation. Please update your code accordingly.
+[60.037s] [ext: omni.isaac.assets_check-0.3.13] startup
+2026-11-11T04:00:35Z [59,737ms] [Warning] [omni.isaac.assets_check] omni.isaac.assets_check has been deprecated in favor of isaacsim.asset.browser. Please update your code accordingly.
+[60.042s] [ext: isaacsim.gui.sensors.icon-2.0.3] startup
+[60.259s] [ext: isaacsim.asset.importer.mjcf-2.5.13] startup
+[60.346s] [ext: omni.sensors.nv.common-3.0.0] startup
+[61.517s] [ext: isaacsim.sensors.physics-0.4.3] startup
+[61.607s] [ext: omni.sensors.net-1.0.0] startup
+[61.709s] [ext: omni.isaac.nucleus-1.0.6] startup
+2026-11-11T04:00:36Z [61,406ms] [Warning] [omni.isaac.nucleus] omni.isaac.nucleus has been deprecated in favor of isaacsim.storage.native. Please update your code accordingly.
+2026-11-11T04:00:36Z [61,406ms] [Warning] [omni.isaac.nucleus.nucleus] omni.isaac.nucleus.nucleus has been deprecated in favor of isaacsim.storage.native. Please update your code accordingly.
+[61.711s] [ext: omni.sensors.nv.materials-2.0.0] startup
+[61.830s] [ext: isaacsim.robot.policy.examples-4.1.11] startup
+[61.833s] [ext: omni.sensors.nv.wpm-3.0.0] startup
+[61.940s] [ext: omni.sensors.nv.lidar-3.0.0] startup
+[62.358s] [ext: isaacsim.util.debug_draw-3.1.0] startup
+[62.439s] [ext: omni.sensors.nv.radar-3.0.0] startup
+[62.570s] [ext: omni.sensors.nv.ids-2.0.0] startup
+[62.622s] [ext: isaacsim.core.cloner-1.4.10] startup
+[62.649s] [ext: isaacsim.sensors.physx-2.3.2] startup
+[62.715s] [ext: isaacsim.sensors.rtx-15.8.4] startup
+[62.814s] [ext: isaacsim.sensors.camera-1.3.6] startup
+[62.854s] [ext: omni.isaac.quadruped-3.0.7] startup
+2026-11-11T04:00:38Z [62,556ms] [Warning] [omni.isaac.quadruped] omni.isaac.quadruped has been deprecated in favor of isaacsim.robot.policy.examples. Please update your code accordingly.
+[62.861s] [ext: omni.isaac.cloner-1.0.7] startup
+2026-11-11T04:00:38Z [62,563ms] [Warning] [omni.isaac.cloner] omni.isaac.cloner has been deprecated in favor of isaacsim.core.cloner. Please update your code accordingly.
+[62.868s] [ext: omni.isaac.range_sensor-4.0.6] startup
+2026-11-11T04:00:38Z [62,568ms] [Warning] [omni.isaac.range_sensor] omni.isaac.range_sensor has been deprecated in favor of isaacsim.sensors.physx. Please update your code accordingly.
+2026-11-11T04:00:38Z [62,568ms] [Warning] [omni.isaac.range_sensor.commands] omni.isaac.range_sensor.commands has been deprecated in favor of isaacsim.sensors.physx.commands. Please update your code accordingly.
+[62.873s] [ext: omni.isaac.sensor-13.0.7] startup
+2026-11-11T04:00:38Z [62,573ms] [Warning] [omni.isaac.sensor] omni.isaac.sensor has been deprecated in favor of isaacsim.sensors.camera, isaacsim.sensors.physics, isaacsim.sensors.physx, and isaacsim.sensors.rtx. Please update your code accordingly.
+2026-11-11T04:00:38Z [62,574ms] [Warning] [omni.isaac.sensor.camera] omni.isaac.sensor.camera has been deprecated in favor of isaacsim.sensors.camera.camera. Please update your code accordingly.
+2026-11-11T04:00:38Z [62,574ms] [Warning] [omni.isaac.sensor.camera_view] omni.isaac.sensor.camera_view has been deprecated in favor of isaacsim.sensors.camera.camera_view. Please update your code accordingly.
+2026-11-11T04:00:38Z [62,574ms] [Warning] [omni.isaac.sensor.commands] omni.isaac.sensor.commands has been deprecated in favor of isaacsim.sensors.physics.commands, isaacsim.sensors.physx.commands, and isaacsim.sensors.rtx.commands. Please update your code accordingly.
+2026-11-11T04:00:38Z [62,574ms] [Warning] [omni.isaac.sensor.contact_sensor] omni.isaac.sensor.contact_sensor has been deprecated in favor of isaacsim.sensors.physics.contact_sensor. Please update your code accordingly.
+2026-11-11T04:00:38Z [62,575ms] [Warning] [omni.isaac.sensor.imu_sensor] omni.isaac.sensor.imu_sensor has been deprecated in favor of isaacsim.sensors.physics.imu_sensor. Please update your code accordingly.
+2026-11-11T04:00:38Z [62,575ms] [Warning] [omni.isaac.sensor.lidar_rtx] omni.isaac.sensor.lidar_rtx has been deprecated in favor of isaacsim.sensors.rtx.lidar_rtx. Please update your code accordingly.
+2026-11-11T04:00:38Z [62,575ms] [Warning] [omni.isaac.sensor.rotating_lidar_physX] omni.isaac.sensor.imu_sensor has been deprecated in favor of isaacsim.sensors.physix.rotating_lidar_physX. Please update your code accordingly.
+2026-11-11T04:00:38Z [62,576ms] [Warning] [omni.isaac.sensor.scripts.samples.contact_sensor] omni.isaac.sensor.scripts.samples.contact_sensor has been deprecated in favor of isaacsim.sensors.physics.scripts.samples.contact_sensor. Please update your code accordingly.
+2026-11-11T04:00:38Z [62,576ms] [Warning] [omni.isaac.sensor.scripts.samples.imu_sensor] omni.isaac.sensor.scripts.samples.imu_sensor has been deprecated in favor of isaacsim.sensors.physics.scripts.samples.imu_sensor. Please update your code accordingly.
+2026-11-11T04:00:38Z [62,576ms] [Warning] [omni.isaac.sensor.scripts.samples.lightbeam_sensor] omni.isaac.sensor.scripts.samples.lightbeam_sensor has been deprecated in favor of isaacsim.sensors.physx.scripts.samples.lightbeam_sensor. Please update your code accordingly.
+[62.881s] [ext: omni.kit.menu.create-2.0.1] startup
+[62.901s] [ext: omni.kit.widget.toolbar-2.0.1] startup
+[62.932s] [ext: omni.kit.manipulator.transform-107.0.0] startup
+[62.960s] [ext: omni.isaac.core-4.0.7] startup
+2026-11-11T04:00:38Z [62,660ms] [Warning] [omni.isaac.core.physics_context.physics_context] omni.isaac.core.physics_context.physics_context has been deprecated in favor of isaacsim.core.api.physics_context.physics_context. Please update your code accordingly.
+2026-11-11T04:00:38Z [62,661ms] [Warning] [omni.isaac.core.simulation_context.simulation_context] omni.isaac.core.simulation_context.simulation_context has been deprecated in favor of isaacsim.core.api.simulation_context.simulation_context. Please update your code accordingly.
+2026-11-11T04:00:38Z [62,661ms] [Warning] [omni.isaac.core.world.world] omni.isaac.core.world.world has been deprecated in favor of isaacsim.core.api.world.world. Please update your code accordingly.
+2026-11-11T04:00:38Z [62,661ms] [Warning] [omni.isaac.core] omni.isaac.core has been deprecated in favor of isaacsim.core.api. Please update your code accordingly.
+[62.966s] [ext: omni.kit.scripting-107.3.2] startup
+[63.001s] [ext: omni.kit.manipulator.tool.snap-1.5.13] startup
+[63.032s] [ext: omni.kit.manipulator.selector-1.1.3] startup
+[63.037s] [ext: isaacsim.app.about-2.0.11] startup
+[63.123s] [ext: isaacsim.replicator.behavior-1.1.16] startup
+[63.142s] [ext: omni.kit.viewport.manipulator.transform-107.0.4] startup
+[63.151s] [ext: omni.isaac.window.about-2.0.7] startup
+2026-11-11T04:00:38Z [62,850ms] [Warning] [omni.isaac.window.about] omni.isaac.window.about has been deprecated in favor of isaacsim.app.about. Please update your code accordingly.
+2026-11-11T04:00:38Z [62,850ms] [Warning] [omni.isaac.window.about.about] omni.isaac.window.about.about has been deprecated in favor of isaacsim.app.about.about. Please update your code accordingly.
+[63.156s] [ext: omni.fabric.commands-1.1.6] startup
+[63.175s] [ext: omni.kit.manipulator.prim.core-107.0.8] startup
+[63.211s] [ext: omni.kit.property.audio-1.0.16] startup
+[63.218s] [ext: omni.kit.property.camera-1.0.10] startup
+[63.223s] [ext: omni.kit.property.geometry-2.0.4] startup
+[63.249s] [ext: omni.hydra.scene_api-0.1.2] startup
+[63.273s] [ext: omni.kit.property.light-1.0.12] startup
+[63.330s] [ext: omni.kit.manipulator.prim.fabric-107.0.4] startup
+[63.338s] [ext: omni.kit.manipulator.prim.usd-107.0.3] startup
+[63.343s] [ext: omni.kit.property.material-1.11.9] startup
+[63.382s] [ext: omni.kit.property.render-1.2.1] startup
+[63.386s] [ext: omni.kit.property.transform-1.5.13] startup
+[63.417s] [ext: isaacsim.gui.property-1.1.3] startup
+[63.427s] [ext: omni.kit.manipulator.camera-106.0.4] startup
+[63.469s] [ext: omni.kit.manipulator.prim-107.0.0] startup
+[63.470s] [ext: omni.isaac.surface_gripper-2.0.6] startup
+2026-11-11T04:00:38Z [63,166ms] [Warning] [omni.isaac.surface_gripper] omni.isaac.surface_gripper has been deprecated in favor of isaacsim.robot.surface_gripper. Please update your code accordingly.
+[63.472s] [ext: omni.kit.manipulator.selection-106.0.1] startup
+[63.481s] [ext: omni.kit.property.bundle-1.4.1] startup
+[63.499s] [ext: omni.kit.property.isaac-1.0.6] startup
+2026-11-11T04:00:38Z [63,197ms] [Warning] [omni.kit.property.isaac] omni.kit.property.isaac has been deprecated in favor of isaacsim.gui.property. Please update your code accordingly.
+2026-11-11T04:00:38Z [63,197ms] [Warning] [omni.kit.property.isaac.widgets] omni.kit.property.isaac.widgets has been deprecated in favor of isaacsim.gui.property.widgets. Please update your code accordingly.
+[63.502s] [ext: omni.isaac.universal_robots-1.0.6] startup
+2026-11-11T04:00:38Z [63,199ms] [Warning] [omni.isaac.universal_robots] omni.isaac.universal_robots has been deprecated in favor of isaacsim.robot.manipulators.examples.universal_robots. Please update your code accordingly.
+2026-11-11T04:00:38Z [63,199ms] [Warning] [omni.isaac.universal_robots.kinematics_solver] omni.isaac.franka has been deprecated in favor of isaacsim.robot.manipulators.examples.universal_robots. Please update your code accordingly.
+2026-11-11T04:00:38Z [63,204ms] [Warning] [omni.isaac.universal_robots.ur10] omni.isaac.franka has been deprecated in favor of isaacsim.robot.manipulators.examples.universal_robots. Please update your code accordingly.
+[63.509s] [ext: omni.isaac.core_nodes-2.0.6] startup
+2026-11-11T04:00:38Z [63,209ms] [Warning] [omni.isaac.core_nodes] omni.isaac.core_nodes has been deprecated in favor of isaacsim.core.nodes. Please update your code accordingly.
+[63.514s] [ext: omni.kit.viewport.menubar.camera-107.0.6] startup
+[63.551s] [ext: omni.kit.viewport.menubar.lighting-107.3.1] startup
+[63.568s] [ext: isaacsim.replicator.writers-1.0.17] startup
+[63.691s] [ext: omni.kit.viewport.menubar.render-107.0.10] startup
+[63.735s] [ext: omni.kit.viewport.menubar.settings-107.0.3] startup
+[63.754s] [ext: omni.kit.window.console-1.1.4] startup
+[63.808s] [ext: isaacsim.replicator.domain_randomization-1.0.16] startup
+[63.818s] [ext: isaacsim.replicator.examples-1.3.6] startup
+[63.823s] [ext: omni.ocio-0.1.1] startup
+[63.844s] [ext: omni.rtx.window.settings-0.6.19] startup
+[63.890s] [ext: omni.kit.window.status_bar-0.1.9] startup
+[63.930s] [ext: omni.kit.window.toolbar-2.0.0] startup
+[63.942s] [ext: omni.replicator.isaac-2.0.8] startup
+2026-11-11T04:00:39Z [63,638ms] [Warning] [omni.replicator.isaac] omni.replicator.isaac has been deprecated in favor of isaacsim.replicator.domain_randomization, isaacsim.replicator.examples, isaacsim.replicator.writers. Please update your code accordingly.
+[63.944s] [ext: omni.replicator.replicator_yaml-2.0.11] startup
+[63.972s] [ext: omni.rtx.settings.core-0.6.5] startup
+[64.005s] [ext: omni.usd.metrics.assembler.ui-107.3.1] startup
+[64.025s] [ext: omni.isaac.utils-2.0.6] startup
+[64.028s] [ext: semantics.schema.editor-2.0.2] startup
+[64.046s] [ext: omni.kit.ui.actions-1.0.5] startup
+[64.051s] [ext: semantics.schema.property-2.0.1] startup
+[64.057s] [ext: omni.isaac.version-2.0.7] startup
+2026-11-11T04:00:39Z [63,754ms] [Warning] [omni.isaac.version] omni.isaac.version has been deprecated in favor of isaacsim.core.version. Please update your code accordingly.
+[64.059s] [ext: omni.isaac.cortex-1.0.5] startup
+[64.061s] [ext: omni.anim.curve.core-1.3.1] startup
+[64.174s] [ext: isaacsim.core.throttling-2.2.2] startup
+[64.193s] [ext: omni.kit.menu.common-2.0.1] startup
+[64.198s] [ext: isaacsim.exp.base-5.1.0] startup
+[64.200s] [ext: isaacsim.exp.base.python-5.1.0] startup
+[64.203s] Simulation App Starting
+2026-11-11T04:00:43Z [67,831ms] [Warning] [omni.fabric.plugin] Warning: attribute viewPickingId not found for bucket id 9
+
+[68.200s] app ready
+[70.431s] Simulation App Startup Complete
+2026-11-11T04:00:45Z [70,297ms] [Warning] [isaacsim.sensors.camera.camera] 'verticalAperture' (1.5290800094604493) and 'horizontalAperture' (2.0954999923706055) are inconsistent with the pixel resolution aspect ratio (1.3333333333333333). Setting 'verticalAperture' to 1.571624994277954 to ensure square pixels.
+2026-11-11T04:00:46Z [70,974ms] [Warning] [carb.graphics-vulkan.plugin] Trying to initialize NGX without vkGetInstanceProcAddr and vkGetDeviceProcAddr pointer-to-functions.
+2026-11-11T04:00:46Z [70,974ms] [Error] [carb.graphics-vulkan.plugin] Could not get NGX parameters block because NGX isn't enabled.
+2026-11-11T04:00:46Z [70,975ms] [Error] [carb.graphics-vulkan.plugin] Failed to create NGX context.
+2026-11-11T04:00:46Z [70,975ms] [Warning] [carb.scenerenderer-rtx.plugin] Failed to create NGX context.
+2026-11-11T04:00:58Z [82,760ms] [Error] [omni.kit.app._impl] [py stderr]: /isaac-sim/kit/python/lib/python3.11/site-packages/albumentations/check_version.py:147: UserWarning: Error fetching version info <urlopen error [Errno 101] Network is unreachable>
+  data = fetch_version_info()
+[1;31m2026-11-10 22:01:01.244346347 [E:onnxruntime:Default, env.cc:234 ThreadMain] pthread_setaffinity_np failed for thread: 688923, index: 7, mask: {20, }, error code: 22 error msg: Invalid argument. Specify the number of threads explicitly so the affinity is not set.[m
+[1;31m2026-11-10 22:01:01.244377561 [E:onnxruntime:Default, env.cc:234 ThreadMain] pthread_setaffinity_np failed for thread: 688922, index: 6, mask: {16, }, error code: 22 error msg: Invalid argument. Specify the number of threads explicitly so the affinity is not set.[m
+[1;31m2026-11-10 22:01:01.244362198 [E:onnxruntime:Default, env.cc:234 ThreadMain] pthread_setaffinity_np failed for thread: 688924, index: 8, mask: {24, }, error code: 22 error msg: Invalid argument. Specify the number of threads explicitly so the affinity is not set.[m
+[1;31m2026-11-10 22:01:01.244387377 [E:onnxruntime:Default, env.cc:234 ThreadMain] pthread_setaffinity_np failed for thread: 688925, index: 9, mask: {22, }, error code: 22 error msg: Invalid argument. Specify the number of threads explicitly so the affinity is not set.[m
+[1;31m2026-11-10 22:01:01.244542171 [E:onnxruntime:Default, env.cc:234 ThreadMain] pthread_setaffinity_np failed for thread: 688934, index: 18, mask: {40, }, error code: 22 error msg: Invalid argument. Specify the number of threads explicitly so the affinity is not set.[m
+[1;31m2026-11-10 22:01:01.244563096 [E:onnxruntime:Default, env.cc:234 ThreadMain] pthread_setaffinity_np failed for thread: 688939, index: 23, mask: {1, }, error code: 22 error msg: Invalid argument. Specify the number of threads explicitly so the affinity is not set.[m
+[1;31m2026-11-10 22:01:01.244567993 [E:onnxruntime:Default, env.cc:234 ThreadMain] pthread_setaffinity_np failed for thread: 688937, index: 21, mask: {42, }, error code: 22 error msg: Invalid argument. Specify the number of threads explicitly so the affinity is not set.[m
+[1;31m2026-11-10 22:01:01.244551956 [E:onnxruntime:Default, env.cc:234 ThreadMain] pthread_setaffinity_np failed for thread: 688930, index: 14, mask: {36, }, error code: 22 error msg: Invalid argument. Specify the number of threads explicitly so the affinity is not set.[m
+[1;31m2026-11-10 22:01:01.244395489 [E:onnxruntime:Default, env.cc:234 ThreadMain] pthread_setaffinity_np failed for thread: 688919, index: 3, mask: {10, }, error code: 22 error msg: Invalid argument. Specify the number of threads explicitly so the affinity is not set.[m
+[1;31m2026-11-10 22:01:01.244558122 [E:onnxruntime:Default, env.cc:234 ThreadMain] pthread_setaffinity_np failed for thread: 688935, index: 19, mask: {44, }, error code: 22 error msg: Invalid argument. Specify the number of threads explicitly so the affinity is not set.[m
+[1;31m2026-11-10 22:01:01.244349591 [E:onnxruntime:Default, env.cc:234 ThreadMain] pthread_setaffinity_np failed for thread: 688918, index: 2, mask: {12, }, error code: 22 error msg: Invalid argument. Specify the number of threads explicitly so the affinity is not set.[m
+[1;31m2026-11-10 22:01:01.244409762 [E:onnxruntime:Default, env.cc:234 ThreadMain] pthread_setaffinity_np failed for thread: 688931, index: 15, mask: {34, }, error code: 22 error msg: Invalid argument. Specify the number of threads explicitly so the affinity is not set.[m
+[1;31m2026-11-10 22:01:01.244675493 [E:onnxruntime:Default, env.cc:234 ThreadMain] pthread_setaffinity_np failed for thread: 688952, index: 36, mask: {29, }, error code: 22 error msg: Invalid argument. Specify the number of threads explicitly so the affinity is not set.[m
+[1;31m2026-11-10 22:01:01.244492675 [E:onnxruntime:Default, env.cc:234 ThreadMain] pthread_setaffinity_np failed for thread: 688936, index: 20, mask: {46, }, error code: 22 error msg: Invalid argument. Specify the number of threads explicitly so the affinity is not set.[m
+[1;31m2026-11-10 22:01:01.244611595 [E:onnxruntime:Default, env.cc:234 ThreadMain] pthread_setaffinity_np failed for thread: 688950, index: 34, mask: {19, }, error code: 22 error msg: Invalid argument. Specify the number of threads explicitly so the affinity is not set.[m
+[1;31m2026-11-10 22:01:01.244493905 [E:onnxruntime:Default, env.cc:234 ThreadMain] pthread_setaffinity_np failed for thread: 688945, index: 29, mask: {3, }, error code: 22 error msg: Invalid argument. Specify the number of threads explicitly so the affinity is not set.[m
+[1;31m2026-11-10 22:01:01.244669347 [E:onnxruntime:Default, env.cc:234 ThreadMain] pthread_setaffinity_np failed for thread: 688949, index: 33, mask: {23, }, error code: 22 error msg: Invalid argument. Specify the number of threads explicitly so the affinity is not set.[m
+[1;31m2026-11-10 22:01:01.244504273 [E:onnxruntime:Default, env.cc:234 ThreadMain] pthread_setaffinity_np failed for thread: 688928, index: 12, mask: {28, }, error code: 22 error msg: Invalid argument. Specify the number of threads explicitly so the affinity is not set.[m
+[1;31m2026-11-10 22:01:01.244502522 [E:onnxruntime:Default, env.cc:234 ThreadMain] pthread_setaffinity_np failed for thread: 688927, index: 11, mask: {14, }, error code: 22 error msg: Invalid argument. Specify the number of threads explicitly so the affinity is not set.[m
+[1;31m2026-11-10 22:01:01.244533325 [E:onnxruntime:Default, env.cc:234 ThreadMain] pthread_setaffinity_np failed for thread: 688946, index: 30, mask: {17, }, error code: 22 error msg: Invalid argument. Specify the number of threads explicitly so the affinity is not set.[m
+[1;31m2026-11-10 22:01:01.244425151 [E:onnxruntime:Default, env.cc:234 ThreadMain] pthread_setaffinity_np failed for thread: 688932, index: 16, mask: {30, }, error code: 22 error msg: Invalid argument. Specify the number of threads explicitly so the affinity is not set.[m
+[1;31m2026-11-10 22:01:01.244572697 [E:onnxruntime:Default, env.cc:234 ThreadMain] pthread_setaffinity_np failed for thread: 688938, index: 22, mask: {38, }, error code: 22 error msg: Invalid argument. Specify the number of threads explicitly so the affinity is not set.[m
+[1;31m2026-11-10 22:01:01.254439724 [E:onnxruntime:Default, env.cc:234 ThreadMain] pthread_setaffinity_np failed for thread: 688944, index: 28, mask: {7, }, error code: 22 error msg: Invalid argument. Specify the number of threads explicitly so the affinity is not set.[m
+[1;31m2026-11-10 22:01:01.255439506 [E:onnxruntime:Default, env.cc:234 ThreadMain] pthread_setaffinity_np failed for thread: 688954, index: 38, mask: {37, }, error code: 22 error msg: Invalid argument. Specify the number of threads explicitly so the affinity is not set.[m
+[1;31m2026-11-10 22:01:01.255450111 [E:onnxruntime:Default, env.cc:234 ThreadMain] pthread_setaffinity_np failed for thread: 688953, index: 37, mask: {33, }, error code: 22 error msg: Invalid argument. Specify the number of threads explicitly so the affinity is not set.[m
+[1;31m2026-11-10 22:01:01.255458653 [E:onnxruntime:Default, env.cc:234 ThreadMain] pthread_setaffinity_np failed for thread: 688956, index: 40, mask: {31, }, error code: 22 error msg: Invalid argument. Specify the number of threads explicitly so the affinity is not set.[m
+[1;31m2026-11-10 22:01:01.255466603 [E:onnxruntime:Default, env.cc:234 ThreadMain] pthread_setaffinity_np failed for thread: 688955, index: 39, mask: {35, }, error code: 22 error msg: Invalid argument. Specify the number of threads explicitly so the affinity is not set.[m
+[1;31m2026-11-10 22:01:01.255469335 [E:onnxruntime:Default, env.cc:234 ThreadMain] pthread_setaffinity_np failed for thread: 688959, index: 43, mask: {45, }, error code: 22 error msg: Invalid argument. Specify the number of threads explicitly so the affinity is not set.[m
+[1;31m2026-11-10 22:01:01.255476409 [E:onnxruntime:Default, env.cc:234 ThreadMain] pthread_setaffinity_np failed for thread: 688957, index: 41, mask: {27, }, error code: 22 error msg: Invalid argument. Specify the number of threads explicitly so the affinity is not set.[m
+[1;31m2026-11-10 22:01:01.244426851 [E:onnxruntime:Default, env.cc:234 ThreadMain] pthread_setaffinity_np failed for thread: 688933, index: 17, mask: {26, }, error code: 22 error msg: Invalid argument. Specify the number of threads explicitly so the affinity is not set.[m
+[1;31m2026-11-10 22:01:01.255486476 [E:onnxruntime:Default, env.cc:234 ThreadMain] pthread_setaffinity_np failed for thread: 688958, index: 42, mask: {41, }, error code: 22 error msg: Invalid argument. Specify the number of threads explicitly so the affinity is not set.[m
+[1;31m2026-11-10 22:01:01.255438695 [E:onnxruntime:Default, env.cc:234 ThreadMain] pthread_setaffinity_np failed for thread: 688951, index: 35, mask: {15, }, error code: 22 error msg: Invalid argument. Specify the number of threads explicitly so the affinity is not set.[m
+[1;31m2026-11-10 22:01:01.264448589 [E:onnxruntime:Default, env.cc:234 ThreadMain] pthread_setaffinity_np failed for thread: 688962, index: 46, mask: {39, }, error code: 22 error msg: Invalid argument. Specify the number of threads explicitly so the affinity is not set.[m
+[1;31m2026-11-10 22:01:01.244520763 [E:onnxruntime:Default, env.cc:234 ThreadMain] pthread_setaffinity_np failed for thread: 688929, index: 13, mask: {32, }, error code: 22 error msg: Invalid argument. Specify the number of threads explicitly so the affinity is not set.[m
+[1;31m2026-11-10 22:01:01.244508910 [E:onnxruntime:Default, env.cc:234 ThreadMain] pthread_setaffinity_np failed for thread: 688948, index: 32, mask: {25, }, error code: 22 error msg: Invalid argument. Specify the number of threads explicitly so the affinity is not set.[m
+[1;31m2026-11-10 22:01:01.244475908 [E:onnxruntime:Default, env.cc:234 ThreadMain] pthread_setaffinity_np failed for thread: 688926, index: 10, mask: {18, }, error code: 22 error msg: Invalid argument. Specify the number of threads explicitly so the affinity is not set.[m
+[1;31m2026-11-10 22:01:01.244391859 [E:onnxruntime:Default, env.cc:234 ThreadMain] pthread_setaffinity_np failed for thread: 688917, index: 1, mask: {8, }, error code: 22 error msg: Invalid argument. Specify the number of threads explicitly so the affinity is not set.[m
+[1;31m2026-11-10 22:01:01.244502692 [E:onnxruntime:Default, env.cc:234 ThreadMain] pthread_setaffinity_np failed for thread: 688947, index: 31, mask: {21, }, error code: 22 error msg: Invalid argument. Specify the number of threads explicitly so the affinity is not set.[m
+[1;31m2026-11-10 22:01:01.299172586 [E:onnxruntime:Default, env.cc:234 ThreadMain] pthread_setaffinity_np failed for thread: 688961, index: 45, mask: {43, }, error code: 22 error msg: Invalid argument. Specify the number of threads explicitly so the affinity is not set.[m
+[1;31m2026-11-10 22:01:01.301378522 [E:onnxruntime:Default, env.cc:234 ThreadMain] pthread_setaffinity_np failed for thread: 688960, index: 44, mask: {47, }, error code: 22 error msg: Invalid argument. Specify the number of threads explicitly so the affinity is not set.[m
+[1;31m2026-11-10 22:01:03.039764574 [E:onnxruntime:Default, env.cc:234 ThreadMain] pthread_setaffinity_np failed for thread: 688977, index: 1, mask: {8, }, error code: 22 error msg: Invalid argument. Specify the number of threads explicitly so the affinity is not set.[m
+[1;31m2026-11-10 22:01:03.039792168 [E:onnxruntime:Default, env.cc:234 ThreadMain] pthread_setaffinity_np failed for thread: 688978, index: 2, mask: {12, }, error code: 22 error msg: Invalid argument. Specify the number of threads explicitly so the affinity is not set.[m
+[1;31m2026-11-10 22:01:03.039811260 [E:onnxruntime:Default, env.cc:234 ThreadMain] pthread_setaffinity_np failed for thread: 688979, index: 3, mask: {10, }, error code: 22 error msg: Invalid argument. Specify the number of threads explicitly so the affinity is not set.[m
+[1;31m2026-11-10 22:01:03.039886086 [E:onnxruntime:Default, env.cc:234 ThreadMain] pthread_setaffinity_np failed for thread: 688982, index: 6, mask: {16, }, error code: 22 error msg: Invalid argument. Specify the number of threads explicitly so the affinity is not set.[m
+[1;31m2026-11-10 22:01:03.050481732 [E:onnxruntime:Default, env.cc:234 ThreadMain] pthread_setaffinity_np failed for thread: 688984, index: 8, mask: {24, }, error code: 22 error msg: Invalid argument. Specify the number of threads explicitly so the affinity is not set.[m
+[1;31m2026-11-10 22:01:03.050606191 [E:onnxruntime:Default, env.cc:234 ThreadMain] pthread_setaffinity_np failed for thread: 688991, index: 15, mask: {34, }, error code: 22 error msg: Invalid argument. Specify the number of threads explicitly so the affinity is not set.[m
+[1;31m2026-11-10 22:01:03.054462462 [E:onnxruntime:Default, env.cc:234 ThreadMain] pthread_setaffinity_np failed for thread: 688985, index: 9, mask: {22, }, error code: 22 error msg: Invalid argument. Specify the number of threads explicitly so the affinity is not set.[m
+[1;31m2026-11-10 22:01:03.058544519 [E:onnxruntime:Default, env.cc:234 ThreadMain] pthread_setaffinity_np failed for thread: 689016, index: 40, mask: {31, }, error code: 22 error msg: Invalid argument. Specify the number of threads explicitly so the affinity is not set.[m
+[1;31m2026-11-10 22:01:03.061212366 [E:onnxruntime:Default, env.cc:234 ThreadMain] pthread_setaffinity_np failed for thread: 688983, index: 7, mask: {20, }, error code: 22 error msg: Invalid argument. Specify the number of threads explicitly so the affinity is not set.[m
+[1;31m2026-11-10 22:01:03.061491403 [E:onnxruntime:Default, env.cc:234 ThreadMain] pthread_setaffinity_np failed for thread: 689022, index: 46, mask: {39, }, error code: 22 error msg: Invalid argument. Specify the number of threads explicitly so the affinity is not set.[m
+[1;31m2026-11-10 22:01:03.069700218 [E:onnxruntime:Default, env.cc:234 ThreadMain] pthread_setaffinity_np failed for thread: 689010, index: 34, mask: {19, }, error code: 22 error msg: Invalid argument. Specify the number of threads explicitly so the affinity is not set.[m
+[1;31m2026-11-10 22:01:03.070574655 [E:onnxruntime:Default, env.cc:234 ThreadMain] pthread_setaffinity_np failed for thread: 688988, index: 12, mask: {28, }, error code: 22 error msg: Invalid argument. Specify the number of threads explicitly so the affinity is not set.[m
+[1;31m2026-11-10 22:01:03.077566002 [E:onnxruntime:Default, env.cc:234 ThreadMain] pthread_setaffinity_np failed for thread: 689013, index: 37, mask: {33, }, error code: 22 error msg: Invalid argument. Specify the number of threads explicitly so the affinity is not set.[m
+[1;31m2026-11-10 22:01:03.077995424 [E:onnxruntime:Default, env.cc:234 ThreadMain] pthread_setaffinity_np failed for thread: 688989, index: 13, mask: {32, }, error code: 22 error msg: Invalid argument. Specify the number of threads explicitly so the affinity is not set.[m
+[1;31m2026-11-10 22:01:03.080478383 [E:onnxruntime:Default, env.cc:234 ThreadMain] pthread_setaffinity_np failed for thread: 689011, index: 35, mask: {15, }, error code: 22 error msg: Invalid argument. Specify the number of threads explicitly so the affinity is not set.[m
+[1;31m2026-11-10 22:01:03.085479847 [E:onnxruntime:Default, env.cc:234 ThreadMain] pthread_setaffinity_np failed for thread: 688994, index: 18, mask: {40, }, error code: 22 error msg: Invalid argument. Specify the number of threads explicitly so the affinity is not set.[m
+[1;31m2026-11-10 22:01:03.088695321 [E:onnxruntime:Default, env.cc:234 ThreadMain] pthread_setaffinity_np failed for thread: 689012, index: 36, mask: {29, }, error code: 22 error msg: Invalid argument. Specify the number of threads explicitly so the affinity is not set.[m
+[1;31m2026-11-10 22:01:03.088772006 [E:onnxruntime:Default, env.cc:234 ThreadMain] pthread_setaffinity_np failed for thread: 688986, index: 10, mask: {18, }, error code: 22 error msg: Invalid argument. Specify the number of threads explicitly so the affinity is not set.[m
+[1;31m2026-11-10 22:01:03.089664505 [E:onnxruntime:Default, env.cc:234 ThreadMain] pthread_setaffinity_np failed for thread: 689018, index: 42, mask: {41, }, error code: 22 error msg: Invalid argument. Specify the number of threads explicitly so the affinity is not set.[m
+[1;31m2026-11-10 22:01:03.095073276 [E:onnxruntime:Default, env.cc:234 ThreadMain] pthread_setaffinity_np failed for thread: 688997, index: 21, mask: {42, }, error code: 22 error msg: Invalid argument. Specify the number of threads explicitly so the affinity is not set.[m
+[1;31m2026-11-10 22:01:03.096564539 [E:onnxruntime:Default, env.cc:234 ThreadMain] pthread_setaffinity_np failed for thread: 689020, index: 44, mask: {47, }, error code: 22 error msg: Invalid argument. Specify the number of threads explicitly so the affinity is not set.[m
+[1;31m2026-11-10 22:01:03.097878180 [E:onnxruntime:Default, env.cc:234 ThreadMain] pthread_setaffinity_np failed for thread: 688995, index: 19, mask: {44, }, error code: 22 error msg: Invalid argument. Specify the number of threads explicitly so the affinity is not set.[m
+[1;31m2026-11-10 22:01:03.100534362 [E:onnxruntime:Default, env.cc:234 ThreadMain] pthread_setaffinity_np failed for thread: 689004, index: 28, mask: {7, }, error code: 22 error msg: Invalid argument. Specify the number of threads explicitly so the affinity is not set.[m
+[1;31m2026-11-10 22:01:03.104539179 [E:onnxruntime:Default, env.cc:234 ThreadMain] pthread_setaffinity_np failed for thread: 688987, index: 11, mask: {14, }, error code: 22 error msg: Invalid argument. Specify the number of threads explicitly so the affinity is not set.[m
+[1;31m2026-11-10 22:01:03.114052676 [E:onnxruntime:Default, env.cc:234 ThreadMain] pthread_setaffinity_np failed for thread: 689005, index: 29, mask: {3, }, error code: 22 error msg: Invalid argument. Specify the number of threads explicitly so the affinity is not set.[m
+[1;31m2026-11-10 22:01:03.114937448 [E:onnxruntime:Default, env.cc:234 ThreadMain] pthread_setaffinity_np failed for thread: 689015, index: 39, mask: {35, }, error code: 22 error msg: Invalid argument. Specify the number of threads explicitly so the affinity is not set.[m
+[1;31m2026-11-10 22:01:03.116875415 [E:onnxruntime:Default, env.cc:234 ThreadMain] pthread_setaffinity_np failed for thread: 688998, index: 22, mask: {38, }, error code: 22 error msg: Invalid argument. Specify the number of threads explicitly so the affinity is not set.[m
+[1;31m2026-11-10 22:01:03.117175153 [E:onnxruntime:Default, env.cc:234 ThreadMain] pthread_setaffinity_np failed for thread: 688990, index: 14, mask: {36, }, error code: 22 error msg: Invalid argument. Specify the number of threads explicitly so the affinity is not set.[m
+[1;31m2026-11-10 22:01:03.119527884 [E:onnxruntime:Default, env.cc:234 ThreadMain] pthread_setaffinity_np failed for thread: 689007, index: 31, mask: {21, }, error code: 22 error msg: Invalid argument. Specify the number of threads explicitly so the affinity is not set.[m
+[1;31m2026-11-10 22:01:03.119722550 [E:onnxruntime:Default, env.cc:234 ThreadMain] pthread_setaffinity_np failed for thread: 688992, index: 16, mask: {30, }, error code: 22 error msg: Invalid argument. Specify the number of threads explicitly so the affinity is not set.[m
+[1;31m2026-11-10 22:01:03.120427751 [E:onnxruntime:Default, env.cc:234 ThreadMain] pthread_setaffinity_np failed for thread: 689019, index: 43, mask: {45, }, error code: 22 error msg: Invalid argument. Specify the number of threads explicitly so the affinity is not set.[m
+[1;31m2026-11-10 22:01:03.127469251 [E:onnxruntime:Default, env.cc:234 ThreadMain] pthread_setaffinity_np failed for thread: 689021, index: 45, mask: {43, }, error code: 22 error msg: Invalid argument. Specify the number of threads explicitly so the affinity is not set.[m
+[1;31m2026-11-10 22:01:03.127485056 [E:onnxruntime:Default, env.cc:234 ThreadMain] pthread_setaffinity_np failed for thread: 688999, index: 23, mask: {1, }, error code: 22 error msg: Invalid argument. Specify the number of threads explicitly so the affinity is not set.[m
+[1;31m2026-11-10 22:01:03.135459612 [E:onnxruntime:Default, env.cc:234 ThreadMain] pthread_setaffinity_np failed for thread: 689017, index: 41, mask: {27, }, error code: 22 error msg: Invalid argument. Specify the number of threads explicitly so the affinity is not set.[m
+[1;31m2026-11-10 22:01:03.137189414 [E:onnxruntime:Default, env.cc:234 ThreadMain] pthread_setaffinity_np failed for thread: 688996, index: 20, mask: {46, }, error code: 22 error msg: Invalid argument. Specify the number of threads explicitly so the affinity is not set.[m
+[1;31m2026-11-10 22:01:03.138460709 [E:onnxruntime:Default, env.cc:234 ThreadMain] pthread_setaffinity_np failed for thread: 689014, index: 38, mask: {37, }, error code: 22 error msg: Invalid argument. Specify the number of threads explicitly so the affinity is not set.[m
+[1;31m2026-11-10 22:01:03.138714096 [E:onnxruntime:Default, env.cc:234 ThreadMain] pthread_setaffinity_np failed for thread: 688993, index: 17, mask: {26, }, error code: 22 error msg: Invalid argument. Specify the number of threads explicitly so the affinity is not set.[m
+[1;31m2026-11-10 22:01:03.143279560 [E:onnxruntime:Default, env.cc:234 ThreadMain] pthread_setaffinity_np failed for thread: 689006, index: 30, mask: {17, }, error code: 22 error msg: Invalid argument. Specify the number of threads explicitly so the affinity is not set.[m
+[1;31m2026-11-10 22:01:03.145158379 [E:onnxruntime:Default, env.cc:234 ThreadMain] pthread_setaffinity_np failed for thread: 689009, index: 33, mask: {23, }, error code: 22 error msg: Invalid argument. Specify the number of threads explicitly so the affinity is not set.[m
+[1;31m2026-11-10 22:01:03.155457335 [E:onnxruntime:Default, env.cc:234 ThreadMain] pthread_setaffinity_np failed for thread: 689008, index: 32, mask: {25, }, error code: 22 error msg: Invalid argument. Specify the number of threads explicitly so the affinity is not set.[m
+[1;31m2026-11-10 22:01:03.229533118 [E:onnxruntime:Default, env.cc:234 ThreadMain] pthread_setaffinity_np failed for thread: 689024, index: 1, mask: {8, }, error code: 22 error msg: Invalid argument. Specify the number of threads explicitly so the affinity is not set.[m
+[1;31m2026-11-10 22:01:03.229570953 [E:onnxruntime:Default, env.cc:234 ThreadMain] pthread_setaffinity_np failed for thread: 689025, index: 2, mask: {12, }, error code: 22 error msg: Invalid argument. Specify the number of threads explicitly so the affinity is not set.[m
+[1;31m2026-11-10 22:01:03.229639629 [E:onnxruntime:Default, env.cc:234 ThreadMain] pthread_setaffinity_np failed for thread: 689029, index: 6, mask: {16, }, error code: 22 error msg: Invalid argument. Specify the number of threads explicitly so the affinity is not set.[m
+[1;31m2026-11-10 22:01:03.230235346 [E:onnxruntime:Default, env.cc:234 ThreadMain] pthread_setaffinity_np failed for thread: 689026, index: 3, mask: {10, }, error code: 22 error msg: Invalid argument. Specify the number of threads explicitly so the affinity is not set.[m
+[1;31m2026-11-10 22:01:03.232568071 [E:onnxruntime:Default, env.cc:234 ThreadMain] pthread_setaffinity_np failed for thread: 689044, index: 21, mask: {42, }, error code: 22 error msg: Invalid argument. Specify the number of threads explicitly so the affinity is not set.[m
+[1;31m2026-11-10 22:01:03.235326957 [E:onnxruntime:Default, env.cc:234 ThreadMain] pthread_setaffinity_np failed for thread: 689036, index: 13, mask: {32, }, error code: 22 error msg: Invalid argument. Specify the number of threads explicitly so the affinity is not set.[m
+[1;31m2026-11-10 22:01:03.240440445 [E:onnxruntime:Default, env.cc:234 ThreadMain] pthread_setaffinity_np failed for thread: 689066, index: 43, mask: {45, }, error code: 22 error msg: Invalid argument. Specify the number of threads explicitly so the affinity is not set.[m
+[1;31m2026-11-10 22:01:03.240461212 [E:onnxruntime:Default, env.cc:234 ThreadMain] pthread_setaffinity_np failed for thread: 689031, index: 8, mask: {24, }, error code: 22 error msg: Invalid argument. Specify the number of threads explicitly so the affinity is not set.[m
+[1;31m2026-11-10 22:01:03.240481780 [E:onnxruntime:Default, env.cc:234 ThreadMain] pthread_setaffinity_np failed for thread: 689032, index: 9, mask: {22, }, error code: 22 error msg: Invalid argument. Specify the number of threads explicitly so the affinity is not set.[m
+[1;31m2026-11-10 22:01:03.242271009 [E:onnxruntime:Default, env.cc:234 ThreadMain] pthread_setaffinity_np failed for thread: 689030, index: 7, mask: {20, }, error code: 22 error msg: Invalid argument. Specify the number of threads explicitly so the affinity is not set.[m
+[1;31m2026-11-10 22:01:03.249294047 [E:onnxruntime:Default, env.cc:234 ThreadMain] pthread_setaffinity_np failed for thread: 689065, index: 42, mask: {41, }, error code: 22 error msg: Invalid argument. Specify the number of threads explicitly so the affinity is not set.[m
+[1;31m2026-11-10 22:01:03.251446286 [E:onnxruntime:Default, env.cc:234 ThreadMain] pthread_setaffinity_np failed for thread: 689057, index: 34, mask: {19, }, error code: 22 error msg: Invalid argument. Specify the number of threads explicitly so the affinity is not set.[m
+[1;31m2026-11-10 22:01:03.251614292 [E:onnxruntime:Default, env.cc:234 ThreadMain] pthread_setaffinity_np failed for thread: 689045, index: 22, mask: {38, }, error code: 22 error msg: Invalid argument. Specify the number of threads explicitly so the affinity is not set.[m
+[1;31m2026-11-10 22:01:03.252444632 [E:onnxruntime:Default, env.cc:234 ThreadMain] pthread_setaffinity_np failed for thread: 689041, index: 18, mask: {40, }, error code: 22 error msg: Invalid argument. Specify the number of threads explicitly so the affinity is not set.[m
+[1;31m2026-11-10 22:01:03.254332373 [E:onnxruntime:Default, env.cc:234 ThreadMain] pthread_setaffinity_np failed for thread: 689067, index: 44, mask: {47, }, error code: 22 error msg: Invalid argument. Specify the number of threads explicitly so the affinity is not set.[m
+[1;31m2026-11-10 22:01:03.259455713 [E:onnxruntime:Default, env.cc:234 ThreadMain] pthread_setaffinity_np failed for thread: 689035, index: 12, mask: {28, }, error code: 22 error msg: Invalid argument. Specify the number of threads explicitly so the affinity is not set.[m
+[1;31m2026-11-10 22:01:03.262449620 [E:onnxruntime:Default, env.cc:234 ThreadMain] pthread_setaffinity_np failed for thread: 689058, index: 35, mask: {15, }, error code: 22 error msg: Invalid argument. Specify the number of threads explicitly so the affinity is not set.[m
+[1;31m2026-11-10 22:01:03.263440019 [E:onnxruntime:Default, env.cc:234 ThreadMain] pthread_setaffinity_np failed for thread: 689042, index: 19, mask: {44, }, error code: 22 error msg: Invalid argument. Specify the number of threads explicitly so the affinity is not set.[m
+[1;31m2026-11-10 22:01:03.267553245 [E:onnxruntime:Default, env.cc:234 ThreadMain] pthread_setaffinity_np failed for thread: 689033, index: 10, mask: {18, }, error code: 22 error msg: Invalid argument. Specify the number of threads explicitly so the affinity is not set.[m
+[1;31m2026-11-10 22:01:03.273446772 [E:onnxruntime:Default, env.cc:234 ThreadMain] pthread_setaffinity_np failed for thread: 689059, index: 36, mask: {29, }, error code: 22 error msg: Invalid argument. Specify the number of threads explicitly so the affinity is not set.[m
+[1;31m2026-11-10 22:01:03.274445603 [E:onnxruntime:Default, env.cc:234 ThreadMain] pthread_setaffinity_np failed for thread: 689043, index: 20, mask: {46, }, error code: 22 error msg: Invalid argument. Specify the number of threads explicitly so the affinity is not set.[m
+[1;31m2026-11-10 22:01:03.274581742 [E:onnxruntime:Default, env.cc:234 ThreadMain] pthread_setaffinity_np failed for thread: 689039, index: 16, mask: {30, }, error code: 22 error msg: Invalid argument. Specify the number of threads explicitly so the affinity is not set.[m
+[1;31m2026-11-10 22:01:03.280419205 [E:onnxruntime:Default, env.cc:234 ThreadMain] pthread_setaffinity_np failed for thread: 689061, index: 38, mask: {37, }, error code: 22 error msg: Invalid argument. Specify the number of threads explicitly so the affinity is not set.[m
+[1;31m2026-11-10 22:01:03.280728379 [E:onnxruntime:Default, env.cc:234 ThreadMain] pthread_setaffinity_np failed for thread: 689054, index: 31, mask: {21, }, error code: 22 error msg: Invalid argument. Specify the number of threads explicitly so the affinity is not set.[m
+[1;31m2026-11-10 22:01:03.283851755 [E:onnxruntime:Default, env.cc:234 ThreadMain] pthread_setaffinity_np failed for thread: 689034, index: 11, mask: {14, }, error code: 22 error msg: Invalid argument. Specify the number of threads explicitly so the affinity is not set.[m
+[1;31m2026-11-10 22:01:03.284526386 [E:onnxruntime:Default, env.cc:234 ThreadMain] pthread_setaffinity_np failed for thread: 689040, index: 17, mask: {26, }, error code: 22 error msg: Invalid argument. Specify the number of threads explicitly so the affinity is not set.[m
+[1;31m2026-11-10 22:01:03.288678455 [E:onnxruntime:Default, env.cc:234 ThreadMain] pthread_setaffinity_np failed for thread: 689060, index: 37, mask: {33, }, error code: 22 error msg: Invalid argument. Specify the number of threads explicitly so the affinity is not set.[m
+[1;31m2026-11-10 22:01:03.290014539 [E:onnxruntime:Default, env.cc:234 ThreadMain] pthread_setaffinity_np failed for thread: 689046, index: 23, mask: {1, }, error code: 22 error msg: Invalid argument. Specify the number of threads explicitly so the affinity is not set.[m
+[1;31m2026-11-10 22:01:03.294443035 [E:onnxruntime:Default, env.cc:234 ThreadMain] pthread_setaffinity_np failed for thread: 689037, index: 14, mask: {36, }, error code: 22 error msg: Invalid argument. Specify the number of threads explicitly so the affinity is not set.[m
+[1;31m2026-11-10 22:01:03.299448495 [E:onnxruntime:Default, env.cc:234 ThreadMain] pthread_setaffinity_np failed for thread: 689062, index: 39, mask: {35, }, error code: 22 error msg: Invalid argument. Specify the number of threads explicitly so the affinity is not set.[m
+[1;31m2026-11-10 22:01:03.301678894 [E:onnxruntime:Default, env.cc:234 ThreadMain] pthread_setaffinity_np failed for thread: 689063, index: 40, mask: {31, }, error code: 22 error msg: Invalid argument. Specify the number of threads explicitly so the affinity is not set.[m
+[1;31m2026-11-10 22:01:03.306949217 [E:onnxruntime:Default, env.cc:234 ThreadMain] pthread_setaffinity_np failed for thread: 689056, index: 33, mask: {23, }, error code: 22 error msg: Invalid argument. Specify the number of threads explicitly so the affinity is not set.[m
+[1;31m2026-11-10 22:01:03.309068343 [E:onnxruntime:Default, env.cc:234 ThreadMain] pthread_setaffinity_np failed for thread: 689055, index: 32, mask: {25, }, error code: 22 error msg: Invalid argument. Specify the number of threads explicitly so the affinity is not set.[m
+[1;31m2026-11-10 22:01:03.310446066 [E:onnxruntime:Default, env.cc:234 ThreadMain] pthread_setaffinity_np failed for thread: 689069, index: 46, mask: {39, }, error code: 22 error msg: Invalid argument. Specify the number of threads explicitly so the affinity is not set.[m
+[1;31m2026-11-10 22:01:03.313410740 [E:onnxruntime:Default, env.cc:234 ThreadMain] pthread_setaffinity_np failed for thread: 689038, index: 15, mask: {34, }, error code: 22 error msg: Invalid argument. Specify the number of threads explicitly so the affinity is not set.[m
+[1;31m2026-11-10 22:01:03.320649584 [E:onnxruntime:Default, env.cc:234 ThreadMain] pthread_setaffinity_np failed for thread: 689064, index: 41, mask: {27, }, error code: 22 error msg: Invalid argument. Specify the number of threads explicitly so the affinity is not set.[m
+[1;31m2026-11-10 22:01:03.322474777 [E:onnxruntime:Default, env.cc:234 ThreadMain] pthread_setaffinity_np failed for thread: 689052, index: 29, mask: {3, }, error code: 22 error msg: Invalid argument. Specify the number of threads explicitly so the affinity is not set.[m
+[1;31m2026-11-10 22:01:03.323453812 [E:onnxruntime:Default, env.cc:234 ThreadMain] pthread_setaffinity_np failed for thread: 689051, index: 28, mask: {7, }, error code: 22 error msg: Invalid argument. Specify the number of threads explicitly so the affinity is not set.[m
+[1;31m2026-11-10 22:01:03.335262321 [E:onnxruntime:Default, env.cc:234 ThreadMain] pthread_setaffinity_np failed for thread: 689068, index: 45, mask: {43, }, error code: 22 error msg: Invalid argument. Specify the number of threads explicitly so the affinity is not set.[m
+[1;31m2026-11-10 22:01:03.342340502 [E:onnxruntime:Default, env.cc:234 ThreadMain] pthread_setaffinity_np failed for thread: 689053, index: 30, mask: {17, }, error code: 22 error msg: Invalid argument. Specify the number of threads explicitly so the affinity is not set.[m
+[1;31m2026-11-10 22:01:03.352047738 [E:onnxruntime:Default, env.cc:234 ThreadMain] pthread_setaffinity_np failed for thread: 689084, index: 14, mask: {36, }, error code: 22 error msg: Invalid argument. Specify the number of threads explicitly so the affinity is not set.[m
+[1;31m2026-11-10 22:01:03.354241679 [E:onnxruntime:Default, env.cc:234 ThreadMain] pthread_setaffinity_np failed for thread: 689073, index: 3, mask: {10, }, error code: 22 error msg: Invalid argument. Specify the number of threads explicitly so the affinity is not set.[m
+[1;31m2026-11-10 22:01:03.356703167 [E:onnxruntime:Default, env.cc:234 ThreadMain] pthread_setaffinity_np failed for thread: 689108, index: 38, mask: {37, }, error code: 22 error msg: Invalid argument. Specify the number of threads explicitly so the affinity is not set.[m
+[1;31m2026-11-10 22:01:03.356748495 [E:onnxruntime:Default, env.cc:234 ThreadMain] pthread_setaffinity_np failed for thread: 689101, index: 31, mask: {21, }, error code: 22 error msg: Invalid argument. Specify the number of threads explicitly so the affinity is not set.[m
+[1;31m2026-11-10 22:01:03.359458296 [E:onnxruntime:Default, env.cc:234 ThreadMain] pthread_setaffinity_np failed for thread: 689072, index: 2, mask: {12, }, error code: 22 error msg: Invalid argument. Specify the number of threads explicitly so the affinity is not set.[m
+[1;31m2026-11-10 22:01:03.359493834 [E:onnxruntime:Default, env.cc:234 ThreadMain] pthread_setaffinity_np failed for thread: 689087, index: 17, mask: {26, }, error code: 22 error msg: Invalid argument. Specify the number of threads explicitly so the affinity is not set.[m
+[1;31m2026-11-10 22:01:03.361461446 [E:onnxruntime:Default, env.cc:234 ThreadMain] pthread_setaffinity_np failed for thread: 689076, index: 6, mask: {16, }, error code: 22 error msg: Invalid argument. Specify the number of threads explicitly so the affinity is not set.[m
+[1;31m2026-11-10 22:01:03.364485966 [E:onnxruntime:Default, env.cc:234 ThreadMain] pthread_setaffinity_np failed for thread: 689078, index: 8, mask: {24, }, error code: 22 error msg: Invalid argument. Specify the number of threads explicitly so the affinity is not set.[m
+[1;31m2026-11-10 22:01:03.370448714 [E:onnxruntime:Default, env.cc:234 ThreadMain] pthread_setaffinity_np failed for thread: 689081, index: 11, mask: {14, }, error code: 22 error msg: Invalid argument. Specify the number of threads explicitly so the affinity is not set.[m
+[1;31m2026-11-10 22:01:03.371145139 [E:onnxruntime:Default, env.cc:234 ThreadMain] pthread_setaffinity_np failed for thread: 689085, index: 15, mask: {34, }, error code: 22 error msg: Invalid argument. Specify the number of threads explicitly so the affinity is not set.[m
+[1;31m2026-11-10 22:01:03.383462285 [E:onnxruntime:Default, env.cc:234 ThreadMain] pthread_setaffinity_np failed for thread: 689089, index: 19, mask: {44, }, error code: 22 error msg: Invalid argument. Specify the number of threads explicitly so the affinity is not set.[m
+[1;31m2026-11-10 22:01:03.384659373 [E:onnxruntime:Default, env.cc:234 ThreadMain] pthread_setaffinity_np failed for thread: 689109, index: 39, mask: {35, }, error code: 22 error msg: Invalid argument. Specify the number of threads explicitly so the affinity is not set.[m
+[1;31m2026-11-10 22:01:03.388258901 [E:onnxruntime:Default, env.cc:234 ThreadMain] pthread_setaffinity_np failed for thread: 689077, index: 7, mask: {20, }, error code: 22 error msg: Invalid argument. Specify the number of threads explicitly so the affinity is not set.[m
+[1;31m2026-11-10 22:01:03.389561266 [E:onnxruntime:Default, env.cc:234 ThreadMain] pthread_setaffinity_np failed for thread: 689098, index: 28, mask: {7, }, error code: 22 error msg: Invalid argument. Specify the number of threads explicitly so the affinity is not set.[m
+[1;31m2026-11-10 22:01:03.393161625 [E:onnxruntime:Default, env.cc:234 ThreadMain] pthread_setaffinity_np failed for thread: 689110, index: 40, mask: {31, }, error code: 22 error msg: Invalid argument. Specify the number of threads explicitly so the affinity is not set.[m
+[1;31m2026-11-10 22:01:03.394458970 [E:onnxruntime:Default, env.cc:234 ThreadMain] pthread_setaffinity_np failed for thread: 689090, index: 20, mask: {46, }, error code: 22 error msg: Invalid argument. Specify the number of threads explicitly so the affinity is not set.[m
+[1;31m2026-11-10 22:01:03.406669783 [E:onnxruntime:Default, env.cc:234 ThreadMain] pthread_setaffinity_np failed for thread: 689086, index: 16, mask: {30, }, error code: 22 error msg: Invalid argument. Specify the number of threads explicitly so the affinity is not set.[m
+[1;31m2026-11-10 22:01:03.408161719 [E:onnxruntime:Default, env.cc:234 ThreadMain] pthread_setaffinity_np failed for thread: 689082, index: 12, mask: {28, }, error code: 22 error msg: Invalid argument. Specify the number of threads explicitly so the affinity is not set.[m
+[1;31m2026-11-10 22:01:03.410467510 [E:onnxruntime:Default, env.cc:234 ThreadMain] pthread_setaffinity_np failed for thread: 689079, index: 9, mask: {22, }, error code: 22 error msg: Invalid argument. Specify the number of threads explicitly so the affinity is not set.[m
+[1;31m2026-11-10 22:01:03.413367807 [E:onnxruntime:Default, env.cc:234 ThreadMain] pthread_setaffinity_np failed for thread: 689083, index: 13, mask: {32, }, error code: 22 error msg: Invalid argument. Specify the number of threads explicitly so the affinity is not set.[m
+[1;31m2026-11-10 22:01:03.413468888 [E:onnxruntime:Default, env.cc:234 ThreadMain] pthread_setaffinity_np failed for thread: 689093, index: 23, mask: {1, }, error code: 22 error msg: Invalid argument. Specify the number of threads explicitly so the affinity is not set.[m
+[1;31m2026-11-10 22:01:03.415051726 [E:onnxruntime:Default, env.cc:234 ThreadMain] pthread_setaffinity_np failed for thread: 689099, index: 29, mask: {3, }, error code: 22 error msg: Invalid argument. Specify the number of threads explicitly so the affinity is not set.[m
+[1;31m2026-11-10 22:01:03.416459708 [E:onnxruntime:Default, env.cc:234 ThreadMain] pthread_setaffinity_np failed for thread: 689107, index: 37, mask: {33, }, error code: 22 error msg: Invalid argument. Specify the number of threads explicitly so the affinity is not set.[m
+[1;31m2026-11-10 22:01:03.423448698 [E:onnxruntime:Default, env.cc:234 ThreadMain] pthread_setaffinity_np failed for thread: 689115, index: 45, mask: {43, }, error code: 22 error msg: Invalid argument. Specify the number of threads explicitly so the affinity is not set.[m
+[1;31m2026-11-10 22:01:03.429388800 [E:onnxruntime:Default, env.cc:234 ThreadMain] pthread_setaffinity_np failed for thread: 689071, index: 1, mask: {8, }, error code: 22 error msg: Invalid argument. Specify the number of threads explicitly so the affinity is not set.[m
+[1;31m2026-11-10 22:01:03.432440397 [E:onnxruntime:Default, env.cc:234 ThreadMain] pthread_setaffinity_np failed for thread: 689092, index: 22, mask: {38, }, error code: 22 error msg: Invalid argument. Specify the number of threads explicitly so the affinity is not set.[m
+[1;31m2026-11-10 22:01:03.432468362 [E:onnxruntime:Default, env.cc:234 ThreadMain] pthread_setaffinity_np failed for thread: 689102, index: 32, mask: {25, }, error code: 22 error msg: Invalid argument. Specify the number of threads explicitly so the affinity is not set.[m
+[1;31m2026-11-10 22:01:03.434026214 [E:onnxruntime:Default, env.cc:234 ThreadMain] pthread_setaffinity_np failed for thread: 689103, index: 33, mask: {23, }, error code: 22 error msg: Invalid argument. Specify the number of threads explicitly so the affinity is not set.[m
+[1;31m2026-11-10 22:01:03.435444496 [E:onnxruntime:Default, env.cc:234 ThreadMain] pthread_setaffinity_np failed for thread: 689112, index: 42, mask: {41, }, error code: 22 error msg: Invalid argument. Specify the number of threads explicitly so the affinity is not set.[m
+[1;31m2026-11-10 22:01:03.435517170 [E:onnxruntime:Default, env.cc:234 ThreadMain] pthread_setaffinity_np failed for thread: 689113, index: 43, mask: {45, }, error code: 22 error msg: Invalid argument. Specify the number of threads explicitly so the affinity is not set.[m
+[1;31m2026-11-10 22:01:03.436075640 [E:onnxruntime:Default, env.cc:234 ThreadMain] pthread_setaffinity_np failed for thread: 689114, index: 44, mask: {47, }, error code: 22 error msg: Invalid argument. Specify the number of threads explicitly so the affinity is not set.[m
+[1;31m2026-11-10 22:01:03.442503255 [E:onnxruntime:Default, env.cc:234 ThreadMain] pthread_setaffinity_np failed for thread: 689080, index: 10, mask: {18, }, error code: 22 error msg: Invalid argument. Specify the number of threads explicitly so the affinity is not set.[m
+[1;31m2026-11-10 22:01:03.412153116 [E:onnxruntime:Default, env.cc:234 ThreadMain] pthread_setaffinity_np failed for thread: 689116, index: 46, mask: {39, }, error code: 22 error msg: Invalid argument. Specify the number of threads explicitly so the affinity is not set.[m
+[1;31m2026-11-10 22:01:03.416446543 [E:onnxruntime:Default, env.cc:234 ThreadMain] pthread_setaffinity_np failed for thread: 689106, index: 36, mask: {29, }, error code: 22 error msg: Invalid argument. Specify the number of threads explicitly so the affinity is not set.[m
+[1;31m2026-11-10 22:01:03.448443999 [E:onnxruntime:Default, env.cc:234 ThreadMain] pthread_setaffinity_np failed for thread: 689100, index: 30, mask: {17, }, error code: 22 error msg: Invalid argument. Specify the number of threads explicitly so the affinity is not set.[m
+[1;31m2026-11-10 22:01:03.448447824 [E:onnxruntime:Default, env.cc:234 ThreadMain] pthread_setaffinity_np failed for thread: 689088, index: 18, mask: {40, }, error code: 22 error msg: Invalid argument. Specify the number of threads explicitly so the affinity is not set.[m
+[1;31m2026-11-10 22:01:03.461526700 [E:onnxruntime:Default, env.cc:234 ThreadMain] pthread_setaffinity_np failed for thread: 689091, index: 21, mask: {42, }, error code: 22 error msg: Invalid argument. Specify the number of threads explicitly so the affinity is not set.[m
+[1;31m2026-11-10 22:01:03.468153091 [E:onnxruntime:Default, env.cc:234 ThreadMain] pthread_setaffinity_np failed for thread: 689111, index: 41, mask: {27, }, error code: 22 error msg: Invalid argument. Specify the number of threads explicitly so the affinity is not set.[m
+[1;31m2026-11-10 22:01:03.468136734 [E:onnxruntime:Default, env.cc:234 ThreadMain] pthread_setaffinity_np failed for thread: 689104, index: 34, mask: {19, }, error code: 22 error msg: Invalid argument. Specify the number of threads explicitly so the affinity is not set.[m
+[1;31m2026-11-10 22:01:03.468895192 [E:onnxruntime:Default, env.cc:234 ThreadMain] pthread_setaffinity_np failed for thread: 689105, index: 35, mask: {15, }, error code: 22 error msg: Invalid argument. Specify the number of threads explicitly so the affinity is not set.[m
+[1;31m2026-11-10 22:01:03.521154508 [E:onnxruntime:Default, env.cc:234 ThreadMain] pthread_setaffinity_np failed for thread: 689118, index: 1, mask: {8, }, error code: 22 error msg: Invalid argument. Specify the number of threads explicitly so the affinity is not set.[m
+[1;31m2026-11-10 22:01:03.521188724 [E:onnxruntime:Default, env.cc:234 ThreadMain] pthread_setaffinity_np failed for thread: 689119, index: 2, mask: {12, }, error code: 22 error msg: Invalid argument. Specify the number of threads explicitly so the affinity is not set.[m
+[1;31m2026-11-10 22:01:03.521214201 [E:onnxruntime:Default, env.cc:234 ThreadMain] pthread_setaffinity_np failed for thread: 689120, index: 3, mask: {10, }, error code: 22 error msg: Invalid argument. Specify the number of threads explicitly so the affinity is not set.[m
+[1;31m2026-11-10 22:01:03.521529534 [E:onnxruntime:Default, env.cc:234 ThreadMain] pthread_setaffinity_np failed for thread: 689135, index: 18, mask: {40, }, error code: 22 error msg: Invalid argument. Specify the number of threads explicitly so the affinity is not set.[m
+[1;31m2026-11-10 22:01:03.522392754 [E:onnxruntime:Default, env.cc:234 ThreadMain] pthread_setaffinity_np failed for thread: 689123, index: 6, mask: {16, }, error code: 22 error msg: Invalid argument. Specify the number of threads explicitly so the affinity is not set.[m
+[1;31m2026-11-10 22:01:03.523674126 [E:onnxruntime:Default, env.cc:234 ThreadMain] pthread_setaffinity_np failed for thread: 689159, index: 42, mask: {41, }, error code: 22 error msg: Invalid argument. Specify the number of threads explicitly so the affinity is not set.[m
+[1;31m2026-11-10 22:01:03.525768563 [E:onnxruntime:Default, env.cc:234 ThreadMain] pthread_setaffinity_np failed for thread: 689154, index: 37, mask: {33, }, error code: 22 error msg: Invalid argument. Specify the number of threads explicitly so the affinity is not set.[m
+[1;31m2026-11-10 22:01:03.525859791 [E:onnxruntime:Default, env.cc:234 ThreadMain] pthread_setaffinity_np failed for thread: 689136, index: 19, mask: {44, }, error code: 22 error msg: Invalid argument. Specify the number of threads explicitly so the affinity is not set.[m
+[1;31m2026-11-10 22:01:03.532447012 [E:onnxruntime:Default, env.cc:234 ThreadMain] pthread_setaffinity_np failed for thread: 689134, index: 17, mask: {26, }, error code: 22 error msg: Invalid argument. Specify the number of threads explicitly so the affinity is not set.[m
+[1;31m2026-11-10 22:01:03.539214701 [E:onnxruntime:Default, env.cc:234 ThreadMain] pthread_setaffinity_np failed for thread: 689137, index: 20, mask: {46, }, error code: 22 error msg: Invalid argument. Specify the number of threads explicitly so the affinity is not set.[m
+[1;31m2026-11-10 22:01:03.540342392 [E:onnxruntime:Default, env.cc:234 ThreadMain] pthread_setaffinity_np failed for thread: 689124, index: 7, mask: {20, }, error code: 22 error msg: Invalid argument. Specify the number of threads explicitly so the affinity is not set.[m
+[1;31m2026-11-10 22:01:03.543257304 [E:onnxruntime:Default, env.cc:234 ThreadMain] pthread_setaffinity_np failed for thread: 689125, index: 8, mask: {24, }, error code: 22 error msg: Invalid argument. Specify the number of threads explicitly so the affinity is not set.[m
+[1;31m2026-11-10 22:01:03.544779752 [E:onnxruntime:Default, env.cc:234 ThreadMain] pthread_setaffinity_np failed for thread: 689127, index: 10, mask: {18, }, error code: 22 error msg: Invalid argument. Specify the number of threads explicitly so the affinity is not set.[m
+[1;31m2026-11-10 22:01:03.547448423 [E:onnxruntime:Default, env.cc:234 ThreadMain] pthread_setaffinity_np failed for thread: 689138, index: 21, mask: {42, }, error code: 22 error msg: Invalid argument. Specify the number of threads explicitly so the affinity is not set.[m
+[1;31m2026-11-10 22:01:03.553008738 [E:onnxruntime:Default, env.cc:234 ThreadMain] pthread_setaffinity_np failed for thread: 689157, index: 40, mask: {31, }, error code: 22 error msg: Invalid argument. Specify the number of threads explicitly so the affinity is not set.[m
+[1;31m2026-11-10 22:01:03.556445882 [E:onnxruntime:Default, env.cc:234 ThreadMain] pthread_setaffinity_np failed for thread: 689128, index: 11, mask: {14, }, error code: 22 error msg: Invalid argument. Specify the number of threads explicitly so the affinity is not set.[m
+[1;31m2026-11-10 22:01:03.557361244 [E:onnxruntime:Default, env.cc:234 ThreadMain] pthread_setaffinity_np failed for thread: 689126, index: 9, mask: {22, }, error code: 22 error msg: Invalid argument. Specify the number of threads explicitly so the affinity is not set.[m
+[1;31m2026-11-10 22:01:03.558158260 [E:onnxruntime:Default, env.cc:234 ThreadMain] pthread_setaffinity_np failed for thread: 689145, index: 28, mask: {7, }, error code: 22 error msg: Invalid argument. Specify the number of threads explicitly so the affinity is not set.[m
+[1;31m2026-11-10 22:01:03.558447543 [E:onnxruntime:Default, env.cc:234 ThreadMain] pthread_setaffinity_np failed for thread: 689139, index: 22, mask: {38, }, error code: 22 error msg: Invalid argument. Specify the number of threads explicitly so the affinity is not set.[m
+[1;31m2026-11-10 22:01:03.562236356 [E:onnxruntime:Default, env.cc:234 ThreadMain] pthread_setaffinity_np failed for thread: 689147, index: 30, mask: {17, }, error code: 22 error msg: Invalid argument. Specify the number of threads explicitly so the affinity is not set.[m
+[1;31m2026-11-10 22:01:03.562416672 [E:onnxruntime:Default, env.cc:234 ThreadMain] pthread_setaffinity_np failed for thread: 689130, index: 13, mask: {32, }, error code: 22 error msg: Invalid argument. Specify the number of threads explicitly so the affinity is not set.[m
+[1;31m2026-11-10 22:01:03.568446342 [E:onnxruntime:Default, env.cc:234 ThreadMain] pthread_setaffinity_np failed for thread: 689146, index: 29, mask: {3, }, error code: 22 error msg: Invalid argument. Specify the number of threads explicitly so the affinity is not set.[m
+[1;31m2026-11-10 22:01:03.569444357 [E:onnxruntime:Default, env.cc:234 ThreadMain] pthread_setaffinity_np failed for thread: 689140, index: 23, mask: {1, }, error code: 22 error msg: Invalid argument. Specify the number of threads explicitly so the affinity is not set.[m
+[1;31m2026-11-10 22:01:03.571607272 [E:onnxruntime:Default, env.cc:234 ThreadMain] pthread_setaffinity_np failed for thread: 689129, index: 12, mask: {28, }, error code: 22 error msg: Invalid argument. Specify the number of threads explicitly so the affinity is not set.[m
+[1;31m2026-11-10 22:01:03.574558125 [E:onnxruntime:Default, env.cc:234 ThreadMain] pthread_setaffinity_np failed for thread: 689131, index: 14, mask: {36, }, error code: 22 error msg: Invalid argument. Specify the number of threads explicitly so the affinity is not set.[m
+[1;31m2026-11-10 22:01:03.581224632 [E:onnxruntime:Default, env.cc:234 ThreadMain] pthread_setaffinity_np failed for thread: 689152, index: 35, mask: {15, }, error code: 22 error msg: Invalid argument. Specify the number of threads explicitly so the affinity is not set.[m
+[1;31m2026-11-10 22:01:03.584641840 [E:onnxruntime:Default, env.cc:234 ThreadMain] pthread_setaffinity_np failed for thread: 689148, index: 31, mask: {21, }, error code: 22 error msg: Invalid argument. Specify the number of threads explicitly so the affinity is not set.[m
+[1;31m2026-11-10 22:01:03.586764306 [E:onnxruntime:Default, env.cc:234 ThreadMain] pthread_setaffinity_np failed for thread: 689132, index: 15, mask: {34, }, error code: 22 error msg: Invalid argument. Specify the number of threads explicitly so the affinity is not set.[m
+[1;31m2026-11-10 22:01:03.587335896 [E:onnxruntime:Default, env.cc:234 ThreadMain] pthread_setaffinity_np failed for thread: 689158, index: 41, mask: {27, }, error code: 22 error msg: Invalid argument. Specify the number of threads explicitly so the affinity is not set.[m
+[1;31m2026-11-10 22:01:03.589431630 [E:onnxruntime:Default, env.cc:234 ThreadMain] pthread_setaffinity_np failed for thread: 689162, index: 45, mask: {43, }, error code: 22 error msg: Invalid argument. Specify the number of threads explicitly so the affinity is not set.[m
+[1;31m2026-11-10 22:01:03.591862485 [E:onnxruntime:Default, env.cc:234 ThreadMain] pthread_setaffinity_np failed for thread: 689133, index: 16, mask: {30, }, error code: 22 error msg: Invalid argument. Specify the number of threads explicitly so the affinity is not set.[m
+[1;31m2026-11-10 22:01:03.593469012 [E:onnxruntime:Default, env.cc:234 ThreadMain] pthread_setaffinity_np failed for thread: 689149, index: 32, mask: {25, }, error code: 22 error msg: Invalid argument. Specify the number of threads explicitly so the affinity is not set.[m
+[1;31m2026-11-10 22:01:03.595455001 [E:onnxruntime:Default, env.cc:234 ThreadMain] pthread_setaffinity_np failed for thread: 689155, index: 38, mask: {37, }, error code: 22 error msg: Invalid argument. Specify the number of threads explicitly so the affinity is not set.[m
+[1;31m2026-11-10 22:01:03.597444445 [E:onnxruntime:Default, env.cc:234 ThreadMain] pthread_setaffinity_np failed for thread: 689160, index: 43, mask: {45, }, error code: 22 error msg: Invalid argument. Specify the number of threads explicitly so the affinity is not set.[m
+[1;31m2026-11-10 22:01:03.598890963 [E:onnxruntime:Default, env.cc:234 ThreadMain] pthread_setaffinity_np failed for thread: 689153, index: 36, mask: {29, }, error code: 22 error msg: Invalid argument. Specify the number of threads explicitly so the affinity is not set.[m
+[1;31m2026-11-10 22:01:03.604449512 [E:onnxruntime:Default, env.cc:234 ThreadMain] pthread_setaffinity_np failed for thread: 689150, index: 33, mask: {23, }, error code: 22 error msg: Invalid argument. Specify the number of threads explicitly so the affinity is not set.[m
+[1;31m2026-11-10 22:01:03.606444731 [E:onnxruntime:Default, env.cc:234 ThreadMain] pthread_setaffinity_np failed for thread: 689156, index: 39, mask: {35, }, error code: 22 error msg: Invalid argument. Specify the number of threads explicitly so the affinity is not set.[m
+[1;31m2026-11-10 22:01:03.612277428 [E:onnxruntime:Default, env.cc:234 ThreadMain] pthread_setaffinity_np failed for thread: 689163, index: 46, mask: {39, }, error code: 22 error msg: Invalid argument. Specify the number of threads explicitly so the affinity is not set.[m
+[1;31m2026-11-10 22:01:03.615464711 [E:onnxruntime:Default, env.cc:234 ThreadMain] pthread_setaffinity_np failed for thread: 689151, index: 34, mask: {19, }, error code: 22 error msg: Invalid argument. Specify the number of threads explicitly so the affinity is not set.[m
+[1;31m2026-11-10 22:01:03.616314454 [E:onnxruntime:Default, env.cc:234 ThreadMain] pthread_setaffinity_np failed for thread: 689161, index: 44, mask: {47, }, error code: 22 error msg: Invalid argument. Specify the number of threads explicitly so the affinity is not set.[m
+2026-11-11T04:01:06Z [90,855ms] [Warning] [omni.syntheticdata.plugin] OgnSdPostRenderVarToHost : rendervar copy from texture directly to host buffer is counter-performant. Please use copy from texture to device buffer first.
+2026-11-11T04:01:08Z [93,032ms] [Warning] [carb] Client gpu.foundation.plugin has acquired [gpu::unstable::IMemoryBudgetManagerFactory v0.1] 100 times. Consider accessing this interface with carb::getCachedInterface() (Performance warning)
+2026-11-11T04:01:12Z [96,900ms] [Error] [omni.kit.app._impl] [py stderr]: /isaac-sim/kit/python/lib/python3.11/site-packages/insightface/utils/transform.py:68: FutureWarning: `rcond` parameter will change to the default of machine precision times ``max(M, N)`` where M and N are the input matrix dimensions.
+To use the future default and silence this warning we advise to pass `rcond=None`, to keep using the old, explicitly pass `rcond=-1`.
+  P = np.linalg.lstsq(X_homo, Y)[0].T # Affine matrix. 3 x 4
+2026-11-11T04:01:12Z [96,967ms] [Error] [omni.kit.app._impl] [py stderr]: /isaac-sim/kit/python/lib/python3.11/site-packages/insightface/utils/face_align.py:23: FutureWarning: `estimate` is deprecated since version 0.26 and will be removed in version 2.2. Please use `SimilarityTransform.from_estimate` class constructor instead.
+  tform.estimate(lmk, dst)
+Starting kit application with the following args:  ['/isaac-sim/exts/isaacsim.simulation_app/isaacsim/simulation_app/simulation_app.py', '/isaac-sim/apps/isaacsim.exp.base.python.kit', '--/app/tokens/exe-path=/isaac-sim/kit', '--/persistent/app/viewport/displayOptions=3094', '--/rtx/materialDb/syncLoads=True', '--/rtx/hydra/materialSyncLoads=True', '--/omni.kit.plugin/syncUsdLoads=True', '--/app/renderer/resolution/width=1280', '--/app/renderer/resolution/height=720', '--/app/window/width=1440', '--/app/window/height=900', '--/renderer/multiGpu/enabled=True', '--/app/fastShutdown=True', '--/app/installSignalHandlers=0', '--ext-folder', '/isaac-sim/exts', '--ext-folder', '/isaac-sim/apps', '--/physics/cudaDevice=0', '--/plugins/carb.tasking.plugin/threadCount=32', '--/plugins/omni.tbb.globalcontrol/maxThreadCount=32', '--portable', '--no-window', '--/app/window/hideUi=1']
+Passing the following args to the base kit application:  ['--config', 'configs/isaac_heads_v2.yaml', 'env.isaac.key_light_base_intensity=774.0030632815389', 'env.isaac.dome_base_intensity=352.51238858096247', 'eval.max_scenes_per_split=12']
+Warp 1.8.2 initialized:
+   CUDA Toolkit 12.8, Driver 13.0
+   Devices:
+     "cpu"      : "x86_64"
+     "cuda:0"   : "Tesla T4" (16 GiB, sm_75, mempool enabled)
+   Kernel cache:
+     /scratch/user/chenzc2001/.dt_cache/warp/1.8.2
+Warp DeprecationWarning: The `warp.sim` module is deprecated and will be removed in v1.10. Please transition to using the forthcoming Newton library instead.
+Applied providers: ['CUDAExecutionProvider', 'CPUExecutionProvider'], with options: {'CPUExecutionProvider': {}, 'CUDAExecutionProvider': {'sdpa_kernel': '0', 'use_tf32': '1', 'fuse_conv_bias': '0', 'prefer_nhwc': '0', 'tunable_op_max_tuning_duration_ms': '0', 'enable_skip_layer_norm_strict_mode': '0', 'tunable_op_tuning_enable': '0', 'tunable_op_enable': '0', 'use_ep_level_unified_stream': '0', 'device_id': '0', 'has_user_compute_stream': '0', 'gpu_external_empty_cache': '0', 'cudnn_conv_algo_search': 'EXHAUSTIVE', 'cudnn_conv1d_pad_to_nc1d': '0', 'gpu_mem_limit': '18446744073709551615', 'gpu_external_alloc': '0', 'gpu_external_free': '0', 'arena_extend_strategy': 'kNextPowerOfTwo', 'do_copy_in_default_stream': '1', 'enable_cuda_graph': '0', 'user_compute_stream': '0', 'cudnn_conv_use_max_workspace': '1'}}
+find model: /scratch/user/chenzc2001/qx/689/hprc/insightface/models/buffalo_l/1k3d68.onnx landmark_3d_68 ['None', 3, 192, 192] 0.0 1.0
+Applied providers: ['CUDAExecutionProvider', 'CPUExecutionProvider'], with options: {'CPUExecutionProvider': {}, 'CUDAExecutionProvider': {'sdpa_kernel': '0', 'use_tf32': '1', 'fuse_conv_bias': '0', 'prefer_nhwc': '0', 'tunable_op_max_tuning_duration_ms': '0', 'enable_skip_layer_norm_strict_mode': '0', 'tunable_op_tuning_enable': '0', 'tunable_op_enable': '0', 'use_ep_level_unified_stream': '0', 'device_id': '0', 'has_user_compute_stream': '0', 'gpu_external_empty_cache': '0', 'cudnn_conv_algo_search': 'EXHAUSTIVE', 'cudnn_conv1d_pad_to_nc1d': '0', 'gpu_mem_limit': '18446744073709551615', 'gpu_external_alloc': '0', 'gpu_external_free': '0', 'arena_extend_strategy': 'kNextPowerOfTwo', 'do_copy_in_default_stream': '1', 'enable_cuda_graph': '0', 'user_compute_stream': '0', 'cudnn_conv_use_max_workspace': '1'}}
+model ignore: /scratch/user/chenzc2001/qx/689/hprc/insightface/models/buffalo_l/2d106det.onnx landmark_2d_106
+Applied providers: ['CUDAExecutionProvider', 'CPUExecutionProvider'], with options: {'CPUExecutionProvider': {}, 'CUDAExecutionProvider': {'sdpa_kernel': '0', 'use_tf32': '1', 'fuse_conv_bias': '0', 'prefer_nhwc': '0', 'tunable_op_max_tuning_duration_ms': '0', 'enable_skip_layer_norm_strict_mode': '0', 'tunable_op_tuning_enable': '0', 'tunable_op_enable': '0', 'use_ep_level_unified_stream': '0', 'device_id': '0', 'has_user_compute_stream': '0', 'gpu_external_empty_cache': '0', 'cudnn_conv_algo_search': 'EXHAUSTIVE', 'cudnn_conv1d_pad_to_nc1d': '0', 'gpu_mem_limit': '18446744073709551615', 'gpu_external_alloc': '0', 'gpu_external_free': '0', 'arena_extend_strategy': 'kNextPowerOfTwo', 'do_copy_in_default_stream': '1', 'enable_cuda_graph': '0', 'user_compute_stream': '0', 'cudnn_conv_use_max_workspace': '1'}}
+find model: /scratch/user/chenzc2001/qx/689/hprc/insightface/models/buffalo_l/det_10g.onnx detection [1, 3, '?', '?'] 127.5 128.0
+Applied providers: ['CUDAExecutionProvider', 'CPUExecutionProvider'], with options: {'CPUExecutionProvider': {}, 'CUDAExecutionProvider': {'sdpa_kernel': '0', 'use_tf32': '1', 'fuse_conv_bias': '0', 'prefer_nhwc': '0', 'tunable_op_max_tuning_duration_ms': '0', 'enable_skip_layer_norm_strict_mode': '0', 'tunable_op_tuning_enable': '0', 'tunable_op_enable': '0', 'use_ep_level_unified_stream': '0', 'device_id': '0', 'has_user_compute_stream': '0', 'gpu_external_empty_cache': '0', 'cudnn_conv_algo_search': 'EXHAUSTIVE', 'cudnn_conv1d_pad_to_nc1d': '0', 'gpu_mem_limit': '18446744073709551615', 'gpu_external_alloc': '0', 'gpu_external_free': '0', 'arena_extend_strategy': 'kNextPowerOfTwo', 'do_copy_in_default_stream': '1', 'enable_cuda_graph': '0', 'user_compute_stream': '0', 'cudnn_conv_use_max_workspace': '1'}}
+model ignore: /scratch/user/chenzc2001/qx/689/hprc/insightface/models/buffalo_l/genderage.onnx genderage
+Applied providers: ['CUDAExecutionProvider', 'CPUExecutionProvider'], with options: {'CPUExecutionProvider': {}, 'CUDAExecutionProvider': {'sdpa_kernel': '0', 'use_tf32': '1', 'fuse_conv_bias': '0', 'prefer_nhwc': '0', 'tunable_op_max_tuning_duration_ms': '0', 'enable_skip_layer_norm_strict_mode': '0', 'tunable_op_tuning_enable': '0', 'tunable_op_enable': '0', 'use_ep_level_unified_stream': '0', 'device_id': '0', 'has_user_compute_stream': '0', 'gpu_external_empty_cache': '0', 'cudnn_conv_algo_search': 'EXHAUSTIVE', 'cudnn_conv1d_pad_to_nc1d': '0', 'gpu_mem_limit': '18446744073709551615', 'gpu_external_alloc': '0', 'gpu_external_free': '0', 'arena_extend_strategy': 'kNextPowerOfTwo', 'do_copy_in_default_stream': '1', 'enable_cuda_graph': '0', 'user_compute_stream': '0', 'cudnn_conv_use_max_workspace': '1'}}
+find model: /scratch/user/chenzc2001/qx/689/hprc/insightface/models/buffalo_l/w600k_r50.onnx recognition ['None', 3, 112, 112] 127.5 127.5
+set det-size: (640, 640)
+[eval] episode 7/72  success: random=0.714  greedy_heuristic=1.000  greedy_preview=1.000  learned=1.000  (48.7s)
+[eval] episode 14/72  success: random=0.786  greedy_heuristic=1.000  greedy_preview=1.000  learned=1.000  (97.5s)
+[eval] episode 21/72  success: random=0.714  greedy_heuristic=1.000  greedy_preview=1.000  learned=1.000  (156.4s)
+[eval] episode 28/72  success: random=0.750  greedy_heuristic=1.000  greedy_preview=1.000  learned=1.000  (198.9s)
+[eval] episode 35/72  success: random=0.800  greedy_heuristic=1.000  greedy_preview=1.000  learned=1.000  (226.2s)
+[eval] episode 42/72  success: random=0.833  greedy_heuristic=1.000  greedy_preview=1.000  learned=1.000  (248.1s)
+[eval] episode 49/72  success: random=0.857  greedy_heuristic=1.000  greedy_preview=1.000  learned=1.000  (274.5s)
+[eval] episode 56/72  success: random=0.821  greedy_heuristic=1.000  greedy_preview=1.000  learned=1.000  (325.3s)
+[eval] episode 63/72  success: random=0.841  greedy_heuristic=1.000  greedy_preview=1.000  learned=1.000  (354.8s)
+[eval] episode 70/72  success: random=0.843  greedy_heuristic=1.000  greedy_preview=1.000  learned=1.000  (389.9s)
+[eval] episode 72/72  success: random=0.847  greedy_heuristic=1.000  greedy_preview=1.000  learned=1.000  (392.4s)
+[484.575s] Simulation App Shutting Down

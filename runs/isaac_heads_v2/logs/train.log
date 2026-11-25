@@ -1,0 +1,14 @@
+[train] ep   0 train 0.0176 val 0.0076 val_regret 0.1100
+[train] ep  10 train 0.0011 val 0.0019 val_regret 0.0160
+[train] ep  20 train 0.0008 val 0.0017 val_regret 0.0205
+[train] ep  30 train 0.0008 val 0.0017 val_regret 0.0191
+[train] ep  40 train 0.0007 val 0.0017 val_regret 0.0166
+[train] ep  50 train 0.0006 val 0.0016 val_regret 0.0149
+[train] ep  60 train 0.0006 val 0.0017 val_regret 0.0149
+[train] ep  70 train 0.0006 val 0.0017 val_regret 0.0131
+[train] early stop at epoch 77
+[train] train                  loss 0.0006 regret 0.0099 (random 0.1120) top1 0.540
+[train] val                    loss 0.0016 regret 0.0116 (random 0.1176) top1 0.594
+[train] test                   loss 0.0011 regret 0.0160 (random 0.1036) top1 0.404
+[train] test_heldout_identity  loss 0.0025 regret 0.0184 (random 0.1213) top1 0.514
+[train] saved checkpoint to /scratch/user/chenzc2001/qx/689/active-viewpoint-selection/runs/isaac_heads_v2

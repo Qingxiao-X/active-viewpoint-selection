@@ -2,11 +2,17 @@
 # Real Isaac Sim experiment, run by gpu_job.sbatch on one GPU node.
 # preflight -> (size) -> collect -> train -> calibrate -> (size) -> evaluate
 set -uo pipefail
-H=/scratch/user/qingxiao/689/hprc
-R=/scratch/user/qingxiao/689/active-viewpoint-selection
+H=/scratch/user/chenzc2001/qx/689/hprc
+R=/scratch/user/chenzc2001/qx/689/active-viewpoint-selection
 SIF=$H/isaac-sim_5.1.0_avs.sif
-CFG=configs/isaac_heads.yaml
-RUN=$R/runs/isaac_heads_v1
+# v3: v1 is the broken run (results/isaac_heads_v1/README.md), v2 is the single-key-light
+# real run (random=84.7% vs learned/greedy=100%, but learned tied with greedy -- a single
+# point light makes "move away from the one glare blob" near-optimal). v3 adds a second,
+# independently-randomized light (avs/scenes.py fill_light_*, avs/envs/isaac_env.py) so
+# glare position alone no longer predicts the best escape direction. All three trees are
+# kept side by side on purpose.
+CFG=configs/isaac_heads_v3.yaml
+RUN=$R/runs/isaac_heads_v3
 PRE=$RUN/preflight
 W=$H/runtime
 LOG=$RUN/logs
@@ -26,27 +32,18 @@ stamp() { echo "=== [$(date +%T)] $* (time left $(secs_left)s)"; }
 
 stamp "node $(hostname)"
 nvidia-smi --query-gpu=name,driver_version,memory.total --format=csv
-grep -E "rtcore|optix|glvkspirv|GLX_nvidia|gpucomp" /etc/singularity/nvliblist.conf 2>/dev/null | tr '\n' ' '; echo
 
-# RTX needs the ray-tracing / OptiX / Vulkan driver libs; bind any that --nv might not.
-EXTRA=$(ldconfig -p | grep 'x86-64' | grep -E 'libnvidia-rtcore\.so|libnvoptix\.so|libnvidia-glvkspirv\.so|libnvidia-gpucomp\.so|libnvidia-glcore\.so|libnvidia-tls\.so|libGLX_nvidia\.so\.0|libnvidia-ngx\.so' \
-        | awk '{print $NF}' | sort -u)
-# --nv already binds everything named in nvliblist.conf; adding those again makes container creation fail.
-NVL=$(grep -v '^#' /etc/singularity/nvliblist.conf 2>/dev/null | sed 's/\.so.*//' | grep . | sort -u)
-EXTRA=$(for f in $EXTRA; do b=$(basename $f); b=${b%%.so*}; echo "$NVL" | grep -qx "$b" || echo $f; done | paste -sd, -)
-echo "extra driver libs: $EXTRA"
-export SINGULARITY_CONTAINLIBS=$EXTRA
-cat > $W/nvidia_icd.json <<EOF
-{"file_format_version": "1.0.0", "ICD": {"library_path": "libGLX_nvidia.so.0", "api_version": "1.3.0"}}
-EOF
+# The base image ships its own correct /etc/vulkan/icd.d/nvidia_icd.json (api_version
+# matches the host driver exactly); a hand-written override here previously declared the
+# wrong api_version and broke Vulkan init (ERROR_INCOMPATIBLE_DRIVER). All RTX/OptiX driver
+# libs are already listed in /etc/singularity/nvliblist.conf, so --nv binds them on its own
+# -- no SINGULARITY_CONTAINLIBS or custom ICD needed (see hprc/preflight_job.sbatch).
 export SINGULARITYENV_ACCEPT_EULA=Y SINGULARITYENV_PRIVACY_CONSENT=Y SINGULARITYENV_OMNI_KIT_ACCEPT_EULA=YES
-export SINGULARITYENV_VK_ICD_FILENAMES=/opt/avs_nvidia_icd.json
-SX="singularity exec --nv --home $W/home -B /scratch/user/qingxiao/689 \
-  -B $W/kit_cache:/isaac-sim/kit/cache -B $W/kit_data:/isaac-sim/kit/data -B $W/kit_logs:/isaac-sim/kit/logs \
-  -B $W/nvidia_icd.json:/opt/avs_nvidia_icd.json $SIF"
+SX="singularity exec --nv --home $W/home -B /scratch/user/chenzc2001/qx/689 \
+  -B $W/kit_cache:/isaac-sim/kit/cache -B $W/kit_data:/isaac-sim/kit/data -B $W/kit_logs:/isaac-sim/kit/logs $SIF"
 PY="$SX /isaac-sim/python.sh"
 
-$SX bash -c 'nvidia-smi -L; ls /.singularity.d/libs | grep -E "rtcore|optix|GLX" | tr "\n" " "; echo'
+$SX bash -c 'nvidia-smi -L'
 
 # ---------------------------------------------------------------- preflight
 stamp "preflight"
@@ -66,7 +63,7 @@ N=${N_SCENES:-$($SX /isaac-sim/python.sh scripts/size_run.py collect $PRE/report
 stamp "collect n_scenes=$N"
 $PY -m avs.collect --config $CFG $EXPO collect.n_scenes=$N > $LOG/collect.log 2>&1
 grep -E '^\[collect\]|Error|Traceback' $LOG/collect.log | tail -n 60
-[ -f $R/data/isaac_heads_v1/transitions.npz ] || { stamp "collection produced no dataset; stopping"; exit 3; }
+[ -f $R/data/isaac_heads_v3/transitions.npz ] || { stamp "collection produced no dataset; stopping"; exit 3; }
 
 # ---------------------------------------------------------------- train + calibrate (CPU, Isaac's torch)
 stamp "train"
@@ -84,4 +81,4 @@ stamp "evaluate max_scenes_per_split=$CAP"
 $PY -m avs.evaluate --config $CFG $EXPO $ACC eval.max_scenes_per_split=$CAP > $LOG/evaluate.log 2>&1
 grep -E '^\[eval\]|Error|Traceback|wrote' $LOG/evaluate.log | tail -n 60
 stamp "done"
-ls -la $R/results/isaac_heads_v1 2>/dev/null
+ls -la $R/results/isaac_heads_v3 2>/dev/null

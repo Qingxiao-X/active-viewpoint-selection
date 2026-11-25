@@ -7,9 +7,9 @@ env:
   backend: isaac
   isaac:
     assets:
-      lee_perry_smith: /scratch/user/qingxiao/689/assets_usd/lee_perry_smith/lee_perry_smith.usd
-      faceverse_001: /scratch/user/qingxiao/689/assets_usd/faceverse_001/faceverse_001.usd
-      digital_emily_2: /scratch/user/qingxiao/689/assets_usd/digital_emily_2/digital_emily_2.usd
+      lee_perry_smith: /scratch/user/chenzc2001/qx/689/assets_usd/lee_perry_smith/lee_perry_smith.usd
+      faceverse_001: /scratch/user/chenzc2001/qx/689/assets_usd/faceverse_001/faceverse_001.usd
+      digital_emily_2: /scratch/user/chenzc2001/qx/689/assets_usd/digital_emily_2/digital_emily_2.usd
     head_center: [0.0, 0.0, 1.0]
     resolution: [640, 480]
     headless: true
@@ -24,7 +24,7 @@ env:
 
 perception:
   model_name: buffalo_l
-  root: /scratch/user/qingxiao/689/hprc/insightface
+  root: /scratch/user/chenzc2001/qx/689/hprc/insightface
   providers: [CUDAExecutionProvider, CPUExecutionProvider]
   det_size: [640, 640]
   ctx_id: 0
@@ -59,7 +59,7 @@ label:
   aux_depth_weight: 0.0
 
 collect:
-  out_dir: /scratch/user/qingxiao/689/active-viewpoint-selection/data/isaac_heads_v1
+  out_dir: /scratch/user/chenzc2001/qx/689/active-viewpoint-selection/data/isaac_heads_v1
   n_scenes: 90              # replaced at run time from the measured render speed
   starts_per_scene: 3
   start_scene_id: 0
@@ -72,8 +72,8 @@ features: {obs_fields: null, action_fields: null}
 model: {hidden: [128, 128], dropout: 0.0}
 
 train:
-  out_dir: /scratch/user/qingxiao/689/active-viewpoint-selection/runs/isaac_heads_v1
-  datasets: [/scratch/user/qingxiao/689/active-viewpoint-selection/data/isaac_heads_v1]
+  out_dir: /scratch/user/chenzc2001/qx/689/active-viewpoint-selection/runs/isaac_heads_v1
+  datasets: [/scratch/user/chenzc2001/qx/689/active-viewpoint-selection/data/isaac_heads_v1]
   label_key: label.label
   epochs: 100
   batch_size: 256
@@ -92,8 +92,8 @@ policy:
   greedy_preview: {cost_weight: 0.0}
 
 eval:
-  checkpoint: /scratch/user/qingxiao/689/active-viewpoint-selection/runs/isaac_heads_v1
-  gallery_file: /scratch/user/qingxiao/689/active-viewpoint-selection/data/isaac_heads_v1/gallery.npz
+  checkpoint: /scratch/user/chenzc2001/qx/689/active-viewpoint-selection/runs/isaac_heads_v1
+  gallery_file: /scratch/user/chenzc2001/qx/689/active-viewpoint-selection/data/isaac_heads_v1/gallery.npz
   scene_source: test_split
   splits: [test, test_heldout_identity]
   max_scenes_per_split: 15
@@ -102,7 +102,7 @@ eval:
   start_el_range: [-25, 40]
   budget: 6
   accept: {min_det_score: 0.5, min_top1_similarity: 0.35, min_margin: 0.1}
-  accept_file: /scratch/user/qingxiao/689/active-viewpoint-selection/runs/isaac_heads_v1/accept.json
+  accept_file: /scratch/user/chenzc2001/qx/689/active-viewpoint-selection/runs/isaac_heads_v1/accept.json
   policies: [random, greedy_heuristic, greedy_preview, learned]
-  out_dir: /scratch/user/qingxiao/689/active-viewpoint-selection/results/isaac_heads_v1
+  out_dir: /scratch/user/chenzc2001/qx/689/active-viewpoint-selection/results/isaac_heads_v1
   seed: 123

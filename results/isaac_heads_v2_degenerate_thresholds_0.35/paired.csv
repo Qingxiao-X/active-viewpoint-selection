@@ -1,0 +1,4 @@
+policy,vs,n_pairs,success_diff,ci95_low,ci95_high,both_success,only_learned,only_other,neither
+learned,random,180,0.0,0.0,0.0,180,0,0,0
+learned,greedy_heuristic,180,0.0,0.0,0.0,180,0,0,0
+learned,greedy_preview,180,0.0,0.0,0.0,180,0,0,0

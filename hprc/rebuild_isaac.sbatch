@@ -1,22 +1,23 @@
 #!/bin/bash
+#SBATCH --export=NONE
 #SBATCH -J rebuild_isaac
-#SBATCH -p cpu
 #SBATCH -n 1
 #SBATCH -c 16
 #SBATCH --mem=48G
 #SBATCH -t 02:00:00
-#SBATCH -o /scratch/user/qingxiao/689/hprc/logs/%x-%j.out
+#SBATCH -o /scratch/user/chenzc2001/qx/689/hprc/logs/%x-%j.out
 # Rebuild the Isaac Sim image so it runs as an unprivileged Singularity user, with the
 # perception deps (insightface, onnxruntime-gpu, pyyaml, matplotlib) baked in.
 set -euo pipefail
 module load WebProxy/0000
-H=/scratch/user/qingxiao/689/hprc
+H=/scratch/user/chenzc2001/qx/689/hprc
+BASE_SIF=/sw/hprc/sw/bio/containers/isaac-sim/isaac-sim_5.1.0.sif  # shared base image; avoids re-pulling
 L=${TMPDIR:-/tmp}/rb_$SLURM_JOB_ID; mkdir -p $L/tmp $L/cache
 export SINGULARITY_TMPDIR=$L/tmp SINGULARITY_CACHEDIR=$L/cache
 SB=$L/sb
-singularity build --sandbox $SB $H/isaac-sim_5.1.0.sif
+singularity build --sandbox $SB $BASE_SIF
 chmod -R u+rwX,go+rX $SB 2>/dev/null || true
-mkdir -p $SB$H $SB/scratch/user/qingxiao/689
+mkdir -p $SB$H $SB/scratch/user/chenzc2001/qx/689
 mkdir -p $SB/isaac-sim/kit/cache $SB/isaac-sim/kit/data $SB/isaac-sim/kit/logs $SB/opt/avs_cache
 PY="singularity exec --writable --no-home -B $H:$H $SB /isaac-sim/python.sh"
 echo "== bundled versions"
@@ -35,7 +36,7 @@ PYEOF
 grep '^PKG' $L/versions.txt | awk '$3 != "?" && $2 != "opencv-python" {print $2"=="$3}' > $L/constraints.txt
 grep -q '^PKG opencv-python' $L/versions.txt && HAVE_CV2=1 || HAVE_CV2=0
 echo "constraints:"; cat $L/constraints.txt; echo "have cv2: $HAVE_CV2"
-EXTRA="pyyaml matplotlib scikit-image onnx easydict prettytable tqdm requests"
+EXTRA="pyyaml matplotlib scikit-image onnx easydict prettytable tqdm requests pygltflib OpenEXR albumentations"
 [ $HAVE_CV2 = 0 ] && EXTRA="$EXTRA opencv-python-headless<4.11"
 $PY -m pip install --no-cache-dir -c $L/constraints.txt "onnxruntime-gpu[cuda,cudnn]>=1.21,<1.23" $EXTRA
 $PY -m pip install --no-cache-dir --no-deps $H/wheels/insightface-0.7.3-cp311-cp311-linux_x86_64.whl

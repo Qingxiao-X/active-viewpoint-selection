@@ -76,6 +76,7 @@ class IsaacViewpointEnv(ViewpointEnv):
     def __init__(self, assets: Dict[str, str], radius: float = 0.6, head_center=(0.0, 0.0, 1.6),
                  resolution=(640, 480), headless: bool = True, warmup_frames: int = 10,
                  key_light_base_intensity: float = 3000.0, dome_base_intensity: float = 1000.0,
+                 fill_light_base_intensity: Optional[float] = None,
                  skin_shader_path: Optional[str] = None, arm_controller: Optional[str] = None,
                  enroll_light: Optional[Dict] = None, focal_length: float = 28.0,
                  horizontal_aperture: float = 20.955, clipping_range=(0.01, 100.0)):
@@ -84,6 +85,12 @@ class IsaacViewpointEnv(ViewpointEnv):
         from isaacsim import SimulationApp  # noqa: lazy, must precede other omni imports
 
         self._app = SimulationApp({"headless": headless})
+        import carb
+        # Isaac Sim 5.1's camera annotator reads /rtx/dataWindowNDC/0..3 for overscan and
+        # treats an unset (None) value as "!= 0", crashing in _resize_data_for_overscan on
+        # the first render (None - None). This project never uses overscan, so just disable
+        # that code path outright instead of relying on those settings being initialized.
+        carb.settings.get_settings().set_bool("/rtx/dataWindow/fitOutputToDataWindow", True)
         from isaacsim.core.api import World
         from isaacsim.sensors.camera import Camera
 
@@ -92,6 +99,12 @@ class IsaacViewpointEnv(ViewpointEnv):
         self.center = np.asarray(head_center, dtype=float)
         self.warmup = int(warmup_frames)
         self.key_base, self.dome_base = float(key_light_base_intensity), float(dome_base_intensity)
+        # Default: same base intensity as the key light, so fill_light_intensity (a scene's
+        # [0, ~1.3] relative factor, see avs/scenes.py) is on a comparable scale to
+        # light_intensity. Not separately exposure-calibrated (preflight only calibrates
+        # key/dome); it rides on whatever the key light's calibrated intensity is.
+        self.fill_base = float(fill_light_base_intensity) if fill_light_base_intensity is not None \
+            else self.key_base
         self.skin_shader_path = skin_shader_path
         self.enroll_light = enroll_light or {"light_intensity": 0.0, "env_intensity": 1.0,
                                              "light_az": 0.0, "light_el": 0.0, "roughness": None}
@@ -134,6 +147,8 @@ class IsaacViewpointEnv(ViewpointEnv):
 
         self.key = UsdLux.DistantLight.Define(self.stage, "/World/KeyLight")
         self.key.CreateAngleAttr(0.5)  # small angular size -> sharp specular highlight
+        self.fill = UsdLux.DistantLight.Define(self.stage, "/World/FillLight")
+        self.fill.CreateAngleAttr(0.5)
         self.dome = UsdLux.DomeLight.Define(self.stage, "/World/EnvLight")
 
     def _head_root(self, identity: str) -> str:
@@ -177,6 +192,16 @@ class IsaacViewpointEnv(ViewpointEnv):
         xf = UsdGeom.Xformable(self.key.GetPrim())
         xf.ClearXformOpOrder()
         xf.AddRotateXYZOp().Set(Gf.Vec3f(0.0, 90.0 - float(s["light_el"]), float(s["light_az"])))
+        # Second, independently-placed light (see avs/scenes.py fill_light_* ranges). Missing
+        # keys default to off (0 intensity): isaac_preflight.py's own ad-hoc scene() dicts and
+        # any older scene data predate this and never set them.
+        fill_intensity = float(s.get("fill_light_intensity", 0.0))
+        self.fill.GetIntensityAttr().Set(self.fill_base * fill_intensity)
+        if fill_intensity > 0.0:
+            xf2 = UsdGeom.Xformable(self.fill.GetPrim())
+            xf2.ClearXformOpOrder()
+            xf2.AddRotateXYZOp().Set(Gf.Vec3f(0.0, 90.0 - float(s.get("fill_light_el", 20.0)),
+                                               float(s.get("fill_light_az", 180.0))))
 
     def _set_roughness(self, roughness):
         if roughness is None or not self.skin_shader_path:

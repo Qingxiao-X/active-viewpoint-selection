@@ -1,0 +1,5 @@
+policy,n_episodes,n_valid,infra_errors,success_rate,failure_rate,incorrect_accept_rate,budget_exhausted_rate,mean_steps_to_success,mean_path_length_m,mean_path_length_success_m,mean_previews,mean_acquisitions,inference_ms_mean,inference_ms_p95,sense_ms_mean,preview_baseline
+random,180,180,0,1.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,1.0,nan,nan,566.6957002547052,False
+greedy_heuristic,180,180,0,1.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,1.0,nan,nan,301.2821305543184,False
+greedy_preview,180,180,0,1.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,1.0,nan,nan,301.0061668542524,True
+learned,180,180,0,1.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,1.0,nan,nan,301.1013586798476,False

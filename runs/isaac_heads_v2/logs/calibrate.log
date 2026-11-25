@@ -1,0 +1,17 @@
+{
+  "accept": {
+    "min_top1_similarity": 0.65,
+    "min_margin": 0.25,
+    "min_det_score": 0.5
+  },
+  "calibration": {
+    "min_top1_similarity": 0.65,
+    "min_margin": 0.25,
+    "precision": 1.0,
+    "coverage": 0.7071290944123314,
+    "n_accepted": 734,
+    "split": "val",
+    "n_views": 1038,
+    "target_precision": 0.95
+  }
+}

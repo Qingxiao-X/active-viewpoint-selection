@@ -14,7 +14,11 @@ import sys
 
 import numpy as np
 from PIL import Image
-from pxr import Gf, Sdf, Usd, UsdGeom, UsdShade, Vt
+
+from isaacsim import SimulationApp  # noqa: lazy, must precede other omni/pxr imports
+_app = SimulationApp({"headless": True})
+
+from pxr import Gf, Sdf, Usd, UsdGeom, UsdShade, Vt  # noqa: E402
 
 sys.path.insert(0, os.path.dirname(os.path.abspath(__file__)))
 from load_meshes import load_glb, load_obj  # noqa: E402
@@ -218,3 +222,4 @@ if __name__ == "__main__":
     infos = [convert(n, HEADS[n], raw_dir, out_dir) for n in only]
     with open(os.path.join(out_dir, "assets_manifest.json"), "w") as f:
         json.dump(infos, f, indent=1)
+    _app.close()

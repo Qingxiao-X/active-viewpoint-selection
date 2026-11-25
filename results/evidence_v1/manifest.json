@@ -1,0 +1,200 @@
+{
+  "environment": {
+    "isaac_sim": "5.1.0 (isaacsim.exp.base-5.1.0, from Simulation App Starting log)",
+    "gpu": "Tesla T4",
+    "rendering_mode": "headless (SimulationApp({'headless': True}))",
+    "resolution": [
+      640,
+      480
+    ],
+    "gpu_rendering_works": true
+  },
+  "asset": {
+    "identity": "lee_perry_smith",
+    "usd": "/scratch/user/chenzc2001/qx/689/assets_usd/lee_perry_smith/lee_perry_smith.usd",
+    "scale_raw_to_m": 0.049402537974303835,
+    "license": "CC BY 3.0, Lee Perry-Smith / Infinite-Realities (www.triplegangers.com, ir-ltd.net)",
+    "source": "leeperrysmith/LeePerrySmith.glb",
+    "bbox_min_m": [
+      -0.1329,
+      -0.208,
+      -0.2775
+    ],
+    "bbox_max_m": [
+      0.123,
+      0.2145,
+      0.115
+    ],
+    "meshes": {
+      "skin": {
+        "triangles": 17684,
+        "vertices": 9279
+      }
+    }
+  },
+  "coordinate_convention": "Head center is the world origin. Camera stays on a sphere of radius `radius` (m) around the head and always looks at the head center. Azimuth 0 / elevation 0 looks at the face from straight ahead (face points along +x). +azimuth rotates the camera toward the head's own left (+y); +elevation raises the camera (+z). LEFT = azimuth += +15 deg, RIGHT = azimuth -= 15 deg (orbit, radius unchanged). FORWARD = radius -= 0.1 m, BACKWARD = radius += 0.1 m (radial, azimuth/elevation unchanged). Orbit limits az=(-75.0, 75.0) el=(-30.0, 45.0) deg, radius limits=(0.35, 0.9) m (design choices, not validated as optimal).",
+  "lighting_presets": {
+    "clean": {
+      "light_intensity": 0.6,
+      "env_intensity": 0.6,
+      "light_az": 25.0,
+      "light_el": 20.0,
+      "roughness": 0.6
+    },
+    "glare": {
+      "light_intensity": 1.4,
+      "env_intensity": 0.3,
+      "light_az": 25.0,
+      "light_el": 20.0,
+      "roughness": 0.08
+    }
+  },
+  "poses": {
+    "clean_front": {
+      "azimuth_deg": 0.0,
+      "elevation_deg": 0.0,
+      "radius_m": 0.6,
+      "lighting": {
+        "light_intensity": 0.6,
+        "env_intensity": 0.6,
+        "light_az": 25.0,
+        "light_el": 20.0,
+        "roughness": 0.6
+      },
+      "depth_valid_fraction": 0.27451497395833335,
+      "depth_min_m": 0.4770650863647461,
+      "depth_max_m": 0.6677327156066895
+    },
+    "glare_front": {
+      "azimuth_deg": 0.0,
+      "elevation_deg": 0.0,
+      "radius_m": 0.6,
+      "lighting": {
+        "light_intensity": 1.4,
+        "env_intensity": 0.3,
+        "light_az": 25.0,
+        "light_el": 20.0,
+        "roughness": 0.08
+      },
+      "depth_valid_fraction": 0.27451497395833335,
+      "depth_min_m": 0.4770650863647461,
+      "depth_max_m": 0.6677327156066895
+    },
+    "glare_left": {
+      "azimuth_deg": 15.0,
+      "elevation_deg": 0.0,
+      "radius_m": 0.6,
+      "lighting": {
+        "light_intensity": 1.4,
+        "env_intensity": 0.3,
+        "light_az": 25.0,
+        "light_el": 20.0,
+        "roughness": 0.08
+      },
+      "depth_valid_fraction": 0.283408203125,
+      "depth_min_m": 0.4815545082092285,
+      "depth_max_m": 0.6891074180603027
+    },
+    "glare_right": {
+      "azimuth_deg": -15.0,
+      "elevation_deg": 0.0,
+      "radius_m": 0.6,
+      "lighting": {
+        "light_intensity": 1.4,
+        "env_intensity": 0.3,
+        "light_az": 25.0,
+        "light_el": 20.0,
+        "roughness": 0.08
+      },
+      "depth_valid_fraction": 0.27935221354166667,
+      "depth_min_m": 0.4807436466217041,
+      "depth_max_m": 0.6906664371490479
+    }
+  },
+  "depth": {
+    "definition": "distance from the camera's image plane to the surface, in meters (IsaacViewpointEnv uses add_distance_to_image_plane_to_frame, not Euclidean distance-to-camera).",
+    "units": "meters",
+    "invalid_value": "0, NaN, or Inf (no geometry hit / outside clip range)"
+  },
+  "rgbd_sample": {
+    "pose": {
+      "azimuth_deg": 0.0,
+      "elevation_deg": 0.0,
+      "radius_m": 0.5
+    },
+    "rgb_shape": [
+      480,
+      640,
+      3
+    ],
+    "depth_shape": [
+      480,
+      640
+    ],
+    "depth_valid_fraction": 0.338798828125,
+    "depth_min_m": 0.37702083587646484,
+    "depth_max_m": 0.5692229270935059
+  },
+  "four_way_motion": [
+    {
+      "action": "LEFT",
+      "requested": [
+        15.0,
+        0.0,
+        0.6
+      ],
+      "applied": [
+        15.0,
+        0.0,
+        0.6
+      ],
+      "hit_limit": false
+    },
+    {
+      "action": "RIGHT",
+      "requested": [
+        0.0,
+        0.0,
+        0.6
+      ],
+      "applied": [
+        0.0,
+        0.0,
+        0.6
+      ],
+      "hit_limit": false
+    },
+    {
+      "action": "FORWARD",
+      "requested": [
+        0.0,
+        0.0,
+        0.5
+      ],
+      "applied": [
+        0.0,
+        0.0,
+        0.5
+      ],
+      "hit_limit": false
+    },
+    {
+      "action": "BACKWARD",
+      "requested": [
+        0.0,
+        0.0,
+        0.6
+      ],
+      "applied": [
+        0.0,
+        0.0,
+        0.6
+      ],
+      "hit_limit": false
+    }
+  ],
+  "arcface": {
+    "attempted": false
+  },
+  "scene_overview_note": "scene_overview.png was regenerated by tools/assets/scene_overview_diagram.py (schematic: head photo inset + labeled camera positions + light-direction arrow, built from this manifest's real pose values), after an in-engine render with marker-sphere geometry at the actual camera positions was tried and discarded -- the markers rendered as a near-skin-color smudge under scene lighting, illegible at presentation size."
+}
