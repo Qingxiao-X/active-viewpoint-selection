@@ -1,0 +1,548 @@
+<title>Seeing Past the Glare — Active Viewpoint Selection</title>
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<style>
+  :root {
+    --bg: #12151a;
+    --bg-grid: #1a1f27;
+    --panel: #1b2128;
+    --panel-line: #2a323d;
+    --ink: #eef1f5;
+    --muted: #8ea0b3;
+    --faint: #5b6673;
+    --accent: #4fd3ff;
+    --accent-dim: #2d7f99;
+    --learned: #9b8cff;
+    --glare: #ffb648;
+    --success: #7bd88f;
+    --mono: ui-monospace, "SFMono-Regular", "JetBrains Mono", "Fira Code", Menlo, Consolas, monospace;
+    --sans: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+  }
+
+  * { box-sizing: border-box; }
+  html, body {
+    margin: 0;
+    padding: 0;
+    background: var(--bg);
+    color: var(--ink);
+    font-family: var(--sans);
+    overflow: hidden;
+    height: 100%;
+  }
+
+  body {
+    background-image:
+      linear-gradient(var(--bg-grid) 1px, transparent 1px),
+      linear-gradient(90deg, var(--bg-grid) 1px, transparent 1px);
+    background-size: 48px 48px;
+    background-position: center;
+  }
+
+  .deck {
+    display: flex;
+    height: 100vh;
+    width: 100vw;
+    overflow-x: auto;
+    overflow-y: hidden;
+    scroll-snap-type: x mandatory;
+    scroll-behavior: smooth;
+  }
+  @media (prefers-reduced-motion: reduce) {
+    .deck { scroll-behavior: auto; }
+  }
+
+  .slide {
+    flex: 0 0 100vw;
+    height: 100vh;
+    scroll-snap-align: start;
+    display: flex;
+    flex-direction: column;
+    padding: 5.5vh 6vw 4vh;
+    position: relative;
+  }
+
+  .eyebrow {
+    font-family: var(--mono);
+    font-size: 0.78rem;
+    letter-spacing: 0.18em;
+    text-transform: uppercase;
+    color: var(--accent);
+    margin: 0 0 0.9rem;
+  }
+  .eyebrow.alt { color: var(--glare); }
+
+  h1.slide-title {
+    font-family: var(--mono);
+    font-weight: 700;
+    font-size: clamp(1.7rem, 3.4vw, 2.6rem);
+    line-height: 1.12;
+    margin: 0 0 1.4rem;
+    max-width: 22ch;
+    text-wrap: balance;
+    letter-spacing: -0.01em;
+  }
+
+  p.lede {
+    font-size: 1.05rem;
+    line-height: 1.6;
+    color: var(--muted);
+    max-width: 62ch;
+    margin: 0 0 1.6rem;
+  }
+
+  .slide-body { flex: 1; min-height: 0; display: flex; flex-direction: column; }
+
+  /* ---- title slide ---- */
+  .title-slide { align-items: flex-start; justify-content: center; }
+  .title-slide .big {
+    font-family: var(--mono);
+    font-weight: 700;
+    font-size: clamp(2.6rem, 7vw, 5.2rem);
+    line-height: 1.02;
+    letter-spacing: -0.015em;
+    max-width: 16ch;
+    text-wrap: balance;
+    margin: 0.3rem 0 1.3rem;
+  }
+  .title-slide .big .hl { color: var(--accent); }
+  .title-meta {
+    font-family: var(--mono);
+    font-size: 0.85rem;
+    color: var(--faint);
+    display: flex;
+    gap: 2.2rem;
+    margin-top: 2.2rem;
+    flex-wrap: wrap;
+  }
+  .title-meta b { color: var(--muted); font-weight: 600; }
+
+  /* ---- photo frames (viewfinder corner brackets) ---- */
+  .shot {
+    position: relative;
+    display: inline-block;
+    border-radius: 2px;
+    overflow: hidden;
+    background: #000;
+  }
+  .shot img { display: block; width: 100%; height: auto; }
+  .shot::before, .shot::after,
+  .shot .c2::before, .shot .c2::after { content: ""; position: absolute; width: 18px; height: 18px; pointer-events: none; }
+  .shot::before { top: 6px; left: 6px; border-top: 2px solid var(--accent); border-left: 2px solid var(--accent); }
+  .shot::after { top: 6px; right: 6px; border-top: 2px solid var(--accent); border-right: 2px solid var(--accent); }
+  .corner-bl, .corner-br { position: absolute; width: 18px; height: 18px; bottom: 6px; }
+  .corner-bl { left: 6px; border-bottom: 2px solid var(--accent); border-left: 2px solid var(--accent); }
+  .corner-br { right: 6px; border-bottom: 2px solid var(--accent); border-right: 2px solid var(--accent); }
+  .shot.warn::before, .shot.warn::after { border-color: var(--glare); }
+  .shot.warn .corner-bl, .shot.warn .corner-br { border-color: var(--glare); }
+
+  .shot-cap {
+    font-family: var(--mono);
+    font-size: 0.74rem;
+    color: var(--muted);
+    margin-top: 0.55rem;
+    display: flex;
+    justify-content: space-between;
+    gap: 1rem;
+  }
+  .shot-cap .tag { color: var(--ink); font-weight: 600; }
+
+  .shots-row { display: flex; gap: 1.6rem; flex: 1; min-height: 0; align-items: flex-start; }
+  .shots-row .shot-col { flex: 1; min-width: 0; display: flex; flex-direction: column; }
+  .shots-row .shot-col img, .shots-row .shot-col .shot { width: 100%; }
+
+  /* ---- two column layout ---- */
+  .cols { display: flex; gap: 3.4rem; flex: 1; min-height: 0; align-items: center; }
+  .cols .col { flex: 1; min-width: 0; }
+  .cols .col.narrow { flex: 0 0 44%; }
+
+  ul.facts { list-style: none; margin: 0; padding: 0; display: flex; flex-direction: column; gap: 0.95rem; }
+  ul.facts li {
+    font-size: 1rem;
+    color: var(--ink);
+    padding-left: 1.3rem;
+    position: relative;
+    line-height: 1.5;
+  }
+  ul.facts li::before {
+    content: "";
+    position: absolute; left: 0; top: 0.5em;
+    width: 7px; height: 7px; background: var(--accent); border-radius: 1px;
+  }
+  ul.facts li b { color: var(--accent); font-family: var(--mono); font-weight: 600; }
+  ul.facts li .sub { display: block; color: var(--muted); font-size: 0.92rem; margin-top: 0.15rem; }
+
+  /* ---- policy cards ---- */
+  .cards { display: grid; grid-template-columns: repeat(4, 1fr); gap: 1.1rem; flex: 1; align-content: center; }
+  .card {
+    background: var(--panel);
+    border: 1px solid var(--panel-line);
+    border-radius: 6px;
+    padding: 1.3rem 1.2rem;
+    display: flex;
+    flex-direction: column;
+    gap: 0.6rem;
+  }
+  .card .tag {
+    font-family: var(--mono);
+    font-size: 0.72rem;
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+    color: var(--faint);
+  }
+  .card h3 { margin: 0; font-size: 1.12rem; font-family: var(--mono); font-weight: 700; }
+  .card p { margin: 0; color: var(--muted); font-size: 0.93rem; line-height: 1.5; }
+  .card.accent { border-color: var(--accent-dim); }
+  .card.accent h3 { color: var(--accent); }
+  .card.learned { border-color: #4a4080; }
+  .card.learned h3 { color: var(--learned); }
+  .card-foot {
+    font-family: var(--mono);
+    font-size: 0.8rem;
+    color: var(--faint);
+    margin-top: 1.4rem;
+  }
+
+  /* ---- bar charts ---- */
+  .chart-wrap { flex: 1; display: flex; flex-direction: column; min-height: 0; }
+  .chart {
+    position: relative;
+    flex: 1;
+    display: flex;
+    align-items: flex-end;
+    gap: 2.6rem;
+    padding: 0 0.5rem;
+    border-bottom: 1px solid var(--panel-line);
+  }
+  .chart .gridline {
+    position: absolute; left: 0; right: 0; height: 1px; background: var(--panel-line);
+  }
+  .chart .gridline span {
+    position: absolute; left: -2.6rem; top: -0.55em;
+    font-family: var(--mono); font-size: 0.68rem; color: var(--faint);
+  }
+  .bargroup { display: flex; flex-direction: column; align-items: center; gap: 0.7rem; flex: 1; height: 100%; justify-content: flex-end; }
+  .bargroup .bars { display: flex; align-items: flex-end; gap: 0.5rem; height: 100%; width: 100%; justify-content: center; }
+  .bar {
+    width: 2.6rem;
+    border-radius: 3px 3px 0 0;
+    position: relative;
+    background: var(--faint);
+    transition: height 0.5s ease;
+  }
+  .bar.random { background: linear-gradient(180deg, #5d6c7c, #44515f); }
+  .bar.greedy { background: linear-gradient(180deg, #5fe0ff, #2fa8c9); }
+  .bar.preview { background: linear-gradient(180deg, #86e8ff, #3fbbd9); opacity: 0.75; }
+  .bar.learned { background: linear-gradient(180deg, #b6a9ff, #8070e0); }
+  .bar .val {
+    position: absolute; top: -1.5rem; left: 50%; transform: translateX(-50%);
+    font-family: var(--mono); font-size: 0.78rem; font-weight: 600; color: var(--ink); white-space: nowrap;
+  }
+  .bargroup .glabel { font-family: var(--mono); font-size: 0.78rem; color: var(--muted); text-align: center; }
+  .bargroup .glabel b { color: var(--ink); display: block; font-size: 0.86rem; }
+
+  .legend { display: flex; gap: 1.6rem; margin-top: 1.1rem; flex-wrap: wrap; }
+  .legend .item { display: flex; align-items: center; gap: 0.5rem; font-family: var(--mono); font-size: 0.78rem; color: var(--muted); }
+  .legend .swatch { width: 10px; height: 10px; border-radius: 2px; }
+
+  .callout-row { display: flex; gap: 2.4rem; margin-top: 1.5rem; flex-wrap: wrap; }
+  .callout { font-family: var(--mono); }
+  .callout .num { font-size: 1.9rem; font-weight: 700; color: var(--success); line-height: 1; }
+  .callout .num.neutral { color: var(--ink); }
+  .callout .lbl { font-size: 0.76rem; color: var(--muted); letter-spacing: 0.04em; text-transform: uppercase; margin-top: 0.3rem; }
+
+  table.compare { border-collapse: collapse; width: 100%; font-family: var(--mono); font-size: 0.92rem; margin-top: 0.4rem; }
+  table.compare th, table.compare td { text-align: left; padding: 0.55rem 1rem 0.55rem 0; border-bottom: 1px solid var(--panel-line); }
+  table.compare th { color: var(--faint); font-weight: 500; text-transform: uppercase; font-size: 0.72rem; letter-spacing: 0.08em; }
+  table.compare td.win { color: var(--accent); font-weight: 700; }
+  table.compare td.lose { color: var(--faint); }
+  table.compare tr:last-child td { border-bottom: none; }
+
+  .note {
+    font-family: var(--mono);
+    font-size: 0.85rem;
+    color: var(--muted);
+    line-height: 1.6;
+    max-width: 70ch;
+    margin-top: 1.6rem;
+    padding-top: 1.2rem;
+    border-top: 1px dashed var(--panel-line);
+  }
+  .note b { color: var(--ink); }
+
+  .quiet-slide .slide-title { color: var(--muted); }
+  .quiet-slide .eyebrow { color: var(--faint); }
+
+  .takeaway-list { list-style: none; margin: 0; padding: 0; display: flex; flex-direction: column; gap: 1.25rem; max-width: 72ch; }
+  .takeaway-list li { display: flex; gap: 1rem; align-items: flex-start; font-size: 1.05rem; line-height: 1.55; }
+  .takeaway-list .mk { font-family: var(--mono); color: var(--accent); font-weight: 700; flex: none; }
+
+  /* ---- chrome: counter + nav ---- */
+  .chrome {
+    position: fixed; bottom: 1.4rem; left: 0; right: 0;
+    display: flex; justify-content: center; align-items: center; gap: 1.1rem;
+    font-family: var(--mono); font-size: 0.8rem; color: var(--faint);
+    pointer-events: none; z-index: 10;
+  }
+  .chrome button {
+    pointer-events: auto;
+    background: var(--panel); border: 1px solid var(--panel-line); color: var(--ink);
+    width: 2rem; height: 2rem; border-radius: 50%; cursor: pointer; font-family: var(--mono);
+    display: flex; align-items: center; justify-content: center;
+  }
+  .chrome button:hover { border-color: var(--accent); color: var(--accent); }
+  .chrome button:focus-visible { outline: 2px solid var(--accent); outline-offset: 2px; }
+  #ctr { min-width: 4.5ch; text-align: center; }
+
+  ::selection { background: var(--accent); color: #0b1116; }
+</style>
+
+<div class="deck" id="deck" tabindex="0">
+
+  <!-- 0: TITLE -->
+  <section class="slide title-slide">
+    <div class="eyebrow">ACTIVE VIEWPOINT SELECTION</div>
+    <div class="big">Seeing past<br/>the <span class="hl">glare.</span></div>
+    <p class="lede">Can a camera learn <i>where to look</i> to beat the specular highlights that fool face recognition — and does that intelligence need to be learned at all?</p>
+    <div class="title-meta">
+      <div><b>Renderer</b><br/>Isaac Sim 5.1, RTX, T4 GPU</div>
+      <div><b>Identities</b><br/>3 scanned heads, CC/research-use assets</div>
+      <div><b>Policies</b><br/>random · greedy · greedy-preview · learned</div>
+    </div>
+  </section>
+
+  <!-- 1: MOTIVATION -->
+  <section class="slide">
+    <div class="eyebrow">01 — MOTIVATION &amp; BASELINE</div>
+    <h1 class="slide-title">Face Perception Under Specular Glare</h1>
+    <p class="lede">One bright highlight across skin is enough to push a face embedding away from the right identity. Below: the <i>same</i> head, <i>same</i> pose, <i>same</i> camera — only the lighting and skin roughness change.</p>
+    <div class="slide-body">
+      <div class="shots-row">
+        <div class="shot-col">
+          <div class="shot"><img src="img/clean_front.png" alt="Clean frontal render, matte skin, moderate lighting" /><span class="corner-bl"></span><span class="corner-br"></span></div>
+          <div class="shot-cap"><span class="tag">clean_front</span><span>roughness 0.60 · intensity 0.60</span></div>
+        </div>
+        <div class="shot-col">
+          <div class="shot warn"><img src="img/glare_front.png" alt="Same pose under glare-inducing lighting, visible specular sheen" /><span class="corner-bl"></span><span class="corner-br"></span></div>
+          <div class="shot-cap"><span class="tag" style="color:var(--glare)">glare_front</span><span>roughness 0.08 · intensity 1.40</span></div>
+        </div>
+      </div>
+    </div>
+    <div class="note">Everything else held fixed: head, pose, camera intrinsics, exposure. <b>Only two scene parameters moved</b> — glossiness and key-light intensity — and a visible sheen appears across the forehead and nose bridge.</div>
+  </section>
+
+  <!-- 2: SIMULATION SETUP -->
+  <section class="slide">
+    <div class="eyebrow">02 — SIMULATION SETUP</div>
+    <h1 class="slide-title">Controllable Lighting &amp; 4-Way Camera Motion</h1>
+    <div class="slide-body">
+      <div class="cols">
+        <div class="col narrow">
+          <div class="shot"><img src="img/scene_overview.png" alt="Schematic: head, camera orbit positions, key light direction" /></div>
+          <div class="shot-cap"><span class="tag">setup schematic</span><span>real poses, not illustrative</span></div>
+        </div>
+        <div class="col">
+          <ul class="facts">
+            <li><b>Camera</b> orbits a 0.6&nbsp;m sphere, always looking at the head center · 640×480, ~41° horizontal FOV</li>
+            <li><b>LEFT / RIGHT</b> — orbit ±15° (azimuth), radius fixed<span class="sub">+azimuth = toward the head's own left</span></li>
+            <li><b>FORWARD / BACKWARD</b> — radial ∓0.1&nbsp;m, azimuth/elevation fixed<span class="sub">limits: 0.35–0.9&nbsp;m</span></li>
+            <li><b>RGB-D</b> every step — depth = distance to the image plane, meters; 0/NaN/Inf = invalid</li>
+          </ul>
+          <div style="display:flex; gap:1rem; margin-top:1.6rem;">
+            <div style="flex:1"><div class="shot"><img src="img/rgb.png" alt="RGB frame from the FORWARD pose" /></div><div class="shot-cap"><span class="tag">rgb</span></div></div>
+            <div style="flex:1"><div class="shot"><img src="img/depth_vis.png" alt="Depth visualization, red = invalid pixels" /></div><div class="shot-cap"><span class="tag">depth_vis</span><span style="color:var(--glare)">red = invalid</span></div></div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- 3: POLICIES -->
+  <section class="slide">
+    <div class="eyebrow">03 — METHOD</div>
+    <h1 class="slide-title">Four Policies, One Shared Evaluator</h1>
+    <p class="lede">Same scenes, same starting viewpoints, same acceptance rule — only the decision rule for where to move next changes.</p>
+    <div class="cards">
+      <div class="card">
+        <div class="tag">Baseline</div>
+        <h3>Random</h3>
+        <p>Uniform over valid actions. No signal used at all — the floor every policy has to clear.</p>
+      </div>
+      <div class="card accent">
+        <div class="tag">Observable-only</div>
+        <h3>Greedy (heuristic)</h3>
+        <p>No extra renders. Scores moves by frontality and by moving away from the detected glare blob's position.</p>
+      </div>
+      <div class="card accent" style="opacity:0.85">
+        <div class="tag">Oracle-like</div>
+        <h3>Greedy (preview)</h3>
+        <p>Renders <i>every</i> valid neighbor before picking the best observable confidence. Costly: ~10 renders/episode.</p>
+      </div>
+      <div class="card learned">
+        <div class="tag">Trained</div>
+        <h3>Learned</h3>
+        <p>A small MLP trained on real collected outcomes predicts move quality — no preview renders needed.</p>
+      </div>
+    </div>
+    <div class="card-foot">Budget: 6 moves/episode · action grid: 5 azimuth × 3 elevation steps</div>
+  </section>
+
+  <!-- 4: HEADLINE RESULT -->
+  <section class="slide">
+    <div class="eyebrow">04 — RESULT</div>
+    <h1 class="slide-title">Looking Around Beats Guessing Once</h1>
+    <div class="slide-body">
+      <div class="chart-wrap">
+        <div class="chart" style="height:78%">
+          <div class="gridline" style="bottom:100%"><span>100%</span></div>
+          <div class="gridline" style="bottom:75%"><span>75</span></div>
+          <div class="gridline" style="bottom:50%"><span>50</span></div>
+          <div class="gridline" style="bottom:25%"><span>25</span></div>
+          <div class="bargroup">
+            <div class="bars"><div class="bar random" style="height:84.7%"><span class="val">84.7%</span></div></div>
+            <div class="glabel"><b>Random</b>one fixed guess</div>
+          </div>
+          <div class="bargroup">
+            <div class="bars"><div class="bar greedy" style="height:100%"><span class="val">100%</span></div></div>
+            <div class="glabel"><b>Greedy</b>heuristic</div>
+          </div>
+          <div class="bargroup">
+            <div class="bars"><div class="bar preview" style="height:100%"><span class="val">100%</span></div></div>
+            <div class="glabel"><b>Greedy</b>preview</div>
+          </div>
+          <div class="bargroup">
+            <div class="bars"><div class="bar learned" style="height:100%"><span class="val">100%</span></div></div>
+            <div class="glabel"><b>Learned</b>MLP</div>
+          </div>
+        </div>
+      </div>
+      <div class="callout-row">
+        <div class="callout"><div class="num">+15.3pp</div><div class="lbl">learned vs. random</div></div>
+        <div class="callout"><div class="num neutral">[6.9, 23.6]</div><div class="lbl">95% CI, excludes 0</div></div>
+        <div class="callout"><div class="num neutral">11 / 0</div><div class="lbl">episodes only-learned-wins / only-random-wins (n=72)</div></div>
+      </div>
+    </div>
+    <div class="note">Acceptance rule: similarity ≥ 0.70, margin ≥ 0.30 — chosen from the real collected score distribution. The original looser rule (0.35 / 0.10) accepted 99% of views on the very first frame, giving every policy an identical, meaningless 100%.</div>
+  </section>
+
+  <!-- 5: WHERE IT MATTERS -->
+  <section class="slide">
+    <div class="eyebrow">05 — WHY</div>
+    <h1 class="slide-title">The Gap Lives in the Glare</h1>
+    <p class="lede">Success rate of <b style="color:var(--ink)">random</b>, split by skin roughness — the parameter that controls how sharp the specular highlight is.</p>
+    <div class="slide-body">
+      <div class="chart-wrap">
+        <div class="chart" style="height:78%">
+          <div class="gridline" style="bottom:100%"><span>100%</span></div>
+          <div class="gridline" style="bottom:75%"><span>75</span></div>
+          <div class="gridline" style="bottom:50%"><span>50</span></div>
+          <div class="bargroup">
+            <div class="bars">
+              <div class="bar random" style="height:76.2%"><span class="val">76.2%</span></div>
+              <div class="bar learned" style="height:100%"><span class="val">100%</span></div>
+            </div>
+            <div class="glabel"><b>Glossy</b>sharpest glare</div>
+          </div>
+          <div class="bargroup">
+            <div class="bars">
+              <div class="bar random" style="height:76.2%"><span class="val">76.2%</span></div>
+              <div class="bar learned" style="height:100%"><span class="val">100%</span></div>
+            </div>
+            <div class="glabel"><b>Medium</b>roughness</div>
+          </div>
+          <div class="bargroup">
+            <div class="bars">
+              <div class="bar random" style="height:96.7%"><span class="val">96.7%</span></div>
+              <div class="bar learned" style="height:100%"><span class="val">100%</span></div>
+            </div>
+            <div class="glabel"><b>Matte</b>little glare</div>
+          </div>
+        </div>
+        <div class="legend">
+          <div class="item"><span class="swatch" style="background:linear-gradient(180deg,#5d6c7c,#44515f)"></span>random</div>
+          <div class="item"><span class="swatch" style="background:linear-gradient(180deg,#b6a9ff,#8070e0)"></span>learned / greedy (all tied at 100%)</div>
+        </div>
+      </div>
+    </div>
+    <div class="note">On matte surfaces — where there's little glare to begin with — random already nearly matches the active policies (96.7% vs 100%). The <b>23.8pp</b> gap on glossy/medium surfaces is where active viewpoint selection earns its keep.</div>
+  </section>
+
+  <!-- 6: PRESSURE TEST -->
+  <section class="slide">
+    <div class="eyebrow alt">06 — HONEST CHECK</div>
+    <h1 class="slide-title">Does Learned Beat Greedy? Not Here.</h1>
+    <p class="lede">A dense action grid and a 6-move budget mean almost any reasonable path eventually succeeds — so we tightened the budget to make the <i>first</i> move count.</p>
+    <div class="slide-body">
+      <table class="compare">
+        <tr><th>Budget</th><th>Random</th><th>Greedy (heuristic)</th><th>Learned</th><th>Winner</th></tr>
+        <tr><td>1 move</td><td>52.8%</td><td>80.6%</td><td>79.2%</td><td class="win">greedy</td></tr>
+        <tr><td>2 moves</td><td>72.2%</td><td>100%</td><td>100%</td><td>tie</td></tr>
+        <tr><td>3 moves</td><td>72.2%</td><td>100%</td><td>94.4%</td><td class="win">greedy</td></tr>
+        <tr><td>6 moves (main result)</td><td>84.7%</td><td>100%</td><td>100%</td><td>tie</td></tr>
+      </table>
+      <div class="callout-row">
+        <div class="callout"><div class="num neutral">0</div><div class="lbl">episodes only learned wins</div></div>
+        <div class="callout"><div class="num neutral">3</div><div class="lbl">episodes only greedy wins (budgets 1 &amp; 3)</div></div>
+      </div>
+    </div>
+    <div class="note">A simple "move away from the detected glare blob" rule is close to optimal with one light source — the learned model never found a case it couldn't. Its real, defensible claim: matching the render-every-neighbor <b>preview</b> baseline's decision quality at <b>~5× fewer renders</b> (1.9 vs 10 acquisitions/episode).</div>
+  </section>
+
+  <!-- 7: ALSO TRIED -->
+  <section class="slide quiet-slide">
+    <div class="eyebrow alt">07 — ALSO TRIED</div>
+    <h1 class="slide-title">A Second Light Source (Didn't Help)</h1>
+    <p class="lede" style="max-width:70ch">To break the "one glare blob" heuristic, we added a second, independently-randomized light. Across two attempts — the first with the light placed where the camera could never actually see it — dual-light scenes still weren't measurably harder than single-light ones, and greedy stayed tied with learned.</p>
+    <ul class="facts" style="max-width:60ch">
+      <li><b>Scenes</b> with a visible second highlight: success rates statistically indistinguishable from single-light scenes, every policy.</li>
+      <li><b>Documented, not discarded</b> — full negative result and methodology in <code style="color:var(--muted)">results/isaac_heads_v3/README.md</code>.</li>
+    </ul>
+  </section>
+
+  <!-- 8: TAKEAWAYS -->
+  <section class="slide">
+    <div class="eyebrow">08 — TAKEAWAYS</div>
+    <h1 class="slide-title">What We Can Claim</h1>
+    <div class="slide-body" style="justify-content:center">
+      <ul class="takeaway-list">
+        <li><span class="mk">01</span>Moving the camera measurably beats one fixed guess under glare — <b>+15.3pp</b>, 95% CI excludes zero.</li>
+        <li><span class="mk">02</span>The benefit concentrates exactly where physics predicts it should: glossy/medium roughness, not matte.</li>
+        <li><span class="mk">03</span>A simple observable heuristic is a strong baseline here. The learned model hasn't beaten it — only matched the costly preview oracle at a fraction of the render budget.</li>
+        <li><span class="mk">04</span>Negative results — dual-light, tight-budget — are kept in the repo, not hidden.</li>
+      </ul>
+    </div>
+    <div class="note">Reproducible end to end: <b>github.com/Qingxiao-X/active-viewpoint-selection</b> · branch <b>isaac-hprc-run</b></div>
+  </section>
+
+</div>
+
+<div class="chrome">
+  <button id="prev" aria-label="Previous slide">&#8592;</button>
+  <span id="ctr">1 / 9</span>
+  <button id="next" aria-label="Next slide">&#8594;</button>
+</div>
+
+<script>
+  const deck = document.getElementById('deck');
+  const slides = Array.from(document.querySelectorAll('.slide'));
+  const ctr = document.getElementById('ctr');
+  let i = 0;
+  function go(n) {
+    i = Math.max(0, Math.min(slides.length - 1, n));
+    slides[i].scrollIntoView({ behavior: 'smooth', inline: 'start', block: 'nearest' });
+    ctr.textContent = (i + 1) + ' / ' + slides.length;
+  }
+  document.getElementById('prev').addEventListener('click', () => go(i - 1));
+  document.getElementById('next').addEventListener('click', () => go(i + 1));
+  window.addEventListener('keydown', (e) => {
+    if (e.key === 'ArrowRight' || e.key === 'PageDown' || e.key === ' ') { e.preventDefault(); go(i + 1); }
+    if (e.key === 'ArrowLeft' || e.key === 'PageUp') { e.preventDefault(); go(i - 1); }
+  });
+  let scrollTimeout;
+  deck.addEventListener('scroll', () => {
+    clearTimeout(scrollTimeout);
+    scrollTimeout = setTimeout(() => {
+      const idx = Math.round(deck.scrollLeft / window.innerWidth);
+      if (idx !== i) { i = idx; ctr.textContent = (i + 1) + ' / ' + slides.length; }
+    }, 80);
+  });
+  deck.focus();
+</script>
